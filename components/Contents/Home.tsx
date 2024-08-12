@@ -98,11 +98,11 @@ export const HomeSection = async () => {
             >
               <p className="text-white">
                 <span className="font-normsEn block w-full text-[34px] sm:text-[80px] leading-[1]">ABOUT US<strong className="text-blue-400 text-[20px] pl-2">■</strong></span>
-                <span className="text-[24px] sm:text-[34px] tracking-wide">關於我們</span>
+                <span className="text-[24px] sm:text-[34px] tracking-wide">恒佳について</span>
               </p>
               <p className="mt-auto w-full block sm:flex flex-wrap justify-between text-white tracking-widest">
                 <span className="w-[46%] text-lg">
-                  關於我們關於我們關於我們關於我們關於我們關於我們關於我們關於我們關於我們關於我們關於我們
+                  テキストテキストテキスト1
                 </span>
                 
                 <span className="block text-right">
@@ -126,11 +126,11 @@ export const HomeSection = async () => {
             >
               <p className="text-white">
                 <span className="font-normsEn block w-full text-[34px] sm:text-[80px] leading-[1]">COMPANY<strong className="text-blue-400 text-[20px] pl-2">■</strong></span>
-                <span className="text-[24px] sm:text-[34px] tracking-wide">企業簡介</span>
+                <span className="text-[24px] sm:text-[34px] tracking-wide">会社情報</span>
               </p>
               <p className="mt-auto w-full block sm:flex flex-wrap justify-between text-white tracking-widest">
                 <span className="w-[46%] text-lg">
-                  公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司公司
+                  テキストテキストテキスト2
                 </span>
                 
                 <span className="block text-right">
@@ -205,7 +205,7 @@ export const HomeSection = async () => {
                   [03]
                 </span>
                 <span className="block text-sm tracking-[.2em] font-bold mb-8">
-                  美容服務
+                  美容サービス
                 </span>
 
                 <Barcode className="w-28 h-28 mx-auto" />
@@ -284,7 +284,7 @@ export const HomeSection = async () => {
         >
           <div className="w-[100vw] text-sm overflow-hidden sm:flex sm:flex-wrap sm:items-center sm:justify-end sm:mb-14">
             <h3 className="text-center text-[30px] tracking-[.2em] sm:max-w-[280px] sm:w-1/4 sm:pl-5 relative z-20 font-bold">
-              品牌
+              サービス
             </h3>
             <div
               className="max-w-full w-full pl-5 sm:pl-0 sm:max-w-[calc(50%_+_750px_/_2_-_80px] sm:w-3/4 relative mb-[50px] after:bg-[#F2F2F2] sm:after:w-[calc(100%_+_80px)]
