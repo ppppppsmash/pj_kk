@@ -23,7 +23,7 @@ export function Footer() {
 
         <div className="mr-5">
           <Logo style={"w-[80px] pt-3 mb-2"} />
-          <small className="text-xs">© Kubo All Rights Reserved.</small>
+          <small className="text-xs">© Kouka Co., Ltd. All Rights Reserved.</small>
         </div>
       </div>
 

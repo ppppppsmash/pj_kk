@@ -200,7 +200,7 @@ export const DisplacementSphere = props => {
         onSwiper={(swiper) => console.log(swiper)}
         className="w-full  h-[80svh] sm:h-[100svh] overflow-hidden relative"
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <div
             data-swiper-parallax=""
             className="relative block overflow-hidden pt-[100svh] w-[100vw]"
@@ -211,7 +211,7 @@ export const DisplacementSphere = props => {
             ref={canvasRef}
           />
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
         <SwiperSlide>
           <div
@@ -258,18 +258,6 @@ export const DisplacementSphere = props => {
               Kouka Co., Ltd.
             </span>
           </div>
-        </div>
-      </div>
-
-      <div className="absolute block top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 m-auto w-[340px] h-auto z-10">
-        <div
-          className="relative block overflow-hidden"
-          style={{backfaceVisibility: 'hidden'}}
-        >
-          <img
-            className="object-cover w-full h-auto m-auto z-10 shadow-xl rounded-md"
-            src="/images/mv-center.jpg"
-          />
         </div>
       </div>
     </div>
