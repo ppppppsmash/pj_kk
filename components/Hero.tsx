@@ -66,7 +66,7 @@ export const Hero = () => {
               font-bold leading-9 text-transparent dark:from-white dark:via-white/90 dark:to-white/70
               sm:text-3xl sm:leading-[3.5rem] text-white"
           >
-            我們只跟世界最權威級的機構或大師合作，希望用最自然的保養方式來幫助他人更健康{' '}<br />我們帶來
+            テキストテキストテキストテキストテキストテキストTOP{' '}<br />テキスト
             <div className="inline-grid h-9 overflow-hidden sm:h-[3.5rem]">
               <div ref={scope}>
                 {TEXTS.map(({ text, className }, index) => (

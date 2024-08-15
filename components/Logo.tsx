@@ -13,7 +13,7 @@ export function Logo({ style }: Style ) {
     )}>
       <Link href="/">
         <img
-          className="w-full"
+          className="w-full rounded-md"
           src="/images/logo.png"
         />
       </Link>

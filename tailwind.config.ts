@@ -22,7 +22,7 @@ const config = {
         normsEn: ['TTNorms']
       },
       colors: {
-        kubo: "#00B9E5",
+        kouka: "#FECF3E",
         gray: "#F2F2F2",
         scroll: "#333333",
         border: "hsl(var(--border))",

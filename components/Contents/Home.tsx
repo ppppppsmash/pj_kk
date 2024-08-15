@@ -97,7 +97,7 @@ export const HomeSection = async () => {
               href="/about"
             >
               <p className="text-white">
-                <span className="font-normsEn block w-full text-[34px] sm:text-[80px] leading-[1]">ABOUT US<strong className="text-blue-400 text-[20px] pl-2">■</strong></span>
+                <span className="font-normsEn block w-full text-[34px] sm:text-[80px] leading-[1]">ABOUT US<strong className="text-kouka text-[20px] pl-2">■</strong></span>
                 <span className="text-[24px] sm:text-[34px] tracking-wide">恒佳について</span>
               </p>
               <p className="mt-auto w-full block sm:flex flex-wrap justify-between text-white tracking-widest">

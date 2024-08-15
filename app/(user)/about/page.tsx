@@ -13,16 +13,16 @@ export default async function About() {
 
           <div className="mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
             <h3 className="font-semibold leading-[27px] text-[36px]">
-              你好你好你好你好
+              代表メッセージ
             </h3>
 
             <p className="mt-[33px] leading-[31px]">
-              你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            さらに甦る美と健康　伊段のサポート​
             </p>
 
-            <p className="mt-[33px] leading-[31px]">
+            {/* <p className="mt-[33px] leading-[31px]">
               你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -35,36 +35,43 @@ export default async function About() {
             </h2>
 
             <div>
-              <img className="rounded-lg" src="/images/image-1.png" />
+              <img className="rounded-lg w-[300px]" src="/images/about/ceo.jpg" />
             </div>
 
             <div className="max-w-[604px]">
               <p className="leading-[27px] tracking-[.02em] text-[#545454] mb-[20px]">
-              大家好，我是黃惠玲angela。
+                平素より格別のご高配を賜り、誠にありがとうございます。
               </p>
 
               <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
-              日本恒佳株式会社的誕生，是我人生中重要的目標之一，在這裡，我將集結一生所學、所識，毫無保留，並且扎根研究、國際專家接軌，淺顯易懂的教給相信我們的您，一起敬愛生命，享受旅程。</p>
-
-              <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
-                過去穿梭醫學領域，也深耕商業戰場，深知身外之物的一切，在遇見體內抗議時，一切皆不足一提，因此我深入找尋國際實驗室，日本、英國、德國、法國、瑞典⋯⋯認識各國權威，接軌世界頂尖的研究，最終從嚴謹的日本實驗室、優質的日本當地原料，作爲國際級的健康研究整合。
+                恒佳株式会社は、2012年（平成24年）7月24日に設立され、現在に至り、12年になりました。
               </p>
 
               <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
-                並且經過層層審核，成為日本乳酸菌学会榮譽會員，協會會員居多是醫生背景在定期研討會中獲得廣大臨床經驗及數據，益生菌在未來趨勢可以逆轉疾病對抗微生物、病毒對全球人類的傷害，專業醫師組成的日本乳酸菌協會，不放過拯救疾病根本的每一個細節。
+                この12年間にわたり、当社は、「美」「健康」「ゆとり」「時代の空気」などの側面から、お客さまの暮らしの質的向上を応援するという目標を貫いており、日本の健康食品、漢方薬、化粧品を世界の方々にお求めやすい価格でお届けすることを実行します。​</p>
+                
+              <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
+                2015年、当社は、東洋新薬株式会社と提携し、「金の青汁」シリーズ製品の販売を始め、数年間にわたって、社員達が一丸となって、努力を重ねてきた結果、現在、多くのビジネスパートナーができて、食品、健康食品から、漢方薬、化粧品まで、幅広く活躍しております。
               </p>
 
               <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
-                日本恒佳株式会社同時溝通機能食品與高階護膚的重要性，因為兩者相輔相成，內服及外用延續細胞生命力，藉由日本嚴謹的規格及制度，找出當地最權威實驗室由專業科學研究人員，除了找尋透過天然原型食物營養素補充身體機能，取代藥物作用同時讓肌膚達到全能抗老、延續青春秘方。
+                2021年には、「さらに甦る美と健康 伊段のサポート」を理念とした「伊段（いだん)」ブランドを創設しました。
               </p>
 
               <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
-                因此每一項產品的誕生，都擁有同樣的初衷「投資美麗加碼健康」，
-                我們從不停下任何腳步學習與研究，因為每一步都要走的有效率、有效果，請一起跟我們攜手接軌國際與科技，站在每一個時代的健康尖端吧！
+                伊段シリーズ製品は、日本の専門チームにより開発され、GMP&ISO22000 食品安全管理認定を取得した百年の工場で生産されています。
+              </p>
+
+              <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
+                2022年から2024年まで、3年間にわたって、「伊段バターコーヒースリム」が「国際モンドセレクション」を連続受賞しました。その効果、品質、安全性が認められています。
+              </p>
+
+              <p className="leading-[27px] tracking-[.04em] text-[#545454] mb-[25px]">
+                恒佳株式会社は、「伊段シリーズ」を中心に、日本の健康食品をより便利で効果的な方法で提供し続きます。そして、品質を中心に着実なステップで次の10年を進んでいきます
               </p>
 
               <p className="leading-[27px] tracking-[.02em] text-[#545454] mb-[25px]">
-                <span className="font-bold text-sm">代表取締役</span> 黃惠玲angela
+                <span className="font-bold text-sm">代表取締役</span> 梅原 鳳艶
               </p>
             </div>
           </div>
