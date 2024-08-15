@@ -1,4 +1,5 @@
 import { ContactCard } from '@/components/ContactCard'
+import { CompanyTracing } from '@/components/CompanyTracing'
 
 export default async function Company() {
   return (
@@ -16,13 +17,9 @@ export default async function Company() {
               会社概要 歩み
             </h3>
 
-            <p className="mt-[33px] leading-[31px]">
-              テキスト
-            </p>
-
-            <p className="mt-[33px] leading-[31px]">
-              テキスト
-            </p>
+            <div className="mt-14">
+              <CompanyTracing />
+            </div>
           </div>
         </div>
       </section>
