@@ -69,7 +69,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>姓</strong></FormLabel>
               <FormControl>
-                <Input placeholder="請輸入姓." {...field} />
+                <Input placeholder="姓を入力してください." {...field} />
               </FormControl>
               {/* <FormDescription>
                 This is your public display name.
@@ -86,7 +86,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>名</strong></FormLabel>
               <FormControl>
-                <Input placeholder="請輸入名." {...field} />
+                <Input placeholder="名を入力してください." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,7 +100,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>E-mail</strong></FormLabel>
               <FormControl>
-                <Input placeholder="請輸入郵箱." {...field} />
+                <Input placeholder="メールアドレスを入力してください." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -112,9 +112,9 @@ export function ContactForm() {
           name="tel"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[18px]"><strong>電話號碼</strong></FormLabel>
+              <FormLabel className="text-[18px]"><strong>電話番号</strong></FormLabel>
               <FormControl>
-                <Input placeholder="請輸入電話號碼." {...field} />
+                <Input placeholder="電話番号を入力してください." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -126,9 +126,9 @@ export function ContactForm() {
           name="companyname"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[18px]"><strong>企業名</strong></FormLabel>
+              <FormLabel className="text-[18px]"><strong>会社名</strong></FormLabel>
               <FormControl>
-                <Input placeholder="請輸入企業名(任意)." {...field} />
+                <Input placeholder="会社名を入力してください." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -140,9 +140,9 @@ export function ContactForm() {
           name="mainmessage"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[18px]"><strong>資訊內容</strong></FormLabel>
+              <FormLabel className="text-[18px]"><strong>お問い合わせ内容</strong></FormLabel>
               <FormControl>
-                <Textarea className="resize-none" rows={10} placeholder="請輸入您想詢問的內容." {...field} />
+                <Textarea className="resize-none" rows={10} placeholder="お問い合わせ内容を入力してください." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

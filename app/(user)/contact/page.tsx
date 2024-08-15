@@ -13,11 +13,11 @@ export default async function Contact() {
 
           <div className="mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
             <p className="mt-[33px] leading-[31px]">
-              你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
-            </p>
-
-            <p className="mt-[20px] leading-[31px]">
-              你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+              商品について<br />
+              健康相談をしたい<br />
+              ビジネスパートナー希望<br />
+              WEBサイトについて<br />
+              ご意見ご要望​がございましたら、ぜひご連絡ください。
             </p>
           </div>
         </div>
