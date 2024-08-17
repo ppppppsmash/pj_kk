@@ -115,11 +115,11 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/service" legacyBehavior passHref>
+                <Link href="/product" legacyBehavior passHref>
                   <NavigationMenuLink>
                     <NavigationMenuTrigger
-                      className={cn(pathname === "/service" ? "after:scale-x-100 after:scale-y-100" : "")}
-                    >SERVICE</NavigationMenuTrigger>
+                      className={cn(pathname === "/product" ? "after:scale-x-100 after:scale-y-100" : "")}
+                    >PRODUCT</NavigationMenuTrigger>
                   </NavigationMenuLink>
                 </Link>
                 <NavigationMenuContent>
@@ -130,11 +130,11 @@ export function Header() {
                           className={cn(
                             "flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                           )}
-                          href="/service"
+                          href="/product"
                         >
                           {/* <Icons.logo className="h-6 w-6" /> */}
                           <div className="mb-2 mt-4 text-lg font-medium">
-                            測試
+                            テスト
                           </div>
                           <p className="text-sm leading-tight text-muted-foreground">
                             test test test test test test test test test test test test

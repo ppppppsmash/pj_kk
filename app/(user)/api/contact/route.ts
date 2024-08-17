@@ -41,7 +41,7 @@ export async function POST(request: Request) {
   const mailOptions = {
     from: process.env.EMAIL_SENDER,
     to: [formData.email],
-    subject: 'Kubo Contact Form',
+    subject: 'KOUKA Contact Form',
     text: JSON.stringify(formData, null, 2),
   }
 
