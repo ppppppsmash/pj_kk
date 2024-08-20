@@ -6,22 +6,22 @@ import { motion, useAnimate } from 'framer-motion'
 
 const TEXTS = [
   {
-    text: '健康',
+    text: '美',
     className:
       'bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]'
   },
   {
-    text: '美麗',
+    text: '健康',
     className:
       'bg-clip-text text-transparent bg-gradient-to-r from-[#0077ff] to-[#00e7df]'
   },
   {
-    text: '測試1',
+    text: 'ゆとり',
     className:
       'bg-clip-text text-transparent bg-gradient-to-r from-[#7f00de] to-[#ff007f]'
   },
   {
-    text: '測試2',
+    text: '時代の空気',
     className:
       'bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]'
   }
@@ -33,10 +33,10 @@ export const Hero = () => {
   useEffect(() => {
     animate(
       [
-        [scope.current, { y: '0%' }, { duration: 0 }],
+        [scope.current, { y: '0%' }, { duration: 0.3, at: '+1.3' }],
         [scope.current, { y: '-25%' }, { duration: 0.3, at: '+1.3' }],
         [scope.current, { y: '-50%' }, { duration: 0.3, at: '+1.3' }],
-        [scope.current, { y: '-75%' }, { duration: 0.3, at: '+1.3' }]
+        [scope.current, { y: '-75%' }, { duration: 0.3, at: '+2' }]
       ],
       {
         repeat: Number.POSITIVE_INFINITY
@@ -66,7 +66,7 @@ export const Hero = () => {
               font-bold leading-9 text-transparent dark:from-white dark:via-white/90 dark:to-white/70
               sm:text-3xl sm:leading-[3.5rem] text-white"
           >
-            テキストテキストテキストテキストテキストテキストTOP{' '}<br />テキスト
+            客さまの暮らしの質的向上を応援するという目標を貫いており、
             <div className="inline-grid h-9 overflow-hidden sm:h-[3.5rem]">
               <div ref={scope}>
                 {TEXTS.map(({ text, className }, index) => (
@@ -76,6 +76,7 @@ export const Hero = () => {
                 ))}
               </div>
             </div>
+            を提供しております。
           </h1>
         </motion.div>
       </div>

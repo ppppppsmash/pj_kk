@@ -102,7 +102,7 @@ export const HomeSection = async () => {
               </p>
               <p className="mt-auto w-full block sm:flex flex-wrap justify-between text-white tracking-widest">
                 <span className="w-[46%] text-lg">
-                  テキストテキストテキスト1
+                恒佳株式会社は品質を中心に着実なステップで次の10年を進んでいきます
                 </span>
                 
                 <span className="block text-right">
@@ -130,7 +130,7 @@ export const HomeSection = async () => {
               </p>
               <p className="mt-auto w-full block sm:flex flex-wrap justify-between text-white tracking-widest">
                 <span className="w-[46%] text-lg">
-                  テキストテキストテキスト2
+                  
                 </span>
                 
                 <span className="block text-right">
@@ -175,8 +175,7 @@ export const HomeSection = async () => {
                 <Handshake className="w-28 h-28 mx-auto" />
               </h3>
               <p className="leading-7 text-sm tracking-wide">
-                テストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-                テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+                アジアを中心に伊段シリーズ製品を始め、高品質な日本製の漢方薬、健康食品、化粧品、日用雑貨及び日本食材等を輸出しています。すでに、現地の卸売会社及び中国の各地に約XX店舗以上ある大手スーパーと提携し、安心で安全な厳選された日本食材を約XX種類以上卸しております。
               </p>
             </div>
 
@@ -194,8 +193,9 @@ export const HomeSection = async () => {
 
               </h3>
               <p className="leading-7 text-sm tracking-wide">
-                テストテストテストテストテストテストテストテストテストテストテストテストテスト
-                テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+                伊段シリーズ製品は、日本の専門チームにより開発され、GMP&ISO22000食品安全管理認定を取得した百年の工場で生産されています。
+                2022年から2024年まで、3年間にわたって、「伊段バターコーヒースリム」が「国際モンドセレクション」を連続受賞しました。その効果、品質、安全性が認められています。
+                恒佳株式会社は、「伊段シリーズ」を中心に、日本の健康食品をより便利で効果的な方法で提供し続きます。そして、品質を中心に着実なステップで次の１０年を進んでいきます。​
               </p>
             </div>
 
@@ -211,8 +211,8 @@ export const HomeSection = async () => {
                 <Barcode className="w-28 h-28 mx-auto" />
               </h3>
               <p className="leading-7 text-sm tracking-wide">
-                テストテストテストテストテストテストテストテストテストテストテストテストテスト
-                テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+                さらに甦る美と健康 伊段のサポート、​
+                当社は、「美」「健康」「ゆとり」「時代の空気」などの側面から、お客さまの暮らしの質的向上を応援するという目標を貫いており、日本の健康食品、漢方薬、化粧品を世界の方々にお求めやすい価格でお届けすることを実行します。​
               </p>
             </div>
           </div>

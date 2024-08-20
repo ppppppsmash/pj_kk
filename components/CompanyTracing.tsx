@@ -47,7 +47,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: "起業",
+    badge: "発足",
   },
   {
     title: "2015年",
@@ -58,7 +58,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: "",
+    badge: "発展",
   },
   {
     title: "2016年",
@@ -69,7 +69,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: "",
+    badge: "発展",
   },
   {
     title: "2017年",
@@ -80,7 +80,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: "",
+    badge: "発展",
   },
   {
     title: "2020年",
@@ -91,7 +91,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: "",
+    badge: "発展",
   },
   {
     title: "2021年",
@@ -102,7 +102,7 @@ const dummyContent = [
         </p>
       </>
     ),
-    badge: "「伊段（いだん）」ブランドの創設",
+    badge: "変革",
   },
   {
     title: "2023年",
