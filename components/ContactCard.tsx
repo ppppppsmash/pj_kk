@@ -13,7 +13,7 @@ export function ContactCard() {
           h-[500px] px-[50px] bg-cover transition-all hover:scale-105"
         >
           <p className="relative font-black leading-[1] flex items-end">
-            <span className="font-normsEn sm:text-[110px] text-[30px]">CONTACT US<strong className="text-blue-400 text-[20px] pl-2">■</strong><br />
+            <span className="font-normsEn sm:text-[110px] text-[30px]">CONTACT US<strong className="text-kouka text-[20px] pl-2">■</strong><br />
               <small className="sm:text-[50px] text-[20px]">お問い合わせ</small>
             </span>
             <ArrowRight className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px]" />
