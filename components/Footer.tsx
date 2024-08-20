@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Youtube } from 'lucide-react'
+import { IconBrandAmazon } from '@tabler/icons-react';
 import { Logo } from './Logo'
 
 export function Footer() {
@@ -10,14 +10,13 @@ export function Footer() {
           bg-gray"
       >
         <div className="flex items-center gap-x-4 ml-4">
-          <a href="">
-            <Facebook className="w-6 h-6" />
-          </a>
-          <a href="">
-            <Instagram className="w-6 h-6" />
-          </a>
-          <a href="">
-            <Youtube className="w-6 h-6" />
+          <a
+            className="flex gap-x-2 hover:scale-95 transition-all hover:text-kouka"
+            href="https://www.amazon.co.jp/s?me=AJZHQW1IE0MDG&marketplaceID=A1VC38T7YXB528"
+            target="_blank"
+          >
+            <IconBrandAmazon className="w-6 h-6" stroke={2} />
+            <span>amazonショップへ</span>
           </a>
         </div>
 
