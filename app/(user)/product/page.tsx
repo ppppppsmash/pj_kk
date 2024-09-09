@@ -55,20 +55,20 @@ export default async function Service() {
             className="font-bold text-[60px] sm:text-[180px] leading-[50px] sm:leading-[120px]
               tracking-[.01em] duration-500 delay-300 animate-slide-in-left"
           >
-            Service
+            Product
           </h1>
 
           <div className="mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
             <h3 className="font-semibold leading-[27px] text-[36px]">
-              你好你好你好你好
+              日本の品質、世界へ届ける安心
             </h3>
 
             <p className="mt-[33px] leading-[31px]">
-              你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+              日本国内の厳しい品質管理のもとで製造されています。安心・安全を最優先に、国内外の皆様にご提供しています。
             </p>
 
             <p className="mt-[33px] leading-[31px]">
-              你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
+            国内外のお客様に寄り添い、真心を込めた製品をお届けします。私たちと一緒に、健康的な毎日を手に入れましょう。
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 
-export default function Page({ params } : { params: { slug: string }}) {
+export default function ProductPage({ params } : { params: { slug: string }}) {
   return (
     <div>
       <section className="pt-[50px] sm:pt-[100px] bg-gray w-[100vw] overflow-hidden pb-10">
