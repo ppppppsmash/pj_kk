@@ -207,7 +207,7 @@ export const DisplacementSphere = props => {
             className="relative block overflow-hidden pt-[100svh] w-[100vw]"
           >
             <img
-              className="w-1/2 h-full absolute object-cover inset-0"
+              className="w-full sm:w-1/2 h-full absolute object-cover inset-0"
               src="https://firebasestorage.googleapis.com/v0/b/kouka-cf6ee.appspot.com/o/images%2Fmv-01.png?alt=media&token=994e346e-92e5-4a13-a4bd-1dc15c2fa7fe" />
           </div>
         </SwiperSlide>
@@ -218,7 +218,7 @@ export const DisplacementSphere = props => {
             className="relative block overflow-hidden pt-[100svh] w-[100vw]"
           >
             <img
-              className="w-1/2 h-full absolute object-cover inset-0"
+              className="w-full sm:w-1/2 h-full absolute object-cover inset-0"
               src="https://firebasestorage.googleapis.com/v0/b/kouka-cf6ee.appspot.com/o/images%2Fmv-02.png?alt=media&token=7814fd73-0d03-4df1-979e-966abbb38e78"
             />
           </div>

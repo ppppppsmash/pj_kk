@@ -217,19 +217,6 @@ export const HomeSection = async () => {
             </div>
           </div>
 
-          <div className="w-full sm:w-[220px] sm:mx-auto overflow-hidden mt-3 sm:mt-6 flex justify-end">
-            <span className="block overflow-hidden sm:mx-auto">
-              <Link
-                className="sm:h-[55px] w-[200px] sm:w-[220px] sm:rounded-[50px] bg-black text-white relative
-                  flex flex-wrap items-center justify-center tracking-[.5em] text-xs pl-[12px]
-                  rounded-tl-[30px] rounded-bl-[30px] h-[55px]"
-                href="/about"
-              >
-                ABOUT
-              </Link>
-            </span>
-          </div>
-
           { data[1]?.image && (
             <Image
               src={urlForImage(data[1]?.image)}

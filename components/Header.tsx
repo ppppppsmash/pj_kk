@@ -88,15 +88,6 @@ export function Header() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),
-                    pathname === "/about" ? "after:scale-x-100 after:scale-y-100" : "")}>
-                    ABOUT
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
                 <Link href="/company" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),
                     pathname === "/company" ? "after:scale-x-100 after:scale-y-100" : "")}>
