@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { ContactCard } from '@/components/ContactCard'
 
+import newsList from './news.json'
+
 interface News {
   imgSrc: string
   link: string
@@ -13,40 +15,9 @@ interface NewsList {
   newsList: News[]
 }
 
-const news_list = [
-  {
-    imgSrc: '/images/news.jpeg',
-    link: '/article/1',
-    title: '記事タイトル1',
-    date: '2024.03.21',
-  },
-  {
-    imgSrc: '/images/news.jpeg',
-    link: '/article/2',
-    title: '記事タイトル2',
-    date: '2024.03.22',
-  },
-  {
-    imgSrc: '/images/news.jpeg',
-    link: '/article/3',
-    title: '記事タイトル3',
-    date: '2024.03.23',
-  },
-  {
-    imgSrc: '/images/news.jpeg',
-    link: '/article/3',
-    title: '記事タイトル3',
-    date: '2024.03.23',
-  },
-  {
-    imgSrc: '/images/news.jpeg',
-    link: '/article/3',
-    title: '記事タイトル3',
-    date: '2024.03.23',
-  },
-];
-
 export default async function News() {
+  const news_list = newsList;
+
   return (
     <div>
       <section className="pt-[50px] sm:pt-[100px] bg-gray w-[100vw] overflow-hidden pb-20">
@@ -82,7 +53,7 @@ export default async function News() {
             className="md:w-[calc(100%_/_3_-_3%)] sm:w-[calc(100%_/_2_-_2.5%)] mb-8 sm:mb-20 relative h-full rounded-[50px]
               overflow-hidden shadow-[6px_4px_15px_0_rgba(51,51,51,.19)]"
           >
-            <Link href="/" className="block h-full pb-6 bg-white overflow-hidden relative z-10">
+            <Link href={news.link} className="block h-full pb-6 bg-white overflow-hidden relative z-10">
               <div className="mb-4 overflow-hidden rounded-tl-[50px] rounded-tr-[50px]">
                 <img
                   src={news.imgSrc}

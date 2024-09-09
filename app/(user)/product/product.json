@@ -1,0 +1,32 @@
+[
+  {
+    "imgSrc": "/images/news.jpeg",
+    "link": "/product/1",
+    "title": "記事タイトル1",
+    "date": "2024.03.21"
+  },
+  {
+    "imgSrc": "/images/news.jpeg",
+    "link": "/product/2",
+    "title": "記事タイトル2",
+    "date": "2024.03.22"
+  },
+  {
+    "imgSrc": "/images/news.jpeg",
+    "link": "/product/3",
+    "title": "記事タイトル3",
+    "date": "2024.03.23"
+  },
+  {
+    "imgSrc": "/images/news.jpeg",
+    "link": "/product/3",
+    "title": "記事タイトル3",
+    "date": "2024.03.23"
+  },
+  {
+    "imgSrc": "/images/news.jpeg",
+    "link": "/product/3",
+    "title": "記事タイトル3",
+    "date": "2024.03.23"
+  }
+]
