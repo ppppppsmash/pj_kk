@@ -19,11 +19,6 @@ const TEXTS = [
     text: 'ゆとり',
     className:
       'bg-clip-text text-transparent bg-gradient-to-r from-[#7f00de] to-[#ff007f]'
-  },
-  {
-    text: '時代の空気',
-    className:
-      'bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]'
   }
 ]
 
@@ -34,9 +29,8 @@ export const Hero = () => {
     animate(
       [
         [scope.current, { y: '0%' }, { duration: 0.3, at: '+1.3' }],
-        [scope.current, { y: '-25%' }, { duration: 0.3, at: '+1.3' }],
-        [scope.current, { y: '-50%' }, { duration: 0.3, at: '+1.3' }],
-        [scope.current, { y: '-75%' }, { duration: 0.3, at: '+2' }]
+        [scope.current, { y: '-33%' }, { duration: 0.3, at: '+1.3' }],
+        [scope.current, { y: '-67%' }, { duration: 0.3, at: '+1.3' }],
       ],
       {
         repeat: Number.POSITIVE_INFINITY
