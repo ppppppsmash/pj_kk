@@ -21,22 +21,22 @@ import useSubmitContactForm from '@/hooks/use-submit-contact-form'
 
 const formSchema = z.object({
   familyname: z.string().min(2, {
-    message: '姓不能為空喔.',
+    message: '必須項目です.',
   }),
   lastname: z.string().min(2, {
-    message: '名不能為空喔.',
+    message: '必須項目です.',
   }),
   email: z.string().min(2, {
-    message: '請填寫您的郵件',
+    message: '必須項目です.',
   }),
   tel: z.string().min(2, {
-    message: '請填寫您的電話號碼以便我們可以更快聯繫到您',
+    message: '必須項目です.',
   }),
   companyname: z.string().min(2, {
-    message: '公司名不能為空喔.',
+    message: '必須項目です.',
   }),
   mainmessage: z.string().min(2, {
-    message: '請填寫您想詢問的內容',
+    message: '請填寫您想詢問的內容.',
   }),
 })
 
@@ -69,7 +69,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>姓</strong></FormLabel>
               <FormControl>
-                <Input placeholder="姓を入力してください." {...field} />
+                <Input
+                  className="rounded-sm"
+                  placeholder="姓を入力してください."
+                  {...field}
+                />
               </FormControl>
               {/* <FormDescription>
                 This is your public display name.
@@ -86,7 +90,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>名</strong></FormLabel>
               <FormControl>
-                <Input placeholder="名を入力してください." {...field} />
+                <Input
+                  className="rounded-sm"
+                  placeholder="名を入力してください."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,7 +108,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>E-mail</strong></FormLabel>
               <FormControl>
-                <Input placeholder="メールアドレスを入力してください." {...field} />
+                <Input
+                  className="rounded-sm"
+                  placeholder="メールアドレスを入力してください."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -114,7 +126,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>電話番号</strong></FormLabel>
               <FormControl>
-                <Input placeholder="電話番号を入力してください." {...field} />
+                <Input
+                  className="rounded-sm"
+                  placeholder="電話番号を入力してください."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -128,7 +144,11 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>会社名</strong></FormLabel>
               <FormControl>
-                <Input placeholder="会社名を入力してください." {...field} />
+                <Input
+                  className="rounded-sm"
+                  placeholder="会社名を入力してください."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -142,18 +162,23 @@ export function ContactForm() {
             <FormItem>
               <FormLabel className="text-[18px]"><strong>お問い合わせ内容</strong></FormLabel>
               <FormControl>
-                <Textarea className="resize-none" rows={10} placeholder="お問い合わせ内容を入力してください." {...field} />
+                <Textarea
+                  className="resize-none rounded-sm"
+                  rows={10}
+                  placeholder="お問い合わせ内容を入力してください."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <div className="w-[220px] mx-auto overflow-hidden mt-6">
-          <span className="overflow-hidden mx-auto">
+        <div className="w-[220px] mx-auto mt-6">
+          <span className="mx-auto">
             <button
               className="h-[55px] w-[220px] rounded-[40px] sm:rounded-[50px] bg-black text-white relative
-                flex flex-wrap items-center justify-center tracking-[.5em] text-sm pl-[10px]"
+                flex flex-wrap items-center justify-center tracking-[.5em] text-sm pl-[10px] hover:bg-kouka duration-500 delay-100"
               type="submit"
             >
               送信

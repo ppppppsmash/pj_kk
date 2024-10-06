@@ -86,7 +86,7 @@ export const HomeSection = async () => {
         <section className="pt-12">
           <h2 className="font-normsEn leading-[0.6] text-center text-[3.1em] sm:text-[12.2em] tracking-[-.04em]">Kouka Co., Ltd.</h2>
 
-          <div className="relative">
+          <div className="relative hover:opacity-90 duration-500 delay-100">
             <div className="relative overflow-hidden pt-[80%] sm:pt-[36%]">
               <img
                 className="absolute inset-0 m-auto w-full h-full object-cover"
@@ -114,7 +114,7 @@ export const HomeSection = async () => {
             </Link>
           </div>
 
-          <div className="relative">
+          <div className="relative hover:opacity-90 duration-500 delay-100">
             <div className="relative overflow-hidden pt-[80%] sm:pt-[36%]">
               <img
                 className="absolute inset-0 m-auto w-full h-full object-cover"

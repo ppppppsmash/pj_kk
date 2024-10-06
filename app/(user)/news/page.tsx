@@ -28,7 +28,7 @@ export default async function News() {
             News
           </h1>
 
-          <div className="mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
+          {/* <div className="mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
             <h3 className="font-semibold leading-[27px] text-[36px]">
               你好你好你好你好
             </h3>
@@ -40,12 +40,12 @@ export default async function News() {
             <p className="mt-[33px] leading-[31px]">
               你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
 
       <section className="py-20 px-[8%] bg-white">
-        <div className="flex flex-wrap justify-start max-w-[1300px] w-[calc(100%_-_50px)] mx-auto gap-x-6">
+        {/* <div className="flex flex-wrap justify-start max-w-[1300px] w-[calc(100%_-_50px)] mx-auto gap-x-6">
 
         {news_list.map((news, index) => (
           <div
@@ -71,7 +71,8 @@ export default async function News() {
             </Link>
           </div>
         ))}
-        </div>
+        </div> */}
+        ページメンテナンス中...
       </section>
 
       <ContactCard />
