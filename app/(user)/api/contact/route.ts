@@ -38,11 +38,15 @@ export async function POST(request: Request) {
   //   );
   // }
 
+  const formattedText = Object.entries(formData)
+    .map(([key, value]) => `${key}: ${value}`)
+    .join('\n');
+
   const mailOptions = {
     from: process.env.EMAIL_SENDER,
-    to: [formData.email],
-    subject: 'KOUKA Contact Form',
-    text: JSON.stringify(formData, null, 2),
+    to: process.env.EMAIL_DESTINATION,
+    subject: 'お問い合わせの件',
+    text: formattedText,
   }
 
   try {
