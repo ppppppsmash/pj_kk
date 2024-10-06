@@ -11,6 +11,8 @@ import { SwiperNewsWrap } from '../swiper/SwiperNewsWrap'
 import { SwiperServiceWrap } from '../swiper/SwiperServiceWrap'
 import { ContactCard } from '../ContactCard'
 
+import productList from '@/app/(user)/product/product.json'
+
 interface TopDoc {
   children: {
     text: string
@@ -37,9 +39,9 @@ const query = groq`
 
 const slides = [
   {
-    imgSrc: '/images/news.jpeg',
-    link: '/article/1',
-    title: '記事タイトル1',
+    imgSrc: '/images/products/product_1_thumb.jpg',
+    link: '/product/1',
+    title: '伊段 バターコーヒースリム',
     date: '2024.03.21',
   },
   {
@@ -227,28 +229,20 @@ export const HomeSection = async () => {
           )}
         </section>
 
-        <section
+        {/* <section
           className="pt-5 relative mx-auto pb-16"
         >
           <div className="w-[100vw] text-sm overflow-hidden sm:flex sm:flex-wrap sm:items-center sm:justify-end sm:mb-14">
             <h3 className="text-center text-[30px] tracking-[.2em] sm:max-w-[280px] sm:w-1/4 sm:pl-5 relative z-20 font-bold">
               {data[2]?.title}
             </h3>
-            {/* <p>{data[2]?.description}</p> */}
 
             <div
               className="max-w-full w-full pl-5 sm:pl-0 sm:max-w-[calc(50%_+_750px_/_2_-_80px] sm:w-3/4 relative mb-[50px] after:bg-[#F2F2F2] sm:after:w-[calc(100%_+_80px)]
                 after:h-[180px] after:absolute after:right-0 after:-bottom-[30px] sm:after:-bottom-[50px] sm:after:rounded-tl-[50px] sm:after:rounded-bl-[50px]
                 after:w-[calc(100%_-_80px)] after:rounded-tl-[40px] after:rounded-bl-[40px]"
             >
-              {/* {data[2]?.body?.map((block, index) => (
-                <div key={index}>
-                  {block.children.map((child, childIndex) => (
-                    <p key={childIndex}>{child.text}</p>
-                  ))}
-                </div>
-              ))} */}
-              <SwiperNewsWrap slides={slides} />
+              <SwiperNewsWrap slides={productList} />
             </div>
           </div>
 
@@ -264,7 +258,7 @@ export const HomeSection = async () => {
               </Link>
             </span>
           </div>
-        </section>
+        </section> */}
 
         <section
           className="sm:mt-16 pt-5 relative mx-auto"
@@ -278,7 +272,7 @@ export const HomeSection = async () => {
                 after:h-[180px] after:absolute after:right-0 after:-bottom-[30px] sm:after:-bottom-[50px] sm:after:rounded-tl-[50px] sm:after:rounded-bl-[50px]
                 after:w-[calc(100%_-_80px)] after:rounded-tl-[40px] after:rounded-bl-[40px]"
             >
-              <SwiperServiceWrap slides={slides} />
+              <SwiperServiceWrap slides={productList} />
             </div>
           </div>
 
@@ -288,7 +282,7 @@ export const HomeSection = async () => {
                 className="sm:h-[55px] w-[200px] sm:w-[220px] sm:rounded-[50px] bg-black text-white relative
                   flex flex-wrap items-center justify-center tracking-[.5em] text-xs pl-[12px]
                   rounded-tl-[30px] rounded-bl-[30px] h-[55px]"
-                href="/service"
+                href="/product"
               >
                 PRODUCT
               </Link>

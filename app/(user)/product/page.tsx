@@ -5,6 +5,7 @@ import { ContactCard } from '@/components/ContactCard'
 import productList from './product.json'
 
 interface Product {
+  id: number
   imgSrc: string
   link: string
   title: string
@@ -68,7 +69,6 @@ export default async function Service() {
             <h3 className="text-white absolute right-0 bottom-0 w-[calc(100%_-30px)] bg-[rgba(32,24,1,.5)] rounded-tl-[50px] p-6">
               <span className="text-[18px] mb-4 block leading-[1.5] font-semibold">{product.title}</span>
               <span className="text-[12px] block leading-[1]">{product.title}</span>
-              
             </h3>
           </Link>
         </div>
