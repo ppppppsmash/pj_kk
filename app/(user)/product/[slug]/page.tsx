@@ -56,7 +56,7 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
         </div>
 
         <div className="max-w-[800px] w-full mx-auto mt-5 mb-16">
-          <h2 className="sm:w-[calc(100%_-_50px)] sm:p-6 sm:mt-10 sm:mb-5 bg-gray font-bold leading-[1.4] sm:rounded-[25px] text-[24px]">
+          <h2 className="sm:w-[calc(100%_-_50px)] sm:p-6 sm:mt-10 sm:mb-5 bg-gray font-bold leading-[1.4] sm:rounded-sm text-[24px]">
             {product.title}について
           </h2>
 
