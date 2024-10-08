@@ -1,7 +1,12 @@
 [
   {
     "id": 1,
-    "imgSrc": "/images/products/product_1_thumb.jpg",
+    "imgThumb": "/images/products/product_1.png",
+    "productImg": [
+      "/images/products/product_1.png",
+      "/images/products/product_1_1.png",
+      "/images/products/product_1_2.png"
+    ],
     "link": "/product/1",
     "title": "伊段 バターコーヒースリム",
     "description": "伊段 バターコーヒースリム",
@@ -14,7 +19,12 @@
   },
   {
     "id": 2,
-    "imgSrc": "/images/products/product_2_thumb.jpg",
+    "imgThumb": "/images/products/product_2.png",
+    "productImg": [
+      "/images/products/product_2.png",
+      "/images/products/product_2_1.png",
+      "/images/products/product_2_2.png"
+    ],
     "link": "/product/2",
     "title": "伊段 北海道鹿角霊芝",
     "description": "伊段 北海道鹿角霊芝",

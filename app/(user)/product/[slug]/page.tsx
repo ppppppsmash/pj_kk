@@ -2,7 +2,8 @@ import productList from '@/app/(user)/product/product.json'
 
 interface Product {
   id: number
-  imgSrc: string
+  imgThumb: string
+  productImg: string[]
   link: string
   title: string
   description: string
@@ -46,10 +47,10 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
       </section>
 
       <section>
-        <div className="max-w-[900px] w-full mx-auto mt-5 mb-16 text-center">
+        <div className="max-w-[450px] mx-auto mt-5 mb-16 text-center">
           <img
             className="rounded-md text-center"
-            src={product.imgSrc}
+            src={product.imgThumb}
             width={900}
             height={900}
           />
