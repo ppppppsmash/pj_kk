@@ -228,7 +228,7 @@ export const DisplacementSphere = props => {
       <div className="h-[20svh] sm:h-[100svh] bg-white overflow-hidden flex flex-col justify-center relative z-[1]">
         <div className="px-[10%] sm:pl-[26%] sm:pr-[5%] mt-8 sm:md-0">
           <h1 className="font-black text-[28px] leading-[1.2] tracking-wide">恒佳株式会社日本製</h1>
-          <p className="mt-4 w-[300px]">アジアを中心に伊段シリーズ製品を始め、高品質な日本製の漢方薬、健康食品、化粧品、日用雑貨及び日本食材等を輸出しています。</p>
+          <p className="mt-4 w-[300px] text-justify">アジアを中心に伊段シリーズ製品を始め、高品質な日本製の漢方薬、健康食品、化粧品、日用雑貨及び日本食材等を輸出しています。</p>
         </div>
 
         <div className="h-auto sm:h-[260px] absolute inset-0 m-auto flex justify-start flex-nowrap overflow-hidden -z-[1]">

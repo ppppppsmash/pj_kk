@@ -8,7 +8,7 @@ interface Style {
 export function Logo({ style }: Style ) {
   return (
     <div className={cn(
-      "w-[200px]",
+      "w-[130px] sm:w-[200px]",
       style
     )}>
       <Link href="/">

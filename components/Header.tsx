@@ -73,7 +73,7 @@ export function Header() {
   return (
     <div className="relative">
       <div className="absolute bg-transparent z-40 top-0 left-0 w-full h-[90px] sm:h-[80px]">
-        <div className="flex items-center justify-between px-8 w-full mx-auto pt-4">
+        <div className="flex items-center justify-between px-2 w-full mx-auto pt-2 sm:pt-4">
           <Logo />
 
           <NavigationMenu className="sm:flex hidden animate-fade-in-bottom duration-500 delay-300">
