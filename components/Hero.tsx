@@ -57,8 +57,8 @@ export const Hero = () => {
         >
           <h1
             className="bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text font-title text-xl
-              font-bold leading-9 text-transparent dark:from-white dark:via-white/90 dark:to-white/70
-              sm:text-3xl sm:leading-[3.5rem] text-white"
+              font-bold leading-7 text-transparent dark:from-white dark:via-white/90 dark:to-white/70
+              sm:text-3xl sm:leading-[3.5rem] text-white text-justify"
           >
             客さまの暮らしの質的向上を応援するという目標を貫いており、
             <div className="inline-grid h-9 overflow-hidden sm:h-[3.5rem]">

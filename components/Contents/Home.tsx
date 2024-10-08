@@ -99,12 +99,12 @@ export const HomeSection = async () => {
               href="/about"
             >
               <p className="text-white">
-                <span className="font-normsEn block w-full text-[34px] sm:text-[80px] leading-[1]">ABOUT US<strong className="text-kouka text-[20px] pl-2">■</strong></span>
-                <span className="text-[24px] sm:text-[34px] tracking-wide">恒佳について</span>
+                <span className="font-normsEn block w-full text-[28px] sm:text-[80px] leading-[1]">ABOUT US<strong className="text-kouka text-[20px] pl-2">■</strong></span>
+                <span className="text-[14px] sm:text-[34px] tracking-wide">恒佳について</span>
               </p>
               <p className="mt-auto w-full block sm:flex flex-wrap justify-between text-white tracking-widest">
-                <span className="w-[46%] text-lg">
-                恒佳株式会社は品質を中心に着実なステップで次の10年を進んでいきます
+                <span className="w-[46%] text-sm sm:text-lg">
+                  恒佳株式会社は品質を中心に着実なステップで次の10年を進んでいきます
                 </span>
                 
                 <span className="block text-right">
@@ -127,8 +127,8 @@ export const HomeSection = async () => {
               href="/company"
             >
               <p className="text-white">
-                <span className="font-normsEn block w-full text-[34px] sm:text-[80px] leading-[1]">COMPANY<strong className="text-kouka text-[20px] pl-2">■</strong></span>
-                <span className="text-[24px] sm:text-[34px] tracking-wide">会社情報</span>
+                <span className="font-normsEn block w-full text-[28px] sm:text-[80px] leading-[1]">COMPANY<strong className="text-kouka text-[20px] pl-2">■</strong></span>
+                <span className="text-[14px] sm:text-[34px] tracking-wide">会社情報</span>
               </p>
               <p className="mt-auto w-full block sm:flex flex-wrap justify-between text-white tracking-widest">
                 <span className="w-[46%] text-lg">
