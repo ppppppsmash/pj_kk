@@ -113,7 +113,7 @@ export function Header() {
                     >PRODUCT</NavigationMenuTrigger>
                   </NavigationMenuLink>
                 </Link>
-                <NavigationMenuContent>
+                {/* <NavigationMenuContent>
                   <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
@@ -123,7 +123,6 @@ export function Header() {
                           )}
                           href="/product"
                         >
-                          {/* <Icons.logo className="h-6 w-6" /> */}
                           <div className="mb-2 mt-4 text-lg font-medium">
                             テスト
                           </div>
@@ -143,7 +142,7 @@ export function Header() {
                       test test test test test test test test test test test test
                     </ListItem>
                   </ul>
-                </NavigationMenuContent>
+                </NavigationMenuContent> */}
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -191,7 +190,7 @@ export function Header() {
                 <Link href="/" onClick={handleCloseClick}>HOME</Link>
               </li>
               <li className="text-[30px] no-underline text-black px-4 py-5 transition-all duration-300 cursor-pointer">
-                <Link href="/about" onClick={handleCloseClick}>ABOUT</Link>
+                <Link href="/company" onClick={handleCloseClick}>COMPANY</Link>
               </li>
               <li className="text-[30px] no-underline text-black px-4 py-5 transition-all duration-300 cursor-pointer">
                 <Link href="/news" onClick={handleCloseClick}>NEWS</Link>
