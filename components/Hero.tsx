@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 
+import { Globe } from '@/components/ui/global-earth';
+
 export const Hero = () => {
 
   return (
@@ -16,6 +18,11 @@ export const Hero = () => {
             >お客様の暮らしの質的向上を応援するという目標を貫いており、美と健康を提供しております</h1>
           </div>
         </div>
+
+        <div>
+          <Globe />
+        </div>
+        
       </div>
     </div>
   )

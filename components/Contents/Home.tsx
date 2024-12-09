@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { groq } from 'next-sanity'
 import { client } from '@/sanity/lib/client'
 import { urlForImage } from '@/sanity/lib/image'
-import { ModelBrand } from '@/components/model/ModelBrand'
 
 import { Handshake, HeartPulse, Barcode } from 'lucide-react'
 import { SwiperNewsWrap } from '../swiper/SwiperNewsWrap'
@@ -84,7 +83,7 @@ export const HomeSection = async () => {
       <div>
         {/* ABOUT */}
         <section className="pt-12">
-          <h2 className="font-normsEn leading-[0.6] text-center text-[3.1em] sm:text-[12.2em] tracking-[-.04em]">Kouka Co., Ltd.</h2>
+          <h2 className="font-normsEn leading-[0.6] text-center text-[3.1em] sm:text-[12.2em] tracking-[-.04em] z-50">Kouka Co., Ltd.</h2>
 
           <div className="relative hover:opacity-90 duration-500 delay-100">
             <div className="relative overflow-hidden pt-[80%] sm:pt-[36%]">

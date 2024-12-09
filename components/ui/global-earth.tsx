@@ -6,8 +6,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 const GLOBE_CONFIG: COBEOptions = {
-  width: 800,
-  height: 800,
+  width: 1600,
+  height: 1600,
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
@@ -74,7 +74,7 @@ export function Globe({
 
   const onResize = () => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth;
+      width = canvasRef.current.offsetWidth * 1.3;
     }
   };
 
@@ -96,7 +96,7 @@ export function Globe({
   return (
     <div
       className={cn(
-        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
+        "absolute top-0 right-0 mx-auto aspect-[1/1] w-full max-w-[1000px] -z-10",
         className,
       )}
     >
