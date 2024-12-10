@@ -74,7 +74,8 @@ export function Globe({
 
   const onResize = () => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth * 1.3;
+      const isMobile = window.innerWidth <= 768;
+      width = canvasRef.current.offsetWidth * (isMobile ? 1 : 1.3);
     }
   };
 
@@ -96,7 +97,8 @@ export function Globe({
   return (
     <div
       className={cn(
-        "absolute top-0 right-0 mx-auto aspect-[1/1] w-full max-w-[1000px] -z-10",
+        "absolute top-[100px] left-1/2 -translate-x-1/2 mx-auto aspect-[1/1] w-full max-w-[400px] -z-10",
+        "sm:max-w-[1000px] sm:top-0 sm:right-0 sm:translate-x-0 sm:translate-y-0",
         className,
       )}
     >
