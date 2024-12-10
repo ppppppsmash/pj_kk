@@ -16,8 +16,6 @@ const reviews = [
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-
 const ReviewCard = ({
   img
 }: {
@@ -40,7 +38,7 @@ export function MarqueePanel() {
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent my-4 sm:my-20">
       <Marquee pauseOnHover className="[--duration:20s] bg-transparent">
-        {firstRow.map((review) => (
+        {reviews.map((review) => (
           <ReviewCard {...review} />
         ))}
       </Marquee>
