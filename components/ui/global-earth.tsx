@@ -97,7 +97,7 @@ export function Globe({
   return (
     <div
       className={cn(
-        "absolute top-[100px] left-1/2 -translate-x-1/2 mx-auto aspect-[1/1] w-full max-w-[400px] -z-10",
+        "absolute top-[50px] sm:top-[100px] left-1/2 -translate-x-1/2 mx-auto aspect-[1/1] w-full max-w-[400px] -z-10",
         "sm:max-w-[1000px] sm:top-0 sm:right-0 sm:translate-x-0 sm:translate-y-0",
         className,
       )}
