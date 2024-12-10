@@ -76,7 +76,7 @@ export const HomeSection = async () => {
   console.log(data)
 
   return (
-    <div className="pt-[20px] sm:pt-[100px]">
+    <div className="pt-[90px] sm:pt-[250px]">
       <div>
         {/* ABOUT */}
         <section className="pt-12">
