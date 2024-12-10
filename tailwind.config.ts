@@ -144,7 +144,15 @@ const config = {
           "100%": {
               transform: "translateX(-200%)"
           }
-        }
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -156,6 +164,9 @@ const config = {
         "fade-in-bottom": "fade-in-bottom 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both",
         "endless": "endless 30s -15s linear infinite forwards",
         "endless_2": "endless_2 30s linear infinite forwards",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+
       },
       typography: {
         DEFAULT: {

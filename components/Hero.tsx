@@ -1,8 +1,7 @@
 'use client'
 
-import { useEffect } from 'react';
-
 import { Globe } from '@/components/ui/global-earth';
+import { MarqueePanel } from '@/components/MarqueePanel';
 
 export const Hero = () => {
 
@@ -21,8 +20,9 @@ export const Hero = () => {
         <div>
           <Globe />
         </div>
-        
       </div>
+
+      <MarqueePanel />
     </div>
   )
 }
