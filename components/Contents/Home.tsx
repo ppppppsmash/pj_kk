@@ -76,10 +76,7 @@ export const HomeSection = async () => {
   console.log(data)
 
   return (
-    <div className="pt-[50px] sm:pt-[100px]">
-      {/* 3D Model Layout */}
-      {/* <ModelBrand /> */}
-
+    <div className="pt-[20px] sm:pt-[100px]">
       <div>
         {/* ABOUT */}
         <section className="pt-12">
