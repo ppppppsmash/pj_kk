@@ -76,7 +76,7 @@ export function Header() {
         <div className="flex items-start justify-between px-2 w-full mx-auto pt-2 sm:pt-4">
           <Logo />
 
-          <NavigationMenu className="sm:flex hidden animate-fade-in-bottom duration-500 delay-300">
+          <NavigationMenu className="sm:flex hidden animate-fade-in-bottom duration-500 delay-300 pr-6">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>

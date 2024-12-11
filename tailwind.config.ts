@@ -28,7 +28,7 @@ const config = {
         normsEn: ['TTNorms']
       },
       colors: {
-        kouka: "#FECF3E",
+        kouka: "#903494",
         gray: "#F2F2F2",
         scroll: "#333333",
         border: "hsl(var(--border))",
