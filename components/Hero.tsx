@@ -23,6 +23,7 @@ export const Hero = () => {
           <div className="w-[340px] sm:w-[600px] p-4 flex-col z-10 justify-center items-center text-justify">
             <h1 className={cn(
               'flex-start text-xl sm:text-4xl leading-normal sm:leading-relaxed font-semibold sm:font-normal h-auto',
+              'bg-gradient-to-r from-indigo-600 to-purple-400 bg-clip-text text-transparent',
               zenKakuGothicNew.className
             )}
             >お客様の暮らしの質的向上を応援するという目標を貫いており、美と健康を提供しております</h1>

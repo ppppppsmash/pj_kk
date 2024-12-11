@@ -147,9 +147,14 @@ export function Header() {
 
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),
+                  <NavigationMenuLink className={cn(
                     pathname === "/contact" ? "after:scale-x-100 after:scale-y-100" : "")}>
-                    CONTACT
+                      <div className="p-[3px] relative">
+                        <div className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl relative group transition duration-200 text-white
+                          hover:from-purple-500 hover:to-indigo-500 font-bold hover:scale-95 cursor-pointer">
+                          CONTACT
+                        </div>
+                      </div>
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>

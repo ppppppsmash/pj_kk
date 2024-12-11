@@ -73,14 +73,12 @@ const slides = [
 export const HomeSection = async () => {
   const data: Top[] = await client.fetch(query)
 
-  console.log(data)
-
   return (
     <div className="pt-[90px] sm:pt-[250px]">
       <div>
         {/* ABOUT */}
         <section className="pt-12">
-          <h2 className="font-normsEn leading-[0.6] text-center text-[3.1em] sm:text-[12.2em] tracking-[-.04em] z-50">Kouka Co., Ltd.</h2>
+          <h2 className="font-normsEn leading-[0.6] text-center text-[3.1em] sm:text-[12.2em] tracking-[-.04em] z-50 text-neutral-200">Kouka Co., Ltd.</h2>
 
           <div className="relative hover:opacity-90 duration-500 delay-100">
             <div className="relative overflow-hidden pt-[80%] sm:pt-[36%]">
