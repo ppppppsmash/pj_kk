@@ -24,11 +24,11 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative w-[220px] sm:w-[320px] cursor-pointer overflow-hidden rounded-xl sm:rounded-3xl bg-transparent",
+        "relative w-[160px] sm:w-[260px] cursor-pointer overflow-hidden rounded-xl sm:rounded-3xl bg-transparent",
       )}
     >
-      <div className="w-full max-w-full h-[140px] sm:h-[220px] flex flex-row items-center gap-2 bg-transparent">
-        <img className="" width="320" height="220" alt="" src={img} />
+      <div className="w-full max-w-full h-[120px] sm:h-[160px] flex flex-row items-center gap-5 bg-transparent">
+        <img className="" width="260" height="220" alt="" src={img} />
       </div>
     </figure>
   );
