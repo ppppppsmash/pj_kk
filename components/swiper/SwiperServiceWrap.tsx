@@ -35,11 +35,11 @@ export const SwiperServiceWrap = ({ slides }: Slides) => {
         <SwiperSlide className="!w-[300px] !h-[200px]" key={index}>
           <div className="relative h-full rounded-[30px] overflow-hidden shadow-[6px_4px_15px_0_rgba(51,51,51,.19)]">
             <Link href={slide.link} className="block h-full pb-6 bg-white overflow-hidden relative z-10">
-              <div className="w-full max-w-full h-[120px] sm:h-[160px] rounded-[50px]">
+              <div className="w-full max-w-full h-[120px] sm:h-[160px]">
                 <img
                   src={slide.imgThumb}
                   width="300"
-                  className="duration-300 hover:scale-[1.2]"
+                  className="duration-300 object-cover hover:scale-[1.2]"
                 />
               </div>
 
