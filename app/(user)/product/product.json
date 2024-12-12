@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "imgThumb": "/images/products/product_1.png",
+    "imgThumb": "/images/marquee/marquee-1.jpg",
     "productImg": [
       "/images/products/product_1.png",
       "/images/products/product_1_1.png",
@@ -9,7 +9,7 @@
     ],
     "link": "/product/1",
     "title": "伊段 バターコーヒースリム",
-    "description": "伊段 バターコーヒースリム",
+    "description": "3年連続モンドセレクション受賞！",
     "brand": "伊段",
     "category": "コーヒー 粉 バター",
     "feature_1": "3年連続モンドセレクション受賞！　ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。",
@@ -19,7 +19,7 @@
   },
   {
     "id": 2,
-    "imgThumb": "/images/products/product_2.png",
+    "imgThumb": "/images/marquee/marquee-5.jpg",
     "productImg": [
       "/images/products/product_2.png",
       "/images/products/product_2_1.png",
@@ -27,7 +27,7 @@
     ],
     "link": "/product/2",
     "title": "伊段 北海道鹿角霊芝",
-    "description": "伊段 北海道鹿角霊芝",
+    "description": "健康でいられる体づくりを目指す全ての人に",
     "brand": "伊段",
     "category": "カプセル 健康",
     "feature_1": "角霊芝とは、１万本に１本しか取れない「鹿の角」の形をしたサルノコシカケ科に属するキノコのこと。中国では古来から「上薬」「君薬」「天子の薬」などと言われ、天然成分を多く含むのが特徴です。",
