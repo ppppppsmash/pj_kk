@@ -6,13 +6,22 @@ const reviews = [
     img: "/images/marquee/marquee-1.jpg",
   },
   {
-    img: "/images/marquee/marquee-2.png",
+    img: "/images/marquee/marquee-2.jpg",
   },
   {
     img: "/images/marquee/marquee-3.jpg",
   },
   {
     img: "/images/marquee/marquee-4.jpg",
+  },
+  {
+    img: "/images/marquee/marquee-5.jpg",
+  },
+  {
+    img: "/images/marquee/marquee-6.jpg",
+  },
+  {
+    img: "/images/marquee/marquee-7.jpg",
   },
 ];
 
