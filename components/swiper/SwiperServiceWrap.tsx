@@ -44,7 +44,7 @@ export const SwiperServiceWrap = ({ slides }: Slides) => {
               </div>
 
               <h3 className="text-white absolute right-0 bottom-0 bg-[rgba(32,24,1,.5)] pt-2 pl-4 pb-2 w-full">
-                <span className="text-[18px] mb-2 block leading-[1.5] font-semibold">{slide.title}</span>
+                <span className="text-[18px] mb-2 block leading-[1.5] font-semibold truncate">{slide.title}</span>
                 <span className="text-[12px] block leading-[1.5] truncate">{slide.description}</span>
               </h3>
             </Link>
