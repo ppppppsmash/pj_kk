@@ -10,7 +10,7 @@
     "link": "/product/1",
     "title": "伊段 バターコーヒースリム",
     "description": "3年連続モンドセレクション受賞！",
-    "shop_link": "https://www.amazon.co.jp/dp/B0C572CRKY",
+    "amazon_shop_link": "https://www.amazon.co.jp/dp/B0CQ1S1KG1",
     "brand": "伊段",
     "category": "コーヒー 粉 バター",
     "feature_1": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。",
@@ -29,7 +29,7 @@
     "link": "/product/2",
     "title": "伊段 北海道鹿角霊芝",
     "description": "健康でいられる体づくりを目指す全ての人に",
-    "shop_link": "https://www.amazon.co.jp/dp/B0C572CRKY",
+    "amazon_shop_link": "https://www.amazon.co.jp/dp/B0C721V2HF",
     "brand": "伊段",
     "category": "カプセル 健康",
     "feature_1": "角霊芝とは、１万本に１本しか取れない「鹿の角」の形をしたサルノコシカケ科に属するキノコのこと。中国では古来から「上薬」「君薬」「天子の薬」などと言われ、天然成分を多く含むのが特徴です。",
@@ -46,7 +46,7 @@
     "link": "/product/3",
     "title": "伊段 燃えてキレイに生姜オイル 60カプセル 温活",
     "description": "「ひんやり」さんにさようなら！",
-    "shop_link": "https://www.amazon.co.jp/dp/B0C572CRKY",
+    "amazon_shop_link": "https://www.amazon.co.jp/dp/B0CPXW6QZJ",
     "brand": "伊段",
     "category": "カプセル 健康",
     "feature_1": "生姜オイルとは、生姜中にわずか0.3%しか含まれない油分を抽出して得られる、自然由来の天然のオイルです。",
@@ -63,12 +63,63 @@
     "link": "/product/4",
     "title": "伊段 サラシア習慣 230mg x 90粒（約30日分）",
     "description": "食生活が気になる方、食べるのが大好きな方、ダイエット中の方に",
-    "shop_link": "https://www.amazon.co.jp/dp/B0C572CRKY",
+    "amazon_shop_link": "https://www.amazon.co.jp/dp/B0C572CRKY",
     "brand": "伊段",
     "category": "カプセル 健康",
     "feature_1": "食後の血糖値の上昇を穏やかにする機能が報告されている、サラシア由来サラシノール配合。",
     "feature_2": "食生活が気になる方、食べるのが大好きな方、ダイエット中の方に。",
     "feature_3": "お召し上がり方：お食事の際、１日３粒を目安に水またはぬるま湯などと一緒にお召し上がりください。",
+    "date": "2024.12.10"
+  },
+  {
+    "id": 5,
+    "imgThumb": "/images/marquee/marquee-4.jpg",
+    "productImg": [
+      "/images/products/product_2.png"
+    ],
+    "link": "/product/5",
+    "title": "伊段 納豆キナーゼ 135粒（約45日分）",
+    "description": "長年日本の健康を支えてきた伝統食品である「納豆」",
+    "amazon_shop_link": "",
+    "brand": "伊段",
+    "category": "カプセル 健康",
+    "feature_1": "この納豆のネバネバ部分に含まれるたんぱく質分解酵素がナットウキナーゼです。",
+    "feature_2": "納豆は蒸した豆を納豆菌が発酵させることで出来る食品ですが、この発酵課程でナットウキナーゼを始めとする多様な栄養素が生成されます。",
+    "feature_3": "98年前から始まった数多くの研究の結果から、1980年代にフィブリン (血栓の素となるタンパク質) を分解(溶解) する酵素として 「ナットウキナーゼ」と命名されました。",
+    "date": "2024.12.10"
+  },
+  {
+    "id": 6,
+    "imgThumb": "/images/marquee/marquee-6.jpg",
+    "productImg": [
+      "/images/products/product_2.png"
+    ],
+    "link": "/product/6",
+    "title": "伊段 しっとり浸透持続マスク",
+    "description": "日本国内産のコットン使用",
+    "amazon_shop_link": "https://www.amazon.co.jp/dp/B0C5J8YNXH",
+    "brand": "伊段",
+    "category": "マスク",
+    "feature_1": "６種の保湿成分（卵殻膜エキス、コラーゲン、ヒアルロン酸、桜の花エキス、シルクエキス、セラミド）配合。",
+    "feature_2": "お顔の乾燥や肌荒れが気になる方、白くてハリのある肌を求めいつも美容を心掛けている方に。",
+    "feature_3": "日本国内産のコットン使用。厚手のコットン（60g）には美容液が30mlとたっぷり！乾燥知らずのお肌に♪。",
+    "date": "2024.12.10"
+  },
+  {
+    "id": 7,
+    "imgThumb": "/images/marquee/marquee-7.jpg",
+    "productImg": [
+      "/images/products/product_2.png"
+    ],
+    "link": "/product/7",
+    "title": "伊段 ソウソウ（爽爽）栄養機能食品",
+    "description": "植物発酵エキス、ビタミンB1、NMN、高麗人参",
+    "amazon_shop_link": "https://www.amazon.co.jp/dp/B0CDQ4JSYX",
+    "brand": "伊段",
+    "category": "カプセル 健康",
+    "feature_1": "主要成分：植物発酵エキス、ビタミンB1、NMN、高麗人参",
+    "feature_2": "元気とキレイをWサポート！",
+    "feature_3": "お召し上がり方：１日当たり３〜１０粒を目安に水又はぬるま湯などと一緒にお召し上がりください。",
     "date": "2024.12.10"
   }
 ]
