@@ -4,7 +4,7 @@
     "imgThumb": "/images/marquee/marquee-1.jpg",
     "productImg": [
       "/images/products/product_1.png",
-      "/images/products/product_1_1.png",
+      "/images/products/product_1_1.jpg",
       "/images/products/product_1_2.png"
     ],
     "link": "/product/1",
@@ -24,7 +24,7 @@
     "productImg": [
       "/images/products/product_2.png",
       "/images/products/product_2_1.png",
-      "/images/products/product_2_2.png"
+      "/images/products/product_2_2.jpg"
     ],
     "link": "/product/2",
     "title": "伊段 北海道鹿角霊芝",

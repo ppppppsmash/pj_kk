@@ -49,22 +49,17 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
         </div>
       </section>
 
-      <section>
-        {/* <div className="max-w-[450px] mx-auto mt-5 mb-16 text-center">
-          <img
-            className="rounded-md text-center"
-            src={product.imgThumb}
-            width={900}
-            height={900}
-          />
-        </div> */}
-
-        <SwiperProduct slides={product.productImg} />
-
-        <div className="max-w-[800px] w-full mx-auto mt-5 mb-16">
-          <h2 className="sm:w-[calc(100%_-_50px)] sm:p-6 sm:mt-10 sm:mb-5 bg-gray font-bold leading-[1.4] sm:rounded-sm text-[24px]">
+      <section className="px-4 sm:px-[100px]">
+        <div className="flex justify-center items-top">
+          <div className="w-[300px]">
+            <SwiperProduct slides={product.productImg} />
+          </div>
+          <h2 className="sm:w-[calc(100%_-_50px)] text-[24px]">
             {product.title}について
           </h2>
+        </div>
+
+        <div className="max-w-[800px] w-full mx-auto mt-5 mb-16">
 
           <p className="mb-5 px-6">{product.feature_1}</p>
           <p className="mb-5 px-6">{product.feature_2}</p>

@@ -1,28 +1,35 @@
 'use client';
 
+import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
 
 interface SlideProp {
-  slides: string[]
+  slides: string[];
 }
 
 export const SwiperProduct = ({ slides }: SlideProp) => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+      loop={true}
+      navigation={true}
+      thumbs={{ swiper: thumbsSwiper }}
+      modules={[FreeMode, Navigation, Thumbs]}
+      className="swiperProduct"
     >
       {slides.map((slide, index) => (
-        <SwiperSlide>
-          <div className="w-full max-w-full h-[120px] sm:h-[160px]">
+        <SwiperSlide className="w-[400px]">
+          <div>
             <img
               src={slide}
-              width="300"
-              className="duration-300 object-cover hover:scale-[1.2]"
+              width="400"
+              className=""
             />
           </div>
         </SwiperSlide>

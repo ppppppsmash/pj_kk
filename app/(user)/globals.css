@@ -308,6 +308,44 @@ body.loading {
   -o-transform: translateY(-50%);
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.swiperProduct {
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-size: 27px 27px;
+    background-repeat: no-repeat;
+
+    &:after {
+      content: none;
+    }
+  }
+
+  .swiper-button-prev {
+    background-size: 28px;
+    background-repeat: no-repeat;
+  }
+}
+
 
 @media (min-width: 400px) {
   .swiper-button-prev {
