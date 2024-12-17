@@ -1,8 +1,8 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import { ContactCard } from '@/components/ContactCard'
+import { ContactCard } from '@/components/ContactCard';
 
-import productList from './product.json'
+import productList from './product.json';
 
 interface Product {
   id: number

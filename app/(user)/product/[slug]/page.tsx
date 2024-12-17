@@ -1,18 +1,21 @@
-import productList from '@/app/(user)/product/product.json'
+import { SwiperProduct } from '@/components/swiper/SwiperProduct';
+
+import productList from '@/app/(user)/product/product.json';
 
 interface Product {
-  id: number
-  imgThumb: string
-  productImg: string[]
-  link: string
-  title: string
-  description: string
-  brand: string
-  category: string
-  feature_1: string
-  feature_2: string
-  feature_3: string
-  date: string
+  id: number;
+  imgThumb: string;
+  productImg: string[];
+  link: string;
+  title: string;
+  description: string;
+  amazon_shop_link: string;
+  brand: string;
+  category: string;
+  feature_1: string;
+  feature_2: string;
+  feature_3: string;
+  date: string;
 }
 
 export default function ProductPage({ params } : { params: { slug: string }}) {
@@ -47,14 +50,16 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
       </section>
 
       <section>
-        <div className="max-w-[450px] mx-auto mt-5 mb-16 text-center">
+        {/* <div className="max-w-[450px] mx-auto mt-5 mb-16 text-center">
           <img
             className="rounded-md text-center"
             src={product.imgThumb}
             width={900}
             height={900}
           />
-        </div>
+        </div> */}
+
+        <SwiperProduct slides={product.productImg} />
 
         <div className="max-w-[800px] w-full mx-auto mt-5 mb-16">
           <h2 className="sm:w-[calc(100%_-_50px)] sm:p-6 sm:mt-10 sm:mb-5 bg-gray font-bold leading-[1.4] sm:rounded-sm text-[24px]">
