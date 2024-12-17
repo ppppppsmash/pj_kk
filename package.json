@@ -31,6 +31,7 @@
     "ress": "^5.0.2",
     "sanity": "^3.34.0",
     "sass": "^1.72.0",
+    "simplex-noise": "^4.0.3",
     "styled-components": "^6.1.8",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.2.1",
