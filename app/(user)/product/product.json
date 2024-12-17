@@ -2,10 +2,19 @@
   {
     "id": 1,
     "imgThumb": "/images/marquee/marquee-1.jpg",
-    "productImg": [
-      "/images/products/product_1.png",
-      "/images/products/product_1_1.jpg",
-      "/images/products/product_1_2.png"
+    "product_detail": [
+      {
+        "product_detail_img": "/images/products/product_1.png",
+        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_1.jpg",
+        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_2.png",
+        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+      }
     ],
     "link": "/product/1",
     "title": "伊段 バターコーヒースリム",
@@ -21,10 +30,19 @@
   {
     "id": 2,
     "imgThumb": "/images/marquee/marquee-5.jpg",
-    "productImg": [
-      "/images/products/product_2.png",
-      "/images/products/product_2_1.png",
-      "/images/products/product_2_2.jpg"
+    "product_detail": [
+      {
+        "product_detail_img": "/images/products/product_2.png",
+        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+      },
+      {
+        "product_detail_img": "/images/products/product_2_1.png",
+        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+      },
+      {
+        "product_detail_img": "/images/products/product_2_2.jpg",
+        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+      }
     ],
     "link": "/product/2",
     "title": "伊段 北海道鹿角霊芝",
@@ -40,8 +58,19 @@
   {
     "id": 3,
     "imgThumb": "/images/marquee/marquee-2.jpg",
-    "productImg": [
-      "/images/products/product_2.png"
+    "product_detail": [
+      {
+        "product_detail_img": "/images/products/product_1.png",
+        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_1.png",
+        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_2.png",
+        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+      }
     ],
     "link": "/product/3",
     "title": "伊段 燃えてキレイに生姜オイル 60カプセル 温活",
@@ -57,8 +86,19 @@
   {
     "id": 4,
     "imgThumb": "/images/marquee/marquee-3.jpg",
-    "productImg": [
-      "/images/products/product_2.png"
+    "product_detail": [
+      {
+        "product_detail_img": "/images/products/product_1.png",
+        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_1.png",
+        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_2.png",
+        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+      }
     ],
     "link": "/product/4",
     "title": "伊段 サラシア習慣 230mg x 90粒（約30日分）",
@@ -74,8 +114,19 @@
   {
     "id": 5,
     "imgThumb": "/images/marquee/marquee-4.jpg",
-    "productImg": [
-      "/images/products/product_2.png"
+    "product_detail": [
+      {
+        "product_detail_img": "/images/products/product_1.png",
+        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_1.png",
+        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_2.png",
+        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+      }
     ],
     "link": "/product/5",
     "title": "伊段 納豆キナーゼ 135粒（約45日分）",
@@ -91,8 +142,19 @@
   {
     "id": 6,
     "imgThumb": "/images/marquee/marquee-6.jpg",
-    "productImg": [
-      "/images/products/product_2.png"
+    "product_detail": [
+      {
+        "product_detail_img": "/images/products/product_1.png",
+        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_1.png",
+        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_2.png",
+        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+      }
     ],
     "link": "/product/6",
     "title": "伊段 しっとり浸透持続マスク",
@@ -108,8 +170,19 @@
   {
     "id": 7,
     "imgThumb": "/images/marquee/marquee-7.jpg",
-    "productImg": [
-      "/images/products/product_2.png"
+    "product_detail": [
+      {
+        "product_detail_img": "/images/products/product_1.png",
+        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_1.png",
+        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+      },
+      {
+        "product_detail_img": "/images/products/product_1_2.png",
+        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+      }
     ],
     "link": "/product/7",
     "title": "伊段 ソウソウ（爽爽）栄養機能食品",

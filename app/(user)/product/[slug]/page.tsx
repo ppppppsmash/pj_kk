@@ -1,10 +1,11 @@
-import { SwiperProduct } from '@/components/swiper/SwiperProduct';
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 import productList from '@/app/(user)/product/product.json';
 
 interface Product {
   id: number;
   imgThumb: string;
+  product_detail?: ProductDetail[];
   productImg: string[];
   link: string;
   title: string;
@@ -16,6 +17,11 @@ interface Product {
   feature_2: string;
   feature_3: string;
   date: string;
+}
+
+interface ProductDetail {
+  product_detail_img: string;
+  product_detail_feature: string;
 }
 
 export default function ProductPage({ params } : { params: { slug: string }}) {
@@ -49,15 +55,8 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
         </div>
       </section>
 
-      <section className="px-4 sm:px-[100px]">
-        <div className="flex justify-center items-top">
-          <div className="w-[300px]">
-            <SwiperProduct slides={product.productImg} />
-          </div>
-          <h2 className="sm:w-[calc(100%_-_50px)] text-[24px]">
-            {product.title}について
-          </h2>
-        </div>
+      <section className="px-4 py-10 sm:px-[100px]">
+        {product.product_detail && <AnimatedTestimonials testimonials={product.product_detail} />}
 
         <div className="max-w-[800px] w-full mx-auto mt-5 mb-16">
 
