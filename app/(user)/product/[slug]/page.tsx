@@ -1,4 +1,7 @@
+'use client';
+
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { Vortex } from "@/components/ui/vortex";
 
 import productList from '@/app/(user)/product/product.json';
 
@@ -33,12 +36,13 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
 
   return (
     <div>
-      <section className="pt-[50px] sm:pt-[100px] bg-gray w-[100vw] overflow-hidden pb-10">
-        <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
+      <section className="px-4 pb-10 sm:px-[100px] pt-[40svh]">
+        <div className="absolute -top-[65svh] left-0 overflow-hidden -z-10">
+          <Vortex
+            backgroundColor="black"
+            className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+          ></Vortex>
         </div>
-      </section>
-
-      <section className="px-4 py-10 sm:px-[100px]">
         <h1
           className="font-bold text-[30px] sm:text-[50px] leading-[50px] sm:leading-[70px] tracking-[.01em] duration-100 delay-100"
         >
@@ -46,9 +50,8 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
         </h1>
 
         <div className="mt-[30px] mx-auto tracking-wide text-[#545454]">
-          <div className="flex justify-between items-center mt-6">
+          <div className="flex justify-between items-center">
             <p>カテゴリー： {product.category}</p>
-            <p>2024.03.27</p>
           </div>
         </div>
 
