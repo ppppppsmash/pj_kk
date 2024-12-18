@@ -61,7 +61,7 @@ export const AnimatedTestimonials = ({
                     z: isActive(index) ? 0 : -100,
                     rotate: isActive(index) ? 0 : randomRotateY(),
                     zIndex: isActive(index)
-                      ? 999
+                      ? 30
                       : testimonials.length + 2 - index,
                     y: isActive(index) ? [0, -80, 0] : 0,
                   }}
@@ -79,7 +79,7 @@ export const AnimatedTestimonials = ({
                 >
                   <Image
                     src={testimonial.product_detail_img}
-                    alt="test"
+                    alt="idan_product"
                     width={500}
                     height={500}
                     draggable={false}
