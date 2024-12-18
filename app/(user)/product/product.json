@@ -1,23 +1,24 @@
 [
   {
     "id": 1,
+    "title": "伊段 バターコーヒースリム",
     "imgThumb": "/images/marquee/marquee-1.jpg",
     "product_detail": [
       {
         "product_detail_img": "/images/products/product_1.png",
-        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+        "product_detail_feature": "カフェインと良質な脂肪分の組み合わせは、脳のエネルギー源となり、集中力を高める働きがあります。朝に飲むことで、頭がスッキリし、生産性の向上が期待できます。"
       },
       {
         "product_detail_img": "/images/products/product_1_1.jpg",
-        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+        "product_detail_feature": "バターやMCTオイルの脂肪分がゆっくりと消化されるため、長時間にわたって満腹感が持続します。これにより、間食を減らすことができ、無理のないダイエットをサポートします。"
       },
       {
         "product_detail_img": "/images/products/product_1_2.png",
-        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+        "product_detail_feature": "バターコーヒースリムは、朝食代わりやエネルギーが必要なタイミングで飲むのがおすすめです。ただし、脂肪分が多いため、摂取しすぎに注意し、適量を守ることが大切です。"
       }
     ],
     "link": "/product/1",
-    "title": "伊段 バターコーヒースリム",
+    "next": "/product/2",
     "description": "3年連続モンドセレクション受賞！",
     "amazon_shop_link": "https://www.amazon.co.jp/dp/B0CQ1S1KG1",
     "brand": "伊段",
@@ -29,23 +30,25 @@
   },
   {
     "id": 2,
+    "title": "伊段 北海道鹿角霊芝",
     "imgThumb": "/images/marquee/marquee-5.jpg",
     "product_detail": [
       {
         "product_detail_img": "/images/products/product_2.png",
-        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+        "product_detail_feature": "β-グルカンやトリテルペノイドなどの成分が豊富に含まれており、免疫機能を調整する働きがあります。これにより、風邪や感染症に対する抵抗力を高める効果が期待されます。"
       },
       {
         "product_detail_img": "/images/products/product_2_1.png",
-        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+        "product_detail_feature": "ポリフェノールやその他の抗酸化物質が含まれています。これらは、体内の酸化ストレスを軽減し、細胞の老化や生活習慣病の予防に役立つとされています。"
       },
       {
         "product_detail_img": "/images/products/product_2_2.jpg",
-        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+        "product_detail_feature": "日常的に取り入れることで、健康維持や予防効果が期待できます。ただし、体質や体調により効果が異なるため、適切な量を守り、必要に応じて専門家に相談してください。"
       }
     ],
     "link": "/product/2",
-    "title": "伊段 北海道鹿角霊芝",
+    "prev": "/product/1",
+    "next": "/product/3",
     "description": "健康でいられる体づくりを目指す全ての人に",
     "amazon_shop_link": "https://www.amazon.co.jp/dp/B0C721V2HF",
     "brand": "伊段",
@@ -57,23 +60,25 @@
   },
   {
     "id": 3,
+    "title": "伊段 燃えてキレイに生姜オイル 60カプセル 温活",
     "imgThumb": "/images/marquee/marquee-2.jpg",
     "product_detail": [
       {
         "product_detail_img": "/images/products/product_3.jpg",
-        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+        "product_detail_feature": "厳選された生姜オイルを使用し、内側から体を温める作用があります。生姜に含まれる「ショウガオール」や「ジンゲロール」は、血行を促進し、冷え性の改善に役立ちます。"
       },
       {
         "product_detail_img": "/images/products/product_3_1.jpg",
-        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+        "product_detail_feature": "特に女性に多い冷え性対策に最適。寒い季節や冷房が効いた環境でも、体をポカポカと温め、快適な毎日をサポートします。"
       },
       {
         "product_detail_img": "/images/products/product_3_2.jpg",
-        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+        "product_detail_feature": "「燃えてキレイに生姜オイル」は、健康的に体を温めながら、美容にもこだわりたい方のための温活サプリメントです。忙しい毎日の中で手軽に温活習慣を取り入れて、内側から美と健康を目指しましょう！"
       }
     ],
     "link": "/product/3",
-    "title": "伊段 燃えてキレイに生姜オイル 60カプセル 温活",
+    "prev": "/product/2",
+    "next": "/product/4",
     "description": "「ひんやり」さんにさようなら！",
     "amazon_shop_link": "https://www.amazon.co.jp/dp/B0CPXW6QZJ",
     "brand": "伊段",
@@ -85,23 +90,25 @@
   },
   {
     "id": 4,
+    "title": "伊段 サラシア習慣 230mg x 90粒（約30日分）",
     "imgThumb": "/images/marquee/marquee-3.jpg",
     "product_detail": [
       {
         "product_detail_img": "/images/products/product_4.jpg",
-        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+        "product_detail_feature": "サラシアには糖の吸収を穏やかにする働きがあり、血糖値の急激な上昇を抑えるとされています。糖質の多い食生活が気になる方や、ダイエットをサポートしたい方に最適です。"
       },
       {
         "product_detail_img": "/images/products/product_4_1.jpg",
-        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+        "product_detail_feature": "腸内の善玉菌を増やし、腸内環境を整えるサポートをします。お通じの改善やデトックス効果が期待され、体の内側から健康を促進します。"
       },
       {
         "product_detail_img": "/images/products/product_4_2.jpg",
-        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+        "product_detail_feature": "健康を守る自然の力を毎日の生活に取り入れるための理想的なサプリメントです。糖質コントロールと腸内環境の改善を同時にサポートし、内側から健康的なライフスタイルを目指しましょう！"
       }
     ],
     "link": "/product/4",
-    "title": "伊段 サラシア習慣 230mg x 90粒（約30日分）",
+    "prev": "/product/3",
+    "next": "/product/5",
     "description": "食生活が気になる方、食べるのが大好きな方、ダイエット中の方に",
     "amazon_shop_link": "https://www.amazon.co.jp/dp/B0C572CRKY",
     "brand": "伊段",
@@ -113,23 +120,25 @@
   },
   {
     "id": 5,
+    "title": "伊段 納豆キナーゼ 135粒（約45日分）",
     "imgThumb": "/images/marquee/marquee-4.jpg",
     "product_detail": [
       {
         "product_detail_img": "/images/products/product_5.jpg",
-        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+        "product_detail_feature": "血栓（血液のかたまり）を溶解する作用があるとされています。これにより、血流が改善され、脳梗塞や心筋梗塞などの血管疾患の予防が期待できます。"
       },
       {
         "product_detail_img": "/images/products/product_5_1.jpg",
-        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+        "product_detail_feature": "血液をサラサラにする効果があるため、高血圧や動脈硬化の予防にも寄与します。継続的に摂取することで、血液循環が整いやすくなると考えられています。"
       },
       {
         "product_detail_img": "/images/products/product_5.jpg",
-        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+        "product_detail_feature": "血液循環の改善により、脳に必要な酸素や栄養が行き届きやすくなります。これにより、記憶力や集中力の維持に役立つと考えられています。"
       }
     ],
     "link": "/product/5",
-    "title": "伊段 納豆キナーゼ 135粒（約45日分）",
+    "prev": "/product/4",
+    "next": "/product/6",
     "description": "長年日本の健康を支えてきた伝統食品である「納豆」",
     "amazon_shop_link": "",
     "brand": "伊段",
@@ -141,23 +150,25 @@
   },
   {
     "id": 6,
+    "title": "伊段 しっとり浸透持続マスク",
     "imgThumb": "/images/marquee/marquee-6.jpg",
     "product_detail": [
       {
         "product_detail_img": "/images/products/product_6.jpg",
-        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+        "product_detail_feature": "肌触りの良い日本国内産コットンを採用。デリケートな肌にも負担をかけず、安心してお使いいただけます。"
       },
       {
         "product_detail_img": "/images/products/product_6_1.jpg",
-        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+        "product_detail_feature": "高品質なコットンマスクが肌にピタッと密着し、美容成分を逃さずしっかり届けます。お手入れ後の肌がふっくらと柔らかく、健康的な仕上がりに。"
       },
       {
         "product_detail_img": "/images/products/product_6_2.jpg",
-        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+        "product_detail_feature": "日々のスキンケアに贅沢な時間をプラスするアイテムです。潤いをたっぷり補給し、透明感とハリのある肌へと導きます。忙しい現代人のための手軽な高保湿ケアをぜひお試しください！"
       }
     ],
     "link": "/product/6",
-    "title": "伊段 しっとり浸透持続マスク",
+    "prev": "/product/5",
+    "next": "/product/7",
     "description": "日本国内産のコットン使用",
     "amazon_shop_link": "https://www.amazon.co.jp/dp/B0C5J8YNXH",
     "brand": "伊段",
@@ -169,23 +180,24 @@
   },
   {
     "id": 7,
+    "title": "伊段 ソウソウ（爽爽）栄養機能食品",
     "imgThumb": "/images/marquee/marquee-7.jpg",
     "product_detail": [
       {
         "product_detail_img": "/images/products/product_7.jpg",
-        "product_detail_feature": "3年連続モンドセレクション受賞！ ケトジェニックダイエットのためのバターコーヒーがお手軽に！ 使い方はとても簡単です！バターコーヒーの粉末をお湯に溶かすだけでOK。MCTオイルとグラスフェッドバターがコク深いコーヒーとまろやかに溶け合い、リッチな味わいの本格バターコーヒーが完成します。毎朝のコーヒータイムに、新しい贅沢をプラスしましょう。"
+        "product_detail_feature": "厳選された植物原料を発酵させて抽出したエキスが、体内環境を整え、消化や吸収をサポートします。腸内フローラを健やかに保ち、体のめぐりをスムーズにします。"
       },
       {
         "product_detail_img": "/images/products/product_7_1.jpg",
-        "product_detail_feature": "MCTオイル（中鎖脂肪酸）、グラスフェッドバター、難消化性デキストリン（消化しにくい水溶性食物繊維）を配合。砂糖や保存料は一切使用していません。健康を考えた、本格的なバターコーヒーをお楽しみいただけます。"
+        "product_detail_feature": "エネルギー代謝を助ける必須ビタミンB1を含有。疲労感を軽減し、日々の活力をサポートします。ビタミンB1不足による倦怠感やエネルギー不足を効果的に補います。"
       },
       {
         "product_detail_img": "/images/products/product_7_2.jpg",
-        "product_detail_feature": "MCTオイルとグラスフェッドバターに最適なベトナム産コーヒーを使用し、丁寧にエスプレッソ抽出して粉末化しました。深い苦みとコクが特徴で、ミルキーなグラスフェッドバターとの相性は抜群です。これにより、毎日のコーヒータイムがより豊かで風味豊かなものになります。"
+        "product_detail_feature": "体が本来持つ力を引き出し、心身を健やかに保つ栄養サポート食品です。自然と科学の力で、充実した毎日をお手伝いします。健康で生き生きとした日々を送りたい方に、ぜひお試しください！"
       }
     ],
     "link": "/product/7",
-    "title": "伊段 ソウソウ（爽爽）栄養機能食品",
+    "prev": "/product/6",
     "description": "植物発酵エキス、ビタミンB1、NMN、高麗人参",
     "amazon_shop_link": "https://www.amazon.co.jp/dp/B0CDQ4JSYX",
     "brand": "伊段",
