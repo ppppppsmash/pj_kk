@@ -30,7 +30,7 @@ export default async function Service() {
             Product
           </h1>
 
-          <div className="mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
+          <div className="mt-[40px] sm:mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
             <h3 className="font-semibold leading-10 sm:leading-[27px] text-lg sm:text-[36px]">
               日本の品質、世界へ届ける安心
             </h3>

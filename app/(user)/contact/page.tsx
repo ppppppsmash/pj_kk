@@ -11,7 +11,7 @@ export default async function Contact() {
             CONTACT
           </h1>
 
-          <div className="mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
+          <div className="mt-[40px] sm:mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
             <p className="mt-[33px] leading-[31px]">
               商品について<br />
               健康相談をしたい<br />
