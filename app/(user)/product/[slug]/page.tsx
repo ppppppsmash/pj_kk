@@ -44,14 +44,14 @@ export default function ProductPage({ params } : { params: { slug: string }}) {
           ></Vortex>
         </div>
         <h1
-          className="font-bold text-[30px] sm:text-[50px] leading-[50px] sm:leading-[70px] tracking-[.01em] duration-100 delay-100"
+          className="font-bold text-[20px] sm:text-[50px] leading-[50px] sm:leading-[70px] tracking-[.01em] duration-100 delay-100"
         >
           {product.title}
         </h1>
 
-        <div className="mt-[30px] mx-auto tracking-wide text-[#545454]">
+        <div className="mt-[10px] sm:mt-[30px] mx-auto tracking-wide text-[#545454]">
           <div className="flex justify-between items-center">
-            <p>カテゴリー： {product.category}</p>
+            <p className="text-sm">カテゴリー： {product.category}</p>
           </div>
         </div>
 
