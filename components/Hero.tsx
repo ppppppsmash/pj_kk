@@ -13,7 +13,6 @@ const zenKakuGothicNew = Zen_Kaku_Gothic_New({
 });
 
 export const Hero = () => {
-
   return (
     <div className="w-full max-w-full items-end flex-nowrap flex-row h-[400px] sm:h-[540px] justify-start mb-[60px] sm:mb-[80px]
       overflow-x-visible overflow-y-visible"
