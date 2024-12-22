@@ -254,25 +254,32 @@ export const HomeSection = async () => {
           </div>
         </section> */}
 
-        {/* <section
-          className="sm:mt-16 pt-5 relative mx-auto"
+        <section
+          className="max-w-full p-20 justify-center flex-nowrap flex-col items-center sm:mt-16 pt-5 relative mx-auto"
         >
-          <div className="w-[100vw] text-sm overflow-hidden sm:flex sm:flex-wrap sm:items-center sm:justify-end sm:mb-14">
-            <h3 className="text-center text-[30px] tracking-[.2em] sm:max-w-[280px] sm:w-1/4 sm:pl-5 relative z-20 font-bold">
-              ニュース
-            </h3>
-            <div
-              className="max-w-full w-full pl-5 sm:pl-0 sm:max-w-[calc(50%_+_750px_/_2_-_80px] sm:w-3/4 relative mb-[50px] after:bg-[#F2F2F2] sm:after:w-[calc(100%_+_80px)]
-                after:h-[180px] after:absolute after:right-0 after:-bottom-[30px] sm:after:-bottom-[50px] sm:after:rounded-tl-[50px] sm:after:rounded-bl-[50px]
-                after:w-[calc(100%_-_80px)] after:rounded-tl-[40px] after:rounded-bl-[40px]"
-            >
-              <div className="w-full max-w-full justify-start">
-                <a className="align-center flex-row">
-                  テスト
+          {/* <div className="max-w-full w-[1280px] flex">
+            <div className="flex-none w-[40%] max-w-[40%] items-end flex-nowrap h-auto justify-start m-0 pr-10 pb-7">
+              <div className="flex-none w-[1200px] max-w-full p-0 justify-start flex-nowrap flex-row items-start">
+                <h3 className="text-left justify-start text-[#1c1c1c] flex-none text-[32px] font-bold h-10 w-auto max-w-full">
+                  ニュース
+                </h3>
+              </div>
+            </div>
+            <div className="w-[60%] max-w-[60%] flex-none items-center flex-col flex-nowrap justify-center p-0">
+              <div className="w-full max-w-full justify-start flex-none">
+                <a className="w-full max-w-full align-center flex-row flex-nowrap bg-white gap-0 m-0">
+                  <div className="flex items-start flex-1 m-0 py-6">
+                    <div className="max-w-full p-0 mb-3 justify-center flex flex-nowrap items-center">
+                      <span className="rounded-md bg-[#f2f2f2] text-[#666666] flex-none text-[12px] font-light mr-5
+                        items-center flex flex-row justify-center max-w-[calc(100%-20px)]">お知らせ</span>
+                      <p className="flex flex-row justify-center items-center text-[#666666] text-[14px] m-0 max-w-full">2024.12.9</p>
+                    </div>
+                  </div>
+                  <div>テスト</div>
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="w-full sm:w-[220px] sm:mx-auto overflow-hidden mt-3 sm:mt-6 flex justify-end">
             <span className="block overflow-hidden sm:mx-auto">
@@ -286,7 +293,7 @@ export const HomeSection = async () => {
               </Link>
             </span>
           </div>
-        </section> */}
+        </section>
 
         <section
           className="sm:mt-16 pt-5 relative mx-auto"
