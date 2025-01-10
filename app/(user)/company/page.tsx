@@ -89,7 +89,7 @@ export default async function Company() {
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒355-0006<br />埼玉県東松山市大字市ノ川199番地164</dd>
 
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">支社</dt>
-            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒332-0035<br />埼玉県川口市西青木2-4-3-1F</dd>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒103-0004<br />東京都中央区東日本橋1-1-9-2F備広東日本橋ビルIII</dd>
 
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">設立</dt>
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">平成24年7月24日</dd>

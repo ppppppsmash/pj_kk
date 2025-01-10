@@ -19,10 +19,6 @@ export default async function About() {
             <p className="mt-[33px] leading-[31px]">
             さらに甦る美と健康　伊段のサポート​
             </p>
-
-            {/* <p className="mt-[33px] leading-[31px]">
-              你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好
-            </p> */}
           </div>
         </div>
       </section>
