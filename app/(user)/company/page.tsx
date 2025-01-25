@@ -91,6 +91,9 @@ export default async function Company() {
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">支社</dt>
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒103-0004<br />東京都中央区東日本橋1-1-9-2F備広東日本橋ビルIII</dd>
 
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">電話番号</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">0493-27-5122<br />03-4333-3211</dd>
+
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">設立</dt>
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">平成24年7月24日</dd>
 
