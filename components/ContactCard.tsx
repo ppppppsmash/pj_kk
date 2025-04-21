@@ -9,7 +9,7 @@ export function ContactCard() {
         className="cursor-pointer text-[#1F2023] transition-all hover:opacity-70 duration-500"
         href="/contact"
       >
-        <div className="flex items-center box-border bg-[url('/images/contact.png')] w-full
+        <div className="flex items-center box-border bg-[url('/images/contact.jpg')] w-full
           h-[500px] px-[50px] bg-cover transition-all hover:scale-105"
         >
           <p className="relative font-black leading-[1] flex items-end">
