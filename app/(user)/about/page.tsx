@@ -67,7 +67,7 @@ export default async function About() {
               </p>
 
               <p className="leading-[27px] tracking-[.02em] text-[#545454] mb-[25px]">
-                <span className="font-bold text-sm">代表取締役</span> 梅原 鳳艶
+                <span className="font-bold text-sm">代表取締役</span> 梅原 美鳳
               </p>
             </div>
           </div>
