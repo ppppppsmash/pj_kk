@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { useState } from 'react'
 
 import { Textarea } from "@/components/ui/textarea"
 
@@ -42,6 +43,7 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const { isLoading, submitForm } = useSubmitContactForm()
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -56,7 +58,24 @@ export function ContactForm() {
   })
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    await submitForm(values)
+    setIsSubmitted(true)
+
+    const result = await submitForm(values)
+    if (result) {
+      form.reset()
+    } else {
+      // エラー時の処理（必要に応じて実装）
+      console.error('送信に失敗しました')
+    }
+  }
+
+  if (isSubmitted) {
+    return (
+      <div className="text-center py-8">
+        <h2 className="text-2xl font-bold mb-4">送信完了</h2>
+        <p className="mb-6">お問い合わせありがとうございます。<br />内容を確認次第、担当者よりご連絡させていただきます。</p>
+      </div>
+    )
   }
 
   return (

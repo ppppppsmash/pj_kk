@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 
 export default function useSubmitContactForm() {
@@ -19,29 +18,30 @@ export default function useSubmitContactForm() {
         }
         return response.json();
       })
-      .then(data => resolve(data))
-      .catch(error => reject(error));
+      .then(data => {
+        console.log('API Response:', data)
+        resolve(data)
+      })
+      .catch(error => {
+        console.error('API Error:', error)
+        reject(error)
+      });
     });
   };
 
   async function submitForm<T>(data: T) {
     setIsLoading(true)
-
-    console.log(data)
   
     try {
       const response = await api(data)
-  
-      alert(response)
-  
-      return response
+      return response // APIから返される { success: true } をそのまま返す
     } catch (error) {
-      console.log(error)
+      console.error('Form submission error:', error)
+      return { success: false, error }
     } finally {
       setIsLoading(false)
     }
   }
-  
 
   return {
     isLoading,
