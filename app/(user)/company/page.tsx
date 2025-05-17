@@ -80,25 +80,31 @@ export default async function Company() {
           <h2 className="mt-5 font-semibold text-[32px] leading-[20px] tracking-[.01em] text-white">COMPANY</h2>
 
           <dl className="-mt-[27px] leading-[36px] tracking-[.01em] text-[#F5F5F5] flex flex-wrap max-w-[1200px]">
-            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">会社名</dt>
-            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">恒佳 株式会社<br />
-            Kouka Co., Ltd.
-            </dd>
-
-            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">本社</dt>
-            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒355-0006<br />埼玉県東松山市大字市ノ川199番地164</dd>
-
-            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">支社</dt>
-            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒103-0004<br />東京都中央区東日本橋1-1-9-2F備広東日本橋ビルIII</dd>
-
-            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">電話番号</dt>
-            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">0493-27-5122<br />03-4333-3211</dd>
-
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">設立</dt>
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">平成24年7月24日</dd>
 
-            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">従業員人数</dt>
-            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">6人</dd>
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">会社名</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">恒佳 株式会社<br />
+              Kouka Co., Ltd.
+            </dd>
+
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">資本金</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">500万円</dd>
+
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">代表取締役</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">梅原 美鳳</dd>
+
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">事務所</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒103-0004<br />東京都中央区東日本橋1-1-9-2F備広東日本橋ビルIII</dd>
+
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">倉庫</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">〒355-0006<br />埼玉県東松山市大字市ノ川199番地164</dd>
+
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">業務内容</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">自社ブランド「伊段」シリーズ、日本製の漢方薬、健康食品、化粧品、日用雑貨、日本食材などを日本国内および海外にて販売しております</dd>
+
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">電話番号</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">0493-27-5122<br />03-4333-3211</dd>
 
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">薬剤師顧問</dt>
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">菊地 音羽</dd>
@@ -113,7 +119,7 @@ export default async function Company() {
 
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">主要取引先</dt>
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">
-              （株）建林松鶴堂 / インフィニティー（株）/ 健康フーズ（株）/（株）ピーエス
+              （株）建林松鶴堂 / インフィニティー（株）/（株）ピーエス
             </dd>
           </dl>
         </div>
