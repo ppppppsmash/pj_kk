@@ -158,7 +158,7 @@ export const HomeSection = async () => {
           <div className="block sm:flex sm:justify-center mx-auto my-10 px-5 sm:px-0">
             <div
               className="px-7 sm:pl-7 sm:pr-16 py-14 w-full sm:max-w-[calc(400px_+_90px)] sm:w-[calc(100%_/_3_+_50px)] rounded-[50px] sm:rounded-tl-[50px] sm:rounded-bl-[50px]
-                sm:rounded-tr-none sm:rounded-br-none bg-gray z-10"
+                sm:rounded-tr-none sm:rounded-br-none bg-gray z-10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:z-40"
             >
               <h3 className="text-center mb-8">
                 <span className="block text-[24px] tracking-[.2em] mb-4 font-extrabold">
@@ -177,7 +177,7 @@ export const HomeSection = async () => {
 
             <div
               className="px-7 sm:pl-7 sm:pr-16 py-14 w-full sm:max-w-[calc(400px_+_90px)] sm:w-[calc(100%_/_3_+_50px)] rounded-[50px] sm:rounded-tl-[50px] sm:rounded-bl-[50px]
-                sm:rounded-tr-none sm:rounded-br-none bg-white z-20 sm:-ml-[50px]">
+                sm:rounded-tr-none sm:rounded-br-none bg-white z-20 sm:-ml-[50px] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:z-40">
               <h3 className="text-center mb-8">
                 <span className="block text-[24px] tracking-[.2em] mb-4 font-extrabold">
                   [02]
@@ -195,7 +195,7 @@ export const HomeSection = async () => {
               </p>
             </div>
 
-            <div className="px-7 py-14 sm:-ml-[50px] w-full sm:max-w-[440px] sm:w-[calc(100%_/_3_+_50px)] rounded-[50px] bg-gray z-30">
+            <div className="px-7 py-14 sm:-ml-[50px] w-full sm:max-w-[440px] sm:w-[calc(100%_/_3_+_50px)] rounded-[50px] bg-gray z-30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:z-40">
               <h3 className="text-center mb-8">
                 <span className="block text-[24px] tracking-[.2em] mb-4 font-extrabold">
                   [03]
