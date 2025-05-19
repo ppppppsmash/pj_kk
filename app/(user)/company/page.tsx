@@ -107,6 +107,9 @@ export default async function Company() {
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">0493-27-5122<br />03-4333-3211</dd>
 
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">薬剤師顧問</dt>
+            <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">若松 一範</dd>
+
+            <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">薬剤師</dt>
             <dd className="w-3/4 border-b border-b-[#6B6B6B] p-[36px]">菊地 音羽</dd>
 
             <dt className="w-1/4 border-b border-b-[#6B6B6B] flex items-center">主要取引国</dt>
