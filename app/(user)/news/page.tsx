@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'ニュース',
+  description: '恒佳株式会社からのお知らせ。',
+}
 
 import { ContactCard } from '@/components/ContactCard'
 
@@ -20,7 +26,7 @@ export default async function News() {
 
   return (
     <div>
-      <section className="pt-[50px] sm:pt-[100px] bg-gray w-[100vw] overflow-hidden pb-20">
+      <section className="pt-[50px] sm:pt-[100px] bg-gray w-full overflow-hidden pb-20">
         <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
           <h1
             className="font-bold text-[60px] sm:text-[180px] leading-[50px] sm:leading-[120px] tracking-[.01em] duration-500 delay-300 animate-slide-in-left"

@@ -7,6 +7,9 @@ const {
 } = require("tailwindcss/lib/util/flattenColorPalette")
 
 const config = {
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx,js,jsx}',
@@ -25,7 +28,12 @@ const config = {
     },
     extend: {
       fontFamily: {
-        normsEn: ['TTNorms']
+        sans: ['var(--font-inter)', 'var(--font-noto-sans-jp)', ...defaultTheme.fontFamily.sans],
+        normsEn: ['TTNorms', 'var(--font-inter)', 'sans-serif']
+      },
+      transitionTimingFunction: {
+        'out-strong': 'cubic-bezier(0.23, 1, 0.32, 1)',
+        'in-out-strong': 'cubic-bezier(0.77, 0, 0.175, 1)',
       },
       colors: {
         kouka: "#903494",

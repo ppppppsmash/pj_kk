@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { Vortex } from "@/components/ui/vortex";
 
@@ -26,9 +25,27 @@ interface ProductDetail {
   product_detail_feature: string;
 }
 
+const product_list: Product[] = productList;
+
+function findProduct(slug: string) {
+  return product_list.find(p => p.id === parseInt(slug, 10))
+}
+
+export function generateStaticParams() {
+  return product_list.map(p => ({ slug: String(p.id) }))
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const product = findProduct(params.slug)
+  if (!product) return { title: '製品が見つかりません' }
+  return {
+    title: product.title,
+    description: product.description || product.feature_1,
+  }
+}
+
 export default function ProductPage({ params } : { params: { slug: string }}) {
-  const product_list: Product[] = productList;
-  const product = product_list.find(p => p.id === parseInt(params.slug))
+  const product = findProduct(params.slug)
 
   if (!product) {
     return <div>製品が見つかりません</div>;

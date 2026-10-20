@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'プロダクト',
+  description: '伊段シリーズをはじめとする、恒佳株式会社の製品一覧。日本国内の厳しい品質管理のもとで製造された健康食品をお届けします。',
+};
 
 import { ContactCard } from '@/components/ContactCard';
 
@@ -21,7 +28,7 @@ export default async function Service() {
 
   return (
     <div>
-      <section className="pt-[70px] sm:pt-[120px] bg-gray w-[100vw] overflow-hidden pb-20">
+      <section className="pt-[70px] sm:pt-[120px] bg-gray w-full overflow-hidden pb-20">
         <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
           <h1
             className="font-bold text-[60px] sm:text-[180px] leading-[50px] sm:leading-[120px]
@@ -60,12 +67,15 @@ export default async function Service() {
           >
           <Link
             href={product.link}
-            className="block h-full bg-white overflow-hidden relative z-10"
+            className="group block h-full bg-white overflow-hidden relative z-10"
           >
-            <div className="w-full max-w-full h-full overflow-hidden">
-              <img
+            <div className="relative w-full h-full overflow-hidden">
+              <Image
                 src={product.imgThumb}
-                className="w-full h-full object-cover duration-300 hover:scale-[1.2]"
+                alt={product.title}
+                fill
+                sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 ease-out-strong group-hover:scale-105"
               />
             </div>
 

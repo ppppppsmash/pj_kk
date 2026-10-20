@@ -1,8 +1,13 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'ニュース',
+}
 
 export default function Page({ params } : { params: { slug: string }}) {
   return (
     <div>
-      <section className="pt-[50px] sm:pt-[100px] bg-gray w-[100vw] overflow-hidden pb-10">
+      <section className="pt-[50px] sm:pt-[100px] bg-gray w-full overflow-hidden pb-10">
         <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
           <h1
             className="font-bold text-[30px] sm:text-[50px] leading-[50px] sm:leading-[120px] tracking-[.01em] duration-100 delay-100"

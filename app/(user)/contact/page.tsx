@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "お問い合わせ",
+  description: "商品、健康相談、ビジネスパートナーのご希望など、恒佳株式会社へのお問い合わせはこちらから。",
+};
 
 export default async function Contact() {
   return (
     <div>
-      <section className="pt-[50px] sm:pt-[100px] bg-gray w-[100vw] overflow-hidden pb-20">
+      <section className="pt-[50px] sm:pt-[100px] bg-gray w-full overflow-hidden pb-20">
         <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
           <h1
             className="animate-slide-in-left font-black text-[60px] sm:text-[180px] leading-[50px] sm:leading-[120px] tracking-[.01em] duration-500 delay-300"

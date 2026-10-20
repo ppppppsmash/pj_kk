@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
 import { ContactCard } from '@/components/ContactCard'
+
+export const metadata: Metadata = {
+  title: '恒佳について',
+  description: '恒佳株式会社の代表メッセージ。美と健康を軸に、日本の健康食品、漢方薬、化粧品を世界へお届けします。',
+}
 
 export default async function About() {
   return (
     <div>
-      <section className="pt-[70px] sm:pt-[120px] bg-gray w-[100vw] overflow-hidden pb-20">
+      <section className="pt-[70px] sm:pt-[120px] bg-gray w-full overflow-hidden pb-20">
         <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
           <h1
             className="font-bold text-[60px] sm:text-[180px] leading-[50px] sm:leading-[120px] tracking-[.01em] duration-500 delay-300 animate-slide-in-left"
@@ -31,7 +38,14 @@ export default async function About() {
             </h2>
 
             <div>
-              <img className="rounded-lg w-[300px]" src="/images/about/ceo.jpg" />
+              <Image
+                className="rounded-lg w-[300px] h-auto"
+                src="/images/about/ceo.jpg"
+                alt="代表取締役 梅原 美鳳"
+                width={300}
+                height={363}
+                sizes="300px"
+              />
             </div>
 
             <div className="max-w-[604px]">

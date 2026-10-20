@@ -1,10 +1,17 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
 import { ContactCard } from '@/components/ContactCard'
+
+export const metadata: Metadata = {
+  title: '会社情報',
+  description: '恒佳株式会社の会社概要、沿革、代表メッセージ。',
+}
 import { CompanyTracing } from '@/components/CompanyTracing'
 
 export default async function Company() {
   return (
     <div>
-      <section className="pt-[70px] sm:pt-[120px] bg-gray w-[100vw] overflow-hidden pb-20">
+      <section className="pt-[70px] sm:pt-[120px] bg-gray w-full overflow-hidden pb-20">
         <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
           <h1
             className="font-bold text-[60px] sm:text-[180px] leading-[50px] sm:leading-[120px] tracking-[.01em] duration-500 delay-300 animate-slide-in-left"
@@ -32,7 +39,14 @@ export default async function Company() {
             </h2>
 
             <div>
-              <img className="rounded-lg w-[300px]" src="/images/about/ceo.jpg" />
+              <Image
+                className="rounded-lg w-[300px] h-auto"
+                src="/images/about/ceo.jpg"
+                alt="代表取締役 梅原 美鳳"
+                width={300}
+                height={363}
+                sizes="300px"
+              />
             </div>
 
             <div className="max-w-[604px]">
