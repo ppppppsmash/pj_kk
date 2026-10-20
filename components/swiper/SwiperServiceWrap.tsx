@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -28,18 +29,18 @@ export const SwiperServiceWrap = ({ slides }: Slides) => {
       spaceBetween={20}
       pagination={{ clickable: true }}
       slidesPerView={2.5}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       {slides.map((slide, index) => (
         <SwiperSlide className="!w-[300px] !h-[200px]" key={index}>
           <div className="relative h-full rounded-[30px] overflow-hidden shadow-[6px_4px_15px_0_rgba(51,51,51,.19)]">
-            <Link href={slide.link} className="block h-full pb-6 bg-white overflow-hidden relative z-10">
-              <div className="w-full max-w-full h-[120px] sm:h-[160px]">
-                <img
+            <Link href={slide.link} className="group block h-full pb-6 bg-white overflow-hidden relative z-10">
+              <div className="relative w-full h-[120px] sm:h-[160px] overflow-hidden">
+                <Image
                   src={slide.imgThumb}
-                  width="300"
-                  className="duration-300 object-cover hover:scale-[1.2]"
+                  alt={slide.title}
+                  fill
+                  sizes="300px"
+                  className="object-cover transition-transform duration-500 ease-out-strong group-hover:scale-105"
                 />
               </div>
 

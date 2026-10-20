@@ -79,15 +79,25 @@ export function Globe({
     window.addEventListener("resize", onResize);
     onResize();
 
-    const globe = createGlobe(canvasRef.current!, {
-      ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender,
-    });
+    // cobe needs WebGL. If the browser cannot provide a context, keep the page alive
+    // and simply leave the canvas invisible instead of crashing the whole route.
+    let globe: ReturnType<typeof createGlobe> | null = null;
+    try {
+      globe = createGlobe(canvasRef.current!, {
+        ...config,
+        width: width * 2,
+        height: width * 2,
+        onRender,
+      });
+      setTimeout(() => (canvasRef.current!.style.opacity = "1"));
+    } catch (e) {
+      console.warn("Globe disabled: WebGL unavailable", e);
+    }
 
-    setTimeout(() => (canvasRef.current!.style.opacity = "1"));
-    return () => globe.destroy();
+    return () => {
+      window.removeEventListener("resize", onResize);
+      globe?.destroy();
+    };
   }, []);
 
   return (

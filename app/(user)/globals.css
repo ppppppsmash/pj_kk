@@ -68,6 +68,49 @@
   @font-face {
     font-family: "TTNorms";
     src: local("TTNorms"), url("/fonts/TTNormsProMedium.otf");
+    font-display: swap;
+  }
+
+  :root {
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  /* Mobile baseline: remove the "this is a website" tells */
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  button,
+  [role="button"] {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* Press feedback for every tappable control (gated hover lives in Tailwind via hoverOnlyWhenSupported) */
+  a:active,
+  button:active,
+  [role="button"]:active {
+    transition-duration: 100ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
