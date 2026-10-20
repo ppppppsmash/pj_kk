@@ -20,7 +20,7 @@ export default async function Contact() {
         }
       />
 
-      <div className="-mt-8 rounded-t-[36px] bg-white px-4 py-16 sm:-mt-12 sm:rounded-t-[50px] sm:px-6 sm:py-24">
+      <div className="-mt-8 rounded-t-[36px] bg-background px-4 py-16 sm:-mt-12 sm:rounded-t-[50px] sm:px-6 sm:py-24">
         <div className="mx-auto max-w-[760px]">
           <ContactForm />
         </div>

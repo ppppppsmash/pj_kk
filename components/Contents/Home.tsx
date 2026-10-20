@@ -72,7 +72,7 @@ export const HomeSection = () => {
       <section className="relative">
         <p
           aria-hidden="true"
-          className="select-none text-center font-normsEn text-[clamp(3rem,13vw,12rem)] leading-[0.8] tracking-[-.04em] text-neutral-200"
+          className="select-none text-center font-normsEn text-[clamp(3rem,13vw,12rem)] leading-[0.8] tracking-[-.04em] text-foreground/10"
         >
           Kouka Co., Ltd.
         </p>
@@ -98,7 +98,7 @@ export const HomeSection = () => {
                   <div className="flex items-end justify-between gap-6">
                     <p className="max-w-[26em] text-sm leading-relaxed text-white/85 sm:text-base">{card.lead}</p>
                     <span
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-neutral-900 transition-[transform,background-color,color] duration-200 ease-out-strong group-hover:translate-x-1 group-hover:bg-kouka group-hover:text-white"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-neutral-950 transition-[transform,background-color,color] duration-200 ease-out-strong group-hover:translate-x-1 group-hover:bg-kouka group-hover:text-white"
                       aria-hidden="true"
                     >
                       <ArrowRight className="h-5 w-5" />
@@ -120,7 +120,7 @@ export const HomeSection = () => {
                 key={item.href}
                 href={item.href}
                 aria-label={item.title}
-                className={`group relative block overflow-hidden rounded-[24px] bg-gray ring-1 ring-black/5 transition-transform duration-200 ease-out-strong active:scale-[0.98] sm:rounded-[28px] ${i % 2 === 1 ? 'mt-8 sm:mt-12' : ''}`}
+                className={`group relative block overflow-hidden rounded-[24px] bg-gray ring-1 ring-line transition-transform duration-200 ease-out-strong active:scale-[0.98] sm:rounded-[28px] ${i % 2 === 1 ? 'mt-8 sm:mt-12' : ''}`}
               >
                 <span className="relative block aspect-square">
                   <Image
@@ -138,10 +138,10 @@ export const HomeSection = () => {
 
           <Reveal delay={60}>
             <SectionHeading en="BRAND" ja="自社ブランド「伊段」" />
-            <p className="mt-6 text-lg font-bold leading-relaxed text-neutral-900 sm:text-xl">
+            <p className="mt-6 text-lg font-bold leading-relaxed text-foreground sm:text-xl">
               さらに甦る美と健康　伊段のサポート
             </p>
-            <p className="mt-4 max-w-[34em] text-[15px] leading-[1.9] text-neutral-600 sm:text-base">
+            <p className="mt-4 max-w-[34em] text-[15px] leading-[1.9] text-muted sm:text-base">
               2021年、この理念のもとに創設した自社ブランドです。バターコーヒーからサプリメント、フェイスマスクまで、日本の健康食品をより便利で効果的な方法でお届けします。
             </p>
             <ul className="mt-8 space-y-5">
@@ -151,8 +151,8 @@ export const HomeSection = () => {
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <span>
-                    <span className="block font-bold text-neutral-900">{title}</span>
-                    <span className="mt-1 block text-sm leading-relaxed text-neutral-600">{body}</span>
+                    <span className="block font-bold text-foreground">{title}</span>
+                    <span className="mt-1 block text-sm leading-relaxed text-muted">{body}</span>
                   </span>
                 </li>
               ))}
@@ -176,10 +176,10 @@ export const HomeSection = () => {
               <Reveal as="li" key={no} delay={i * 60} className="rounded-[28px] bg-gray p-7 sm:rounded-[36px] sm:p-10">
                 <div className="flex items-center justify-between">
                   <span className="font-normsEn text-3xl text-kouka">{no}</span>
-                  <Icon className="h-7 w-7 text-neutral-400" strokeWidth={1.5} aria-hidden="true" />
+                  <Icon className="h-7 w-7 text-subtle" strokeWidth={1.5} aria-hidden="true" />
                 </div>
-                <h3 className="mt-8 text-xl font-bold tracking-wide text-neutral-900">{title}</h3>
-                <p className="mt-4 text-sm leading-[1.9] text-neutral-600">{body}</p>
+                <h3 className="mt-8 text-xl font-bold tracking-wide text-foreground">{title}</h3>
+                <p className="mt-4 text-sm leading-[1.9] text-muted">{body}</p>
               </Reveal>
             ))}
           </ul>
@@ -191,7 +191,7 @@ export const HomeSection = () => {
         <Reveal className="mx-auto max-w-[1400px] overflow-hidden rounded-[32px] bg-gray sm:rounded-[44px]">
           <div className="grid items-center lg:grid-cols-[1fr_1.1fr]">
             <div className="p-4 pb-0 sm:p-6 sm:pb-0 lg:p-10 lg:pr-0">
-              <Link href={pickup.link} className="group relative block aspect-[4/3] overflow-hidden rounded-[24px] bg-white ring-1 ring-black/5 sm:rounded-[32px]">
+              <Link href={pickup.link} className="group relative block aspect-[4/3] overflow-hidden rounded-[24px] bg-white ring-1 ring-line sm:rounded-[32px]">
                 <Image
                   src={pickup.imgThumb}
                   alt={pickup.title}
@@ -205,11 +205,11 @@ export const HomeSection = () => {
               <p className="font-normsEn text-sm tracking-[.25em] text-kouka">
                 PICK UP<span className="ml-1" aria-hidden="true">■</span>
               </p>
-              <h2 className="mt-4 text-[26px] font-bold leading-[1.3] tracking-tight text-neutral-900 sm:text-[36px]">{pickup.title}</h2>
+              <h2 className="mt-4 text-[26px] font-bold leading-[1.3] tracking-tight text-foreground sm:text-[36px]">{pickup.title}</h2>
               <p className="mt-3 text-base font-bold text-kouka sm:text-lg">{pickup.description}</p>
               <ul className="mt-8 space-y-4">
                 {pickupFeatures.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-[15px] leading-[1.9] text-neutral-600">
+                  <li key={feature} className="flex gap-3 text-[15px] leading-[1.9] text-muted">
                     <span className="mt-[0.75em] h-1.5 w-1.5 shrink-0 rounded-full bg-kouka" aria-hidden="true" />
                     <span className="line-clamp-3">{feature}</span>
                   </li>
@@ -234,7 +234,7 @@ export const HomeSection = () => {
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <SectionHeading en="PRODUCT" ja="プロダクト" />
-              <p className="mt-5 max-w-[34em] text-sm leading-[1.9] text-neutral-600 sm:text-base">
+              <p className="mt-5 max-w-[34em] text-sm leading-[1.9] text-muted sm:text-base">
                 日本国内の厳しい品質管理のもとで製造された、伊段シリーズの製品をご紹介します。
               </p>
             </div>
@@ -255,7 +255,7 @@ export const HomeSection = () => {
 
       {/* AWARDS */}
       <section className="mt-24 px-4 sm:mt-36 sm:px-6">
-        <div className="mx-auto max-w-[1400px] rounded-[32px] bg-neutral-950 px-6 py-14 text-white sm:rounded-[44px] sm:px-12 sm:py-20 lg:px-16">
+        <div className="mx-auto max-w-[1400px] rounded-[32px] bg-panel px-6 py-14 text-white ring-1 ring-white/10 sm:rounded-[44px] sm:px-12 sm:py-20 lg:px-16">
           <div className="lg:grid lg:grid-cols-[1fr_2fr] lg:gap-16">
             <Reveal className="mb-10 lg:mb-0">
               <SectionHeading en="AWARDS" ja="受賞歴" light />
@@ -281,8 +281,8 @@ export const HomeSection = () => {
       <section className="mt-6 px-4 sm:mt-8 sm:px-6">
         <Reveal className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-6 rounded-[28px] bg-gray px-7 py-8 sm:flex-row sm:items-center sm:rounded-[36px] sm:px-12 sm:py-10">
           <div>
-            <p className="text-lg font-bold text-neutral-900 sm:text-xl">伊段シリーズは Amazon でご購入いただけます</p>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-600">公式ストアから全国へお届けします。</p>
+            <p className="text-lg font-bold text-foreground sm:text-xl">伊段シリーズは Amazon でご購入いただけます</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">公式ストアから全国へお届けします。</p>
           </div>
           <PillLink href={AMAZON_STORE} external icon={ExternalLink} variant="dark" className="shrink-0">
             Amazon ストアへ

@@ -37,7 +37,7 @@ export function ProductGallery({ items, title, className }: ProductGalleryProps)
         ))}
       </div>
 
-      <p key={active} className="fade-up-in mt-5 min-h-[4.5em] text-sm leading-[1.9] text-neutral-600" aria-live="polite">
+      <p key={active} className="fade-up-in mt-5 min-h-[4.5em] text-sm leading-[1.9] text-muted" aria-live="polite">
         {current.product_detail_feature}
       </p>
 
@@ -52,9 +52,9 @@ export function ProductGallery({ items, title, className }: ProductGalleryProps)
               aria-label={`画像${i + 1}を表示`}
               onClick={() => setActive(i)}
               className={cn(
-                'relative h-16 w-16 overflow-hidden rounded-2xl bg-gray ring-2 ring-offset-2 ring-offset-white',
+                'relative h-16 w-16 overflow-hidden rounded-2xl bg-gray ring-2 ring-offset-2 ring-offset-background',
                 'transition-[transform,box-shadow] duration-150 ease-out-strong active:scale-[0.95]',
-                i === active ? 'ring-kouka' : 'ring-transparent hover:ring-neutral-300'
+                i === active ? 'ring-kouka' : 'ring-transparent hover:ring-subtle/50'
               )}
             >
               <Image src={item.product_detail_img} alt="" fill sizes="64px" className="object-cover" />

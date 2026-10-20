@@ -31,13 +31,13 @@ export default function AboutPage() {
         ja="恒佳について"
         lead={
           <>
-            <p className="text-lg font-bold text-neutral-900 sm:text-2xl">さらに甦る美と健康　伊段のサポート</p>
+            <p className="text-lg font-bold text-foreground sm:text-2xl">さらに甦る美と健康　伊段のサポート</p>
             <p>「美」「健康」「ゆとり」「時代の空気」の側面から、お客様の暮らしの質的向上を応援する。それが、恒佳株式会社の変わらない目標です。</p>
           </>
         }
       />
 
-      <section className="-mt-8 rounded-t-[36px] bg-white px-4 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-6 sm:py-32">
+      <section className="-mt-8 rounded-t-[36px] bg-background px-4 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-6 sm:py-32">
         <div className="mx-auto max-w-[1400px] lg:grid lg:grid-cols-[1fr_2fr] lg:gap-16">
           <div className="mb-12 lg:mb-0">
             <div className="lg:sticky lg:top-[120px]">
@@ -51,14 +51,14 @@ export default function AboutPage() {
           </div>
 
           <Reveal delay={120} className="max-w-[40em]">
-            <div className="space-y-6 text-[15px] leading-[2] text-neutral-700 sm:text-base">
+            <div className="space-y-6 text-[15px] leading-[2] text-muted sm:text-base">
               {message.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             <p className="mt-12 flex items-baseline gap-3">
-              <span className="text-sm text-neutral-500">代表取締役</span>
-              <span className="text-xl font-bold tracking-wider text-neutral-900">梅原 美鳳</span>
+              <span className="text-sm text-subtle">代表取締役</span>
+              <span className="text-xl font-bold tracking-wider text-foreground">梅原 美鳳</span>
             </p>
             <div className="mt-12">
               <PillLink href="/company" variant="dark">会社情報を見る</PillLink>

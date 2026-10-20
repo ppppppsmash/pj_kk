@@ -14,9 +14,9 @@ import { ProductCard } from '@/components/product/ProductCard'
 
 
 const navButton = cn(
-  'flex h-12 w-12 items-center justify-center rounded-full border border-neutral-900 text-neutral-900',
+  'flex h-12 w-12 items-center justify-center rounded-full border border-foreground text-foreground',
   'transition-[transform,background-color,color,opacity] duration-200 ease-out-strong',
-  'hover:bg-neutral-900 hover:text-white active:scale-[0.94]',
+  'hover:bg-foreground hover:text-background active:scale-[0.94]',
   'disabled:pointer-events-none disabled:opacity-30'
 )
 

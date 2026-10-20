@@ -29,7 +29,7 @@ export function BackToTop() {
       tabIndex={visible ? 0 : -1}
       aria-hidden={!visible}
       className={cn(
-        'fixed right-4 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-neutral-900 text-white shadow-[0_12px_30px_-10px_rgba(0,0,0,0.45)] ring-1 ring-white/20',
+        'fixed right-4 z-30 flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background shadow-[0_12px_30px_-10px_rgba(0,0,0,0.45)] ring-1 ring-background/20',
         'bottom-[calc(env(safe-area-inset-bottom)+16px)] sm:right-6 sm:bottom-[calc(env(safe-area-inset-bottom)+24px)]',
         'transition-[opacity,transform,background-color] duration-200 ease-out-strong',
         'hover:bg-kouka active:scale-[0.94]',

@@ -43,7 +43,7 @@ export const Hero = () => {
 
           <h1
             className={cn(
-              'hero-in-item mt-5 text-[40px] font-bold leading-[1.2] tracking-tight text-neutral-900 sm:text-[64px] sm:leading-[1.12] xl:text-[72px]',
+              'hero-in-item mt-5 text-[40px] font-bold leading-[1.2] tracking-tight text-foreground sm:text-[64px] sm:leading-[1.12] xl:text-[72px]',
               zenKakuGothicNew.className
             )}
           >
@@ -51,7 +51,7 @@ export const Hero = () => {
             <span className="inline-block">美と健康。</span>
           </h1>
 
-          <p className="hero-in-item mt-6 max-w-[30em] text-[15px] leading-[1.9] text-neutral-600 sm:text-lg">
+          <p className="hero-in-item mt-6 max-w-[30em] text-[15px] leading-[1.9] text-muted sm:text-lg">
             日本の専門チームが開発した「伊段」シリーズをはじめ、健康食品、漢方薬、化粧品を、日本国内と世界の方々へお届けしています。
           </p>
 
@@ -65,7 +65,7 @@ export const Hero = () => {
         <div className="hero-visual relative mx-auto w-full max-w-[520px] pb-10 pl-6 sm:pb-12 sm:pl-10 lg:max-w-none">
           <Link
             href={featured.link}
-            className="group relative block aspect-square overflow-hidden rounded-[32px] bg-white shadow-[0_40px_90px_-30px_rgba(144,52,148,0.45)] ring-1 ring-black/5 transition-transform duration-200 ease-out-strong active:scale-[0.99] sm:rounded-[40px]"
+            className="group relative block aspect-square overflow-hidden rounded-[32px] bg-white shadow-[0_40px_90px_-30px_rgba(144,52,148,0.45)] ring-1 ring-line transition-transform duration-200 ease-out-strong active:scale-[0.99] sm:rounded-[40px]"
           >
             <Image
               src={featuredImage}
@@ -77,12 +77,12 @@ export const Hero = () => {
             />
             {/* the packshot has a price sticker baked in at the bottom; fade it into the white cloth */}
             <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-white via-white/90 to-transparent" />
-            <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-bold text-kouka shadow-sm ring-1 ring-black/5 backdrop-blur">
+            <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-bold text-kouka shadow-sm ring-1 ring-line backdrop-blur">
               <Award className="h-3.5 w-3.5" aria-hidden="true" />
               モンドセレクション 3年連続受賞
             </span>
             <span
-              className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-neutral-900 text-white shadow-lg transition-[transform,background-color] duration-200 ease-out-strong group-hover:translate-x-0.5 group-hover:bg-kouka"
+              className="absolute bottom-5 right-5 flex h-11 w-11 items-center justify-center rounded-full bg-neutral-950 text-white shadow-lg transition-[transform,background-color] duration-200 ease-out-strong group-hover:translate-x-0.5 group-hover:bg-kouka"
               aria-hidden="true"
             >
               <ArrowRight className="h-5 w-5" />
@@ -92,7 +92,7 @@ export const Hero = () => {
           <Link
             href={second.link}
             aria-label={second.title}
-            className="absolute -bottom-2 -left-1 block w-[42%] -rotate-3 sm:-left-4 overflow-hidden rounded-[24px] bg-white shadow-[0_24px_50px_-20px_rgba(0,0,0,0.35)] ring-1 ring-black/5 transition-transform duration-200 ease-out-strong hover:-rotate-2 active:scale-[0.98] sm:rounded-[28px]"
+            className="absolute -bottom-2 -left-1 block w-[42%] -rotate-3 sm:-left-4 overflow-hidden rounded-[24px] bg-white shadow-[0_24px_50px_-20px_rgba(0,0,0,0.35)] ring-1 ring-line transition-transform duration-200 ease-out-strong hover:-rotate-2 active:scale-[0.98] sm:rounded-[28px]"
           >
             <span className="relative block aspect-square">
               <Image src={secondImage} alt="" fill sizes="220px" className="object-cover" />
@@ -104,15 +104,15 @@ export const Hero = () => {
 
       {/* Facts strip */}
       <div className="mx-auto max-w-[1280px] px-5 pb-8 sm:px-8 sm:pb-12">
-        <ul className="grid grid-cols-2 gap-x-4 gap-y-6 border-t border-black/[0.06] pt-8 sm:grid-cols-4 sm:gap-6">
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-6 border-t border-line pt-8 sm:grid-cols-4 sm:gap-6">
           {facts.map(({ Icon, value, label }) => (
             <li key={value} className="flex items-start gap-3">
               <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-kouka/10 text-kouka">
                 <Icon className="h-4 w-4" aria-hidden="true" />
               </span>
               <span>
-                <span className="block text-[15px] font-bold leading-tight text-neutral-900 sm:text-base">{value}</span>
-                <span className="mt-1 block text-xs leading-snug text-neutral-500">{label}</span>
+                <span className="block text-[15px] font-bold leading-tight text-foreground sm:text-base">{value}</span>
+                <span className="mt-1 block text-xs leading-snug text-subtle">{label}</span>
               </span>
             </li>
           ))}

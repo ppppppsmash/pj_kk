@@ -36,7 +36,7 @@ const history: TimelineItem[] = [
 /** Vertical company history. Pure CSS line + dots; items reveal once on scroll. */
 export function Timeline() {
   return (
-    <ol className="relative border-l border-neutral-300 pl-8 sm:pl-12">
+    <ol className="relative border-l border-line pl-8 sm:pl-12">
       {history.map((item, i) => (
         <Reveal as="li" key={item.year} delay={Math.min(i, 3) * 60} className="relative pb-12 last:pb-0">
           <span
@@ -44,10 +44,10 @@ export function Timeline() {
             aria-hidden="true"
           />
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <time className="font-normsEn text-2xl tracking-tight text-neutral-900 sm:text-3xl">{item.year}</time>
-            <span className="rounded-full bg-neutral-900 px-3 py-1 text-xs font-medium tracking-wider text-white">{item.badge}</span>
+            <time className="font-normsEn text-2xl tracking-tight text-foreground sm:text-3xl">{item.year}</time>
+            <span className="rounded-full bg-foreground px-3 py-1 text-xs font-medium tracking-wider text-background">{item.badge}</span>
           </div>
-          <div className="mt-3 max-w-[40em] space-y-2 text-[15px] leading-[1.9] text-neutral-600 sm:text-base">
+          <div className="mt-3 max-w-[40em] space-y-2 text-[15px] leading-[1.9] text-muted sm:text-base">
             {item.body.map((line) => (
               <p key={line}>{line}</p>
             ))}

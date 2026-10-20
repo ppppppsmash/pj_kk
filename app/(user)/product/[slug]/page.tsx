@@ -30,20 +30,20 @@ function AdjacentCard({ product, direction }: { product: Product; direction: 'pr
       href={product.link}
       className={cn(
         'group flex items-center gap-4 rounded-[24px] bg-gray p-4 transition-[transform,background-color] duration-200 ease-out-strong',
-        'hover:bg-neutral-200/70 active:scale-[0.98]',
+        'hover:bg-foreground/[0.08] active:scale-[0.98]',
         isNext && 'flex-row-reverse text-right'
       )}
     >
-      <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-white">
+      <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-white ring-1 ring-line">
         <Image src={product.imgThumb} alt="" fill sizes="80px" className="object-cover" />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="flex items-center gap-1 font-normsEn text-xs tracking-[.2em] text-neutral-500">
+        <span className="flex items-center gap-1 font-normsEn text-xs tracking-[.2em] text-subtle">
           {!isNext && <ArrowLeft className="h-3 w-3 transition-transform duration-200 ease-out-strong group-hover:-translate-x-0.5" aria-hidden="true" />}
           <span className={cn(isNext && 'ml-auto')}>{isNext ? 'NEXT' : 'PREV'}</span>
           {isNext && <ArrowRight className="h-3 w-3 transition-transform duration-200 ease-out-strong group-hover:translate-x-0.5" aria-hidden="true" />}
         </span>
-        <span className="mt-1 line-clamp-2 block text-sm font-bold leading-snug text-neutral-900">{product.title}</span>
+        <span className="mt-1 line-clamp-2 block text-sm font-bold leading-snug text-foreground">{product.title}</span>
       </span>
     </Link>
   )
@@ -63,7 +63,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div className="hero-in mx-auto max-w-[1400px] px-4 pt-6 sm:px-6 sm:pt-10">
         <Link
           href="/product"
-          className="hero-in-item inline-flex h-10 items-center gap-2 text-sm font-bold tracking-wider text-neutral-500 transition-colors duration-200 hover:text-kouka"
+          className="hero-in-item inline-flex h-10 items-center gap-2 text-sm font-bold tracking-wider text-subtle transition-colors duration-200 hover:text-kouka"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           PRODUCT 一覧へ
@@ -81,13 +81,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <div className="lg:py-4">
             <p className="flex flex-wrap gap-2">
               {[product.brand, product.category].filter(Boolean).map((label) => (
-                <span key={label} className="rounded-full bg-gray px-3 py-1 text-xs font-medium tracking-wider text-neutral-600">
+                <span key={label} className="rounded-full bg-gray px-3 py-1 text-xs font-medium tracking-wider text-muted">
                   {label}
                 </span>
               ))}
             </p>
 
-            <h1 className="mt-5 text-[28px] font-bold leading-[1.3] tracking-tight text-neutral-900 sm:text-[40px]">
+            <h1 className="mt-5 text-[28px] font-bold leading-[1.3] tracking-tight text-foreground sm:text-[40px]">
               {product.title}
             </h1>
 
@@ -108,9 +108,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             </div>
 
             {features.length > 0 && (
-              <ul className="mt-10 space-y-5 border-t border-neutral-200 pt-8">
+              <ul className="mt-10 space-y-5 border-t border-line pt-8">
                 {features.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-[15px] leading-[1.9] text-neutral-600">
+                  <li key={feature} className="flex gap-3 text-[15px] leading-[1.9] text-muted">
                     <span className="mt-[0.75em] h-1.5 w-1.5 shrink-0 rounded-full bg-kouka" aria-hidden="true" />
                     <span>{feature}</span>
                   </li>

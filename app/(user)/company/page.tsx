@@ -49,7 +49,7 @@ export default function CompanyPage() {
       </section>
 
       {/* PROFILE */}
-      <section id="profile" className="-mt-8 rounded-t-[36px] bg-neutral-950 px-4 py-20 text-white sm:-mt-12 sm:rounded-t-[50px] sm:px-6 sm:py-32">
+      <section id="profile" className="-mt-8 rounded-t-[36px] bg-panel px-4 py-20 text-white sm:-mt-12 sm:rounded-t-[50px] sm:px-6 sm:py-32">
         <div className="mx-auto max-w-[1400px] lg:grid lg:grid-cols-[1fr_2fr] lg:gap-16">
           <Reveal className="mb-12 lg:mb-0">
             <SectionHeading en="PROFILE" ja="会社概要" light className="lg:sticky lg:top-[120px]" />

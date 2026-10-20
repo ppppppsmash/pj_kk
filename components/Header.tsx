@@ -10,6 +10,7 @@ import { ArrowRight, ChevronDown, ExternalLink, Mail, Phone } from 'lucide-react
 import { cn } from '@/lib/utils'
 import { products } from '@/lib/products'
 import { Logo } from './Logo'
+import { ThemeToggle } from './ThemeToggle'
 
 const NAV_ITEMS = [
   { label: 'HOME', href: '/' },
@@ -97,7 +98,7 @@ export function Header() {
         className={cn(
           'relative z-10 mx-auto flex h-14 max-w-[1400px] items-center justify-between rounded-full border border-transparent pl-4 pr-2 sm:h-16 sm:pl-5 sm:pr-2.5',
           'transition-[background-color,border-color,box-shadow] duration-300',
-          'data-[scrolled=true]:border-white/70 data-[scrolled=true]:bg-white/75 data-[scrolled=true]:shadow-[0_12px_40px_-16px_rgba(20,10,30,0.25)]',
+          'data-[scrolled=true]:border-white/70 dark:data-[scrolled=true]:border-white/10 data-[scrolled=true]:bg-background/75 data-[scrolled=true]:shadow-[0_12px_40px_-16px_rgba(20,10,30,0.25)]',
           'data-[scrolled=true]:backdrop-blur-xl data-[scrolled=true]:backdrop-saturate-150',
           'motion-reduce:transition-none'
         )}
@@ -118,7 +119,7 @@ export function Header() {
             <span
               aria-hidden="true"
               className={cn(
-                'pointer-events-none absolute top-1/2 left-0 h-9 -translate-y-1/2 rounded-full bg-neutral-900/[0.06]',
+                'pointer-events-none absolute top-1/2 left-0 h-9 -translate-y-1/2 rounded-full bg-foreground/[0.06]',
                 'transition-[transform,width,opacity] duration-200 ease-out-strong motion-reduce:transition-none'
               )}
               style={{ transform: `translate(${pill.x}px, -50%)`, width: pill.w, opacity: pill.visible ? 1 : 0 }}
@@ -129,7 +130,7 @@ export function Header() {
               const linkClass = cn(
                 'relative inline-flex h-9 items-center gap-1 rounded-full px-4 text-[14px] font-bold tracking-wider',
                 'transition-colors duration-150 hover:text-kouka focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kouka/40',
-                active ? 'text-kouka' : 'text-neutral-900'
+                active ? 'text-kouka' : 'text-foreground'
               )
               return (
                 <NavigationMenu.Item
@@ -178,7 +179,7 @@ export function Header() {
             >
               <NavigationMenu.Popup
                 className={cn(
-                  'relative origin-[var(--transform-origin)] overflow-hidden rounded-[28px] bg-white/95 shadow-[0_30px_80px_-20px_rgba(20,10,30,0.35)] ring-1 ring-black/5 backdrop-blur-xl',
+                  'relative origin-[var(--transform-origin)] overflow-hidden rounded-[28px] bg-background/95 shadow-[0_30px_80px_-20px_rgba(20,10,30,0.35)] ring-1 ring-line backdrop-blur-xl',
                   'transition-[opacity,transform] duration-150 ease-out-strong',
                   'data-[starting-style]:scale-[0.97] data-[starting-style]:opacity-0',
                   'data-[ending-style]:scale-[0.97] data-[ending-style]:opacity-0',
@@ -192,6 +193,7 @@ export function Header() {
         </NavigationMenu.Root>
 
         <div className="flex items-center gap-1">
+          <ThemeToggle />
           <Link
             href="/contact"
             className={cn(
@@ -215,9 +217,9 @@ export function Header() {
             <span
               aria-hidden="true"
               className={cn(
-                'relative block h-[2px] w-5 bg-black transition-[background-color] duration-150',
-                'before:absolute before:left-0 before:h-[2px] before:w-5 before:bg-black before:transition-[transform] before:duration-250 before:ease-in-out-strong',
-                'after:absolute after:left-0 after:h-[2px] after:w-5 after:bg-black after:transition-[transform] after:duration-250 after:ease-in-out-strong',
+                'relative block h-[2px] w-5 bg-foreground transition-[background-color] duration-150',
+                'before:absolute before:left-0 before:h-[2px] before:w-5 before:bg-foreground before:transition-[transform] before:duration-250 before:ease-in-out-strong',
+                'after:absolute after:left-0 after:h-[2px] after:w-5 after:bg-foreground after:transition-[transform] after:duration-250 after:ease-in-out-strong',
                 isOpen
                   ? 'bg-transparent before:translate-y-0 before:rotate-45 after:translate-y-0 after:-rotate-45'
                   : 'before:-translate-y-1.5 after:translate-y-1.5'
@@ -258,13 +260,13 @@ export function Header() {
                   tabIndex={isOpen ? 0 : -1}
                   aria-current={active ? 'page' : undefined}
                   className={cn(
-                    'flex items-center justify-between border-b border-black/[0.06] py-4 text-[28px] font-bold tracking-wider text-neutral-900',
+                    'flex items-center justify-between border-b border-line py-4 text-[28px] font-bold tracking-wider text-foreground',
                     'transition-transform duration-150 ease-out-strong active:scale-[0.98]',
                     active && 'text-kouka'
                   )}
                 >
                   {item.label}
-                  <ArrowRight className="h-5 w-5 text-neutral-400" aria-hidden="true" />
+                  <ArrowRight className="h-5 w-5 text-subtle" aria-hidden="true" />
                 </Link>
               </li>
             )
@@ -292,7 +294,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               tabIndex={isOpen ? 0 : -1}
-              className="flex h-12 items-center justify-center gap-2 rounded-full border border-neutral-900 text-sm font-bold text-neutral-900 transition-transform duration-150 ease-out-strong active:scale-[0.97]"
+              className="flex h-12 items-center justify-center gap-2 rounded-full border border-foreground text-sm font-bold text-foreground transition-transform duration-150 ease-out-strong active:scale-[0.97]"
             >
               Amazon
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
@@ -300,7 +302,7 @@ export function Header() {
             <a
               href="tel:0343333211"
               tabIndex={isOpen ? 0 : -1}
-              className="flex h-12 items-center justify-center gap-2 rounded-full border border-neutral-900 text-sm font-bold text-neutral-900 transition-transform duration-150 ease-out-strong active:scale-[0.97]"
+              className="flex h-12 items-center justify-center gap-2 rounded-full border border-foreground text-sm font-bold text-foreground transition-transform duration-150 ease-out-strong active:scale-[0.97]"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
               03-4333-3211
@@ -321,21 +323,21 @@ function ProductMenu() {
           <li key={product.id}>
             <NavigationMenu.Link
               render={<Link href={product.link} />}
-              className="group flex items-center gap-3 rounded-2xl p-2 pr-4 transition-colors duration-150 hover:bg-neutral-900/[0.05] focus-visible:bg-neutral-900/[0.05] focus-visible:outline-none"
+              className="group flex items-center gap-3 rounded-2xl p-2 pr-4 transition-colors duration-150 hover:bg-foreground/[0.06] focus-visible:bg-foreground/[0.06] focus-visible:outline-none"
             >
-              <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-gray ring-1 ring-black/5">
+              <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-gray ring-1 ring-line">
                 <Image src={product.imgThumb} alt="" fill sizes="56px" className="object-cover" />
               </span>
               <span className="min-w-0">
-                <span className="block truncate text-[13px] font-bold text-neutral-900">{product.title}</span>
-                <span className="block truncate text-xs text-neutral-500">{product.description}</span>
+                <span className="block truncate text-[13px] font-bold text-foreground">{product.title}</span>
+                <span className="block truncate text-xs text-subtle">{product.description}</span>
               </span>
             </NavigationMenu.Link>
           </li>
         ))}
       </ul>
-      <div className="mt-2 flex items-center justify-between border-t border-black/[0.06] px-3 pb-1 pt-3">
-        <span className="text-xs text-neutral-500">日本国内の認証工場で製造した、伊段シリーズの製品</span>
+      <div className="mt-2 flex items-center justify-between border-t border-line px-3 pb-1 pt-3">
+        <span className="text-xs text-subtle">日本国内の認証工場で製造した、伊段シリーズの製品</span>
         <NavigationMenu.Link
           render={<Link href="/product" />}
           className="group inline-flex items-center gap-1 text-sm font-bold text-kouka"

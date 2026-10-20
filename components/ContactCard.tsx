@@ -18,7 +18,7 @@ export function ContactCard() {
   return (
     <section className="mt-24 px-4 sm:mt-36 sm:px-6" aria-labelledby="contact-cta-title">
       <Reveal className="mx-auto max-w-[1400px]">
-        <div className="relative isolate overflow-hidden rounded-[32px] bg-neutral-950 text-white sm:rounded-[48px]">
+        <div className="relative isolate overflow-hidden rounded-[32px] bg-panel text-white ring-1 ring-white/10 sm:rounded-[48px]">
           {/* ambient brand glow + pointer-following spotlight */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_100%_0%,rgba(144,52,148,0.35),transparent_70%)]" />
           <Spotlight className="-z-10" />
@@ -48,12 +48,12 @@ export function ContactCard() {
               <Link
                 href="/contact"
                 className={cn(
-                  'group inline-flex items-center justify-between gap-6 rounded-full bg-white py-2 pl-7 pr-2 text-neutral-900',
+                  'group inline-flex items-center justify-between gap-6 rounded-full bg-white py-2 pl-7 pr-2 text-neutral-950',
                   'transition-[transform,background-color] duration-200 ease-out-strong hover:bg-kouka-light/90 active:scale-[0.97]'
                 )}
               >
                 <span className="text-base font-bold tracking-wider sm:text-lg">お問い合わせフォーム</span>
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-neutral-900 text-white transition-[transform,background-color] duration-200 ease-out-strong group-hover:bg-kouka group-hover:rotate-45 sm:h-14 sm:w-14">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-neutral-950 text-white transition-[transform,background-color] duration-200 ease-out-strong group-hover:bg-kouka group-hover:rotate-45 sm:h-14 sm:w-14">
                   {/* arrow points up-right at rest; rotating 45° on hover turns it into "go" */}
                   <ArrowUpRight className="h-6 w-6 transition-transform duration-200 ease-out-strong" aria-hidden="true" />
                 </span>

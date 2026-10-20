@@ -5,9 +5,9 @@ import { cn } from '@/lib/utils'
 
 const variants = {
   primary: 'bg-kouka text-white hover:bg-[#7a2a7e]',
-  dark: 'bg-neutral-900 text-white hover:bg-kouka',
-  outline: 'border border-neutral-900 text-neutral-900 hover:bg-neutral-900 hover:text-white',
-  light: 'bg-white text-neutral-900 hover:bg-neutral-100',
+  dark: 'bg-foreground text-background hover:bg-kouka hover:text-white',
+  outline: 'border border-foreground text-foreground hover:bg-foreground hover:text-background',
+  light: 'bg-background text-foreground hover:bg-surface',
 } as const
 
 interface PillLinkProps {

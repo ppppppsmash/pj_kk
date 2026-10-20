@@ -19,7 +19,7 @@ function Required({ optional }: { optional?: boolean }) {
     <span
       className={cn(
         'ml-2 rounded-full px-2 py-0.5 text-[11px] font-medium tracking-wider',
-        optional ? 'bg-neutral-100 text-neutral-500' : 'bg-kouka/10 text-kouka'
+        optional ? 'bg-surface text-subtle' : 'bg-kouka/10 text-kouka'
       )}
     >
       {optional ? '任意' : '必須'}
@@ -67,8 +67,8 @@ export function ContactForm() {
         <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-kouka text-white">
           <Check className="h-8 w-8" aria-hidden="true" />
         </span>
-        <h2 className="mt-6 text-2xl font-bold text-neutral-900">送信が完了しました</h2>
-        <p className="mt-4 leading-[1.9] text-neutral-600">
+        <h2 className="mt-6 text-2xl font-bold text-foreground">送信が完了しました</h2>
+        <p className="mt-4 leading-[1.9] text-muted">
           お問い合わせありがとうございます。確認メールをお送りしましたので、ご確認ください。
           <br />
           内容を確認のうえ、担当者よりご連絡いたします。
@@ -207,7 +207,7 @@ export function ContactForm() {
               </>
             )}
           </button>
-          <p className="mt-4 text-xs leading-relaxed text-neutral-500">
+          <p className="mt-4 text-xs leading-relaxed text-subtle">
             ご入力いただいた内容は、お問い合わせへの回答のみに使用します。
           </p>
         </div>
