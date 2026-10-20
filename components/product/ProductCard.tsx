@@ -10,7 +10,7 @@ export function ProductCard({ product, sizes }: { product: Product; sizes: strin
       href={product.link}
       className="group block h-full rounded-[28px] transition-transform duration-200 ease-out-strong active:scale-[0.98]"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-gray">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-gray ring-1 ring-black/5">
         <Image
           src={product.imgThumb}
           alt=""
