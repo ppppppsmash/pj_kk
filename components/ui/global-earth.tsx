@@ -70,8 +70,7 @@ export function Globe({
 
   const onResize = () => {
     if (canvasRef.current) {
-      const isMobile = window.innerWidth <= 768;
-      width = canvasRef.current.offsetWidth * (isMobile ? 1 : 1.3);
+      width = canvasRef.current.offsetWidth;
     }
   };
 

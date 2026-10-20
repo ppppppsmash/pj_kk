@@ -40,9 +40,17 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div aria-hidden="true">
-          <Globe className="-top-[60px] left-auto -right-[140px] translate-x-0 max-w-[320px] opacity-80 sm:-right-[140px] sm:-top-[20px] sm:max-w-[760px] sm:opacity-100" />
-        </div>
+      </div>
+
+      <div aria-hidden="true">
+        <Globe
+          className={cn(
+            // mobile: small, tucked into the top-right corner behind the eyebrow
+            '-top-[40px] left-auto -right-[120px] translate-x-0 max-w-[300px] opacity-70',
+            // desktop: large, bleeding off the right edge of the viewport
+            'sm:top-[40px] sm:-right-[8vw] sm:max-w-[min(46vw,640px)] sm:opacity-100'
+          )}
+        />
       </div>
 
       <MarqueePanel />
