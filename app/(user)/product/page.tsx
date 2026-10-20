@@ -1,92 +1,39 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { Metadata } from 'next'
+
+import { PageHeader } from '@/components/PageHeader'
+import { ProductCard } from '@/components/product/ProductCard'
+import { Reveal } from '@/components/ui/reveal'
+import { ContactCard } from '@/components/ContactCard'
+import { products } from '@/lib/products'
 
 export const metadata: Metadata = {
   title: 'プロダクト',
   description: '伊段シリーズをはじめとする、恒佳株式会社の製品一覧。日本国内の厳しい品質管理のもとで製造された健康食品をお届けします。',
-};
-
-import { ContactCard } from '@/components/ContactCard';
-
-import productList from './product.json';
-
-interface Product {
-  id: number
-  imgThumb: string
-  link: string
-  title: string
-  date: string
 }
 
-interface ProductList {
-  productList: Product[]
-}
-
-export default async function Service() {
-  const product_list = productList;
-
+export default function ProductListPage() {
   return (
     <div>
-      <section className="pt-[70px] sm:pt-[120px] bg-gray w-full overflow-hidden pb-20">
-        <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
-          <h1
-            className="font-bold text-[60px] sm:text-[180px] leading-[50px] sm:leading-[120px]
-              tracking-[.01em] duration-500 delay-300 animate-slide-in-left"
-          >
-            Product
-          </h1>
+      <PageHeader
+        en="PRODUCT"
+        ja="プロダクト"
+        lead={
+          <>
+            <p className="text-lg font-bold text-neutral-900 sm:text-2xl">日本の品質、世界へ届ける安心</p>
+            <p>日本国内の厳しい品質管理のもとで製造されています。安心・安全を最優先に、国内外の皆様にご提供しています。</p>
+            <p>国内外のお客様に寄り添い、真心を込めた製品をお届けします。私たちと一緒に、健康的な毎日を手に入れましょう。</p>
+          </>
+        }
+      />
 
-          <div className="mt-[40px] sm:mt-[80px] mx-auto tracking-wide text-[#545454] animate-fade-in-bottom duration-500 delay-300">
-            <h3 className="font-semibold leading-10 sm:leading-[27px] text-lg sm:text-[36px]">
-              日本の品質、世界へ届ける安心
-            </h3>
-
-            <p className="mt-[33px] leading-[31px]">
-              日本国内の厳しい品質管理のもとで製造されています。安心・安全を最優先に、国内外の皆様にご提供しています。
-            </p>
-
-            <p className="mt-[33px] leading-[31px]">
-            国内外のお客様に寄り添い、真心を込めた製品をお届けします。私たちと一緒に、健康的な毎日を手に入れましょう。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-[2%] bg-white">
-        <div className="sm:flex sm:flex-wrap justify-between max-w-[1400px] w-[calc(100%_-_50px)]
-          mx-auto sm:gap-x-6 after:content-[''] after:w-[calc(100%_/_3_-_3.5%)] after:h-0 after:block"
-        >
-
-        {product_list.map((product, index) => (
-          <div
-            key={index}
-            className="md:w-[calc(100%_/_3_-_3.5%)] sm:w-[calc(100%_/_2_-_2.5%)] w-auto relative
-              h-[350px] rounded-[30px] overflow-hidden shadow-[6px_4px_15px_0_rgba(51,51,51,.19)]
-              mb-8 sm:mb-20"
-          >
-          <Link
-            href={product.link}
-            className="group block h-full bg-white overflow-hidden relative z-10"
-          >
-            <div className="relative w-full h-full overflow-hidden">
-              <Image
-                src={product.imgThumb}
-                alt={product.title}
-                fill
-                sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover transition-transform duration-500 ease-out-strong group-hover:scale-105"
-              />
-            </div>
-
-            <h3 className="w-full text-white absolute right-0 bottom-0 bg-[rgba(32,24,1,.5)] pt-2 pl-6 pb-2">
-              <span className="text-[18px] mb-2 block leading-[1.5] font-semibold">{product.title}</span>
-              <span className="text-[12px] block leading-[1]">{product.title}</span>
-            </h3>
-          </Link>
-        </div>
-        ))}
-        </div>
+      <section className="-mt-8 rounded-t-[36px] bg-white px-4 py-16 sm:-mt-12 sm:rounded-t-[50px] sm:px-6 sm:py-24">
+        <ul className="mx-auto grid max-w-[1400px] gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product, i) => (
+            <Reveal as="li" key={product.id} delay={(i % 3) * 60}>
+              <ProductCard product={product} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+            </Reveal>
+          ))}
+        </ul>
       </section>
 
       <ContactCard />

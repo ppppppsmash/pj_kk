@@ -8,7 +8,7 @@ import { Reveal } from '@/components/ui/reveal'
 import { ProductSlider } from '@/components/swiper/ProductSlider'
 import { ContactCard } from '@/components/ContactCard'
 
-import productList from '@/app/(user)/product/product.json'
+import { products } from '@/lib/products'
 
 const introCards = [
   {
@@ -132,7 +132,7 @@ export const HomeSection = () => {
           </Reveal>
 
           <Reveal className="mt-10 sm:mt-14" delay={60}>
-            <ProductSlider slides={productList} />
+            <ProductSlider slides={products} />
           </Reveal>
 
           <div className="mt-8 sm:hidden">

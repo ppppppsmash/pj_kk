@@ -1,42 +1,21 @@
-import type { Metadata } from 'next';
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
-import { Vortex } from "@/components/ui/vortex";
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 
-import productList from '@/app/(user)/product/product.json';
-
-interface Product {
-  id: number;
-  imgThumb: string;
-  product_detail?: ProductDetail[];
-  link: string;
-  title: string;
-  description: string;
-  amazon_shop_link: string;
-  brand: string;
-  category: string;
-  feature_1: string;
-  feature_2: string;
-  feature_3: string;
-  date: string;
-}
-
-interface ProductDetail {
-  product_detail_img: string;
-  product_detail_feature: string;
-}
-
-const product_list: Product[] = productList;
-
-function findProduct(slug: string) {
-  return product_list.find(p => p.id === parseInt(slug, 10))
-}
+import { cn } from '@/lib/utils'
+import { getAdjacentProducts, getProduct, products, type Product } from '@/lib/products'
+import { ProductGallery } from '@/components/product/ProductGallery'
+import { PillLink } from '@/components/ui/pill-link'
+import { ContactCard } from '@/components/ContactCard'
 
 export function generateStaticParams() {
-  return product_list.map(p => ({ slug: String(p.id) }))
+  return products.map((p) => ({ slug: String(p.id) }))
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const product = findProduct(params.slug)
+  const product = getProduct(params.slug)
   if (!product) return { title: '製品が見つかりません' }
   return {
     title: product.title,
@@ -44,44 +23,114 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function ProductPage({ params } : { params: { slug: string }}) {
-  const product = findProduct(params.slug)
+function AdjacentCard({ product, direction }: { product: Product; direction: 'prev' | 'next' }) {
+  const isNext = direction === 'next'
+  return (
+    <Link
+      href={product.link}
+      className={cn(
+        'group flex items-center gap-4 rounded-[24px] bg-gray p-4 transition-[transform,background-color] duration-200 ease-out-strong',
+        'hover:bg-neutral-200/70 active:scale-[0.98]',
+        isNext && 'flex-row-reverse text-right'
+      )}
+    >
+      <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-white">
+        <Image src={product.imgThumb} alt="" fill sizes="80px" className="object-cover" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex items-center gap-1 font-normsEn text-xs tracking-[.2em] text-neutral-500">
+          {!isNext && <ArrowLeft className="h-3 w-3 transition-transform duration-200 ease-out-strong group-hover:-translate-x-0.5" aria-hidden="true" />}
+          <span className={cn(isNext && 'ml-auto')}>{isNext ? 'NEXT' : 'PREV'}</span>
+          {isNext && <ArrowRight className="h-3 w-3 transition-transform duration-200 ease-out-strong group-hover:translate-x-0.5" aria-hidden="true" />}
+        </span>
+        <span className="mt-1 line-clamp-2 block text-sm font-bold leading-snug text-neutral-900">{product.title}</span>
+      </span>
+    </Link>
+  )
+}
 
-  if (!product) {
-    return <div>製品が見つかりません</div>;
-  }
+export default function ProductPage({ params }: { params: { slug: string } }) {
+  const product = getProduct(params.slug)
+  if (!product) notFound()
+
+  const { prev, next } = getAdjacentProducts(product)
+  const features = [product.feature_1, product.feature_2, product.feature_3].filter(
+    (f) => f && f !== product.description
+  )
 
   return (
-    <div>
-      <section className="px-4 pb-10 sm:px-[100px] pt-[40svh]">
-        <div className="absolute -top-[65svh] left-0 overflow-hidden -z-10">
-          <Vortex
-            backgroundColor="black"
-            className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
-          ></Vortex>
-        </div>
-        <h1
-          className="font-bold text-[20px] sm:text-[50px] leading-[50px] sm:leading-[70px] tracking-[.01em] duration-100 delay-100"
+    <div className="pt-[72px] sm:pt-[88px]">
+      <div className="hero-in mx-auto max-w-[1400px] px-4 pt-6 sm:px-6 sm:pt-10">
+        <Link
+          href="/product"
+          className="hero-in-item inline-flex h-10 items-center gap-2 text-sm font-bold tracking-wider text-neutral-500 transition-colors duration-200 hover:text-kouka"
         >
-          {product.title}
-        </h1>
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          PRODUCT 一覧へ
+        </Link>
 
-        <div className="mt-[10px] sm:mt-[30px] mx-auto tracking-wide text-[#545454]">
-          <div className="flex justify-between items-center">
-            <p className="text-sm">カテゴリー： {product.category}</p>
+        <div className="hero-in-item mt-6 grid gap-10 sm:mt-10 lg:grid-cols-2 lg:gap-16">
+          {product.product_detail && product.product_detail.length > 0 ? (
+            <ProductGallery items={product.product_detail} title={product.title} />
+          ) : (
+            <div className="relative aspect-square overflow-hidden rounded-[28px] bg-gray sm:rounded-[36px]">
+              <Image src={product.imgThumb} alt={product.title} fill sizes="(min-width: 1024px) 50vw, 100vw" priority className="object-cover" />
+            </div>
+          )}
+
+          <div className="lg:py-4">
+            <p className="flex flex-wrap gap-2">
+              {[product.brand, product.category].filter(Boolean).map((label) => (
+                <span key={label} className="rounded-full bg-gray px-3 py-1 text-xs font-medium tracking-wider text-neutral-600">
+                  {label}
+                </span>
+              ))}
+            </p>
+
+            <h1 className="mt-5 text-[28px] font-bold leading-[1.3] tracking-tight text-neutral-900 sm:text-[40px]">
+              {product.title}
+            </h1>
+
+            {product.description && (
+              <p className="mt-4 text-base font-bold leading-relaxed text-kouka sm:text-lg">{product.description}</p>
+            )}
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              {product.amazon_shop_link ? (
+                <PillLink href={product.amazon_shop_link} external icon={ExternalLink}>
+                  Amazonで購入する
+                </PillLink>
+              ) : (
+                <PillLink href="/contact" variant="outline">
+                  お問い合わせ
+                </PillLink>
+              )}
+            </div>
+
+            {features.length > 0 && (
+              <ul className="mt-10 space-y-5 border-t border-neutral-200 pt-8">
+                {features.map((feature) => (
+                  <li key={feature} className="flex gap-3 text-[15px] leading-[1.9] text-neutral-600">
+                    <span className="mt-[0.75em] h-1.5 w-1.5 shrink-0 rounded-full bg-kouka" aria-hidden="true" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
+      </div>
 
-        {product.product_detail && <AnimatedTestimonials testimonials={product.product_detail} />}
+      {(prev || next) && (
+        <nav aria-label="前後の商品" className="mx-auto mt-20 max-w-[1400px] px-4 sm:mt-28 sm:px-6">
+          <div className="grid gap-4 sm:grid-cols-2">
+            {prev ? <AdjacentCard product={prev} direction="prev" /> : <div className="hidden sm:block" />}
+            {next && <AdjacentCard product={next} direction="next" />}
+          </div>
+        </nav>
+      )}
 
-        <div className="max-w-[800px] w-full mx-auto mt-5 mb-16">
-
-          <p className="mb-5 px-6">{product.feature_1}</p>
-          <p className="mb-5 px-6">{product.feature_2}</p>
-          <p className="mb-5 px-6">{product.feature_3}</p>
-        </div>
-      </section>
-
+      <ContactCard />
     </div>
   )
 }

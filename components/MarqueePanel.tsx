@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { Marquee } from '@/components/ui/marquee'
-import productList from '@/app/(user)/product/product.json'
+import { products } from '@/lib/products'
 
 /** Decorative strip of product imagery under the hero. Purely visual, hidden from AT. */
 export function MarqueePanel() {
@@ -11,7 +11,7 @@ export function MarqueePanel() {
       className="relative w-full overflow-hidden py-4 [touch-action:pan-y] sm:py-10"
     >
       <Marquee pauseOnHover className="[--duration:40s] [--gap:1rem] p-0 sm:[--gap:1.5rem]">
-        {productList.map((product) => (
+        {products.map((product) => (
           <figure
             key={product.id}
             className="relative aspect-[16/10] w-[200px] overflow-hidden rounded-2xl bg-gray sm:w-[280px] sm:rounded-3xl"

@@ -151,7 +151,16 @@
 .hero-in .hero-in-item:nth-child(3) { animation-delay: 120ms; }
 .hero-in .hero-in-item:nth-child(4) { animation-delay: 180ms; }
 
+/* Small content swap (gallery caption etc.) */
+.fade-up-in {
+  animation: hero-fade-up 250ms var(--ease-out) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .fade-up-in {
+    animation: none;
+  }
+
   .reveal {
     transform: none;
     transition: opacity 300ms ease;

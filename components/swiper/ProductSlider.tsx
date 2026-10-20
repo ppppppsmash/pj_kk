@@ -1,8 +1,6 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -11,14 +9,9 @@ import { A11y } from 'swiper/modules'
 import 'swiper/css'
 
 import { cn } from '@/lib/utils'
+import type { Product } from '@/lib/products'
+import { ProductCard } from '@/components/product/ProductCard'
 
-interface Slide {
-  id: number
-  imgThumb: string
-  link: string
-  title: string
-  description: string
-}
 
 const navButton = cn(
   'flex h-12 w-12 items-center justify-center rounded-full border border-neutral-900 text-neutral-900',
@@ -27,7 +20,7 @@ const navButton = cn(
   'disabled:pointer-events-none disabled:opacity-30'
 )
 
-export const ProductSlider = ({ slides }: { slides: Slide[] }) => {
+export const ProductSlider = ({ slides }: { slides: Product[] }) => {
   const swiperRef = useRef<SwiperInstance | null>(null)
   const [edges, setEdges] = useState({ start: true, end: false })
 
@@ -55,26 +48,7 @@ export const ProductSlider = ({ slides }: { slides: Slide[] }) => {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="!h-auto">
-            <Link
-              href={slide.link}
-              className="group block h-full rounded-[28px] transition-transform duration-200 ease-out-strong active:scale-[0.98]"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-gray">
-                <Image
-                  src={slide.imgThumb}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 80vw"
-                  className="object-cover transition-transform duration-500 ease-out-strong group-hover:scale-[1.04]"
-                />
-              </div>
-              <div className="px-2 pt-4">
-                <h3 className="line-clamp-2 text-[15px] font-bold leading-snug text-neutral-900 sm:text-base">
-                  {slide.title}
-                </h3>
-                <p className="mt-1 line-clamp-1 text-sm text-neutral-500">{slide.description}</p>
-              </div>
-            </Link>
+            <ProductCard product={slide} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 80vw" />
           </SwiperSlide>
         ))}
       </Swiper>
