@@ -1,241 +1,164 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import * as React from "react"
-import Link from "next/link"
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
+import { Logo } from './Logo'
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Logo } from "./Logo"
+const NAV_ITEMS = [
+  { label: 'HOME', href: '/' },
+  { label: 'COMPANY', href: '/company' },
+  { label: 'NEWS', href: '/news' },
+  { label: 'PRODUCT', href: '/product' },
+] as const
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Test",
-    href: "/test2",
-    description:
-      "test test test test test test test test test test test test",
-  },
-  {
-    title: "Test",
-    href: "/test2",
-    description:
-      "test test test test test test test test test test test test",
-  },
-  {
-    title: "Test",
-    href: "/test2",
-    description:
-      "test test test test test test test test test test test test",
-  },
-  {
-    title: "Test",
-    href: "/test2",
-    description: "test test test test test test test test test test test test",
-  },
-  {
-    title: "Test",
-    href: "/test2",
-    description:
-      "test test test test test test test test test test test test",
-  },
-  {
-    title: "Test",
-    href: "/test2",
-    description:
-      "test test test test test test test test test test test test",
-  },
-]
+function isActive(pathname: string, href: string) {
+  if (href === '/') return pathname === '/'
+  return pathname === href || pathname.startsWith(`${href}/`)
+}
 
 export function Header() {
   const pathname = usePathname()
-  
   const [isOpen, setIsOpen] = useState(false)
-  const [isClose, setIsClose] = useState(true)
 
-  const handleClick = () => {
-    setIsOpen(!isOpen)
-  }
-
-  const handleCloseClick = () => {
+  // Close the drawer whenever navigation happens
+  useEffect(() => {
     setIsOpen(false)
-  }
+  }, [pathname])
+
+  // Lock page scroll while the mobile menu is open, close on Escape
+  useEffect(() => {
+    if (!isOpen) return
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false)
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.style.overflow = overflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen])
 
   return (
-    <div className="relative">
-      <div className="absolute bg-transparent z-40 top-0 left-0 w-full h-[90px] sm:h-[80px]">
-        <div className="flex items-start justify-between px-2 w-full mx-auto pt-2 sm:pt-4 bg-white pb-6">
-          <Logo />
+    <header className="fixed inset-x-0 top-0 z-40">
+      {/* The bar carries the blur; the mobile nav is a sibling so `fixed inset-0` stays viewport-relative */}
+      <div
+        className={cn(
+          'relative z-10 flex items-center justify-between h-[72px] sm:h-[88px] px-4 sm:px-6 pt-[env(safe-area-inset-top)]',
+          'transition-[background-color] duration-300',
+          isOpen ? 'bg-transparent' : 'bg-white/85 backdrop-blur-md'
+        )}
+      >
+        <Logo />
 
-          <NavigationMenu className="sm:flex hidden animate-fade-in-bottom duration-500 delay-300 pr-6">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),
-                    pathname === "/" ? "after:scale-x-100 after:scale-y-100" : "")}>
-                    HOME
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+        {/* Desktop nav */}
+        <nav aria-label="メインナビゲーション" className="hidden sm:block">
+          <ul className="flex items-center gap-1">
+            {NAV_ITEMS.map((item) => {
+              const active = isActive(pathname, item.href)
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={active ? 'page' : undefined}
+                    className={cn(
+                      'group relative inline-flex h-10 items-center px-4 text-[15px] font-bold tracking-wide text-neutral-900',
+                      'transition-colors duration-200 hover:text-kouka',
+                      'after:absolute after:left-4 after:right-4 after:bottom-0 after:h-[2px] after:rounded-full after:bg-kouka',
+                      'after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out-strong',
+                      'hover:after:scale-x-100',
+                      active && 'text-kouka after:scale-x-100'
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            })}
+            <li className="pl-3">
+              <Link
+                href="/contact"
+                className={cn(
+                  'inline-flex h-11 items-center rounded-full bg-kouka px-7 text-[15px] font-bold text-white',
+                  'transition-[transform,background-color] duration-200 ease-out-strong',
+                  'hover:bg-[#7a2a7e] active:scale-[0.97]'
+                )}
+              >
+                CONTACT
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-              <NavigationMenuItem>
-                <Link href="/company" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),
-                    pathname === "/company" ? "after:scale-x-100 after:scale-y-100" : "")}>
-                    COMPANY
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/news" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(),
-                    pathname === "/news" ? "after:scale-x-100 after:scale-y-100" : "")}>
-                    NEWS
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/product" legacyBehavior passHref>
-                  <NavigationMenuLink>
-                    <NavigationMenuTrigger
-                      className={cn(pathname === "/product" ? "after:scale-x-100 after:scale-y-100" : "")}
-                    >PRODUCT</NavigationMenuTrigger>
-                  </NavigationMenuLink>
-                </Link>
-                {/* <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <a
-                          className={cn(
-                            "flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          )}
-                          href="/product"
-                        >
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            テスト
-                          </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            test test test test test test test test test test test test
-                          </p>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                    <ListItem href="/test1" title="Introduction">
-                      test test test test test test test test test test test test
-                    </ListItem>
-                    <ListItem href="/test1" title="Installation">
-                      test test test test test test test test test test test test
-                    </ListItem>
-                    <ListItem href="/test1" title="Typography">
-                      test test test test test test test test test test test test
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent> */}
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(
-                    pathname === "/contact" ? "after:scale-x-100 after:scale-y-100" : "")}>
-                      <div className="p-[3px] relative">
-                        <div className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl relative group transition duration-200 text-white
-                          hover:from-purple-500 hover:to-indigo-500 font-bold hover:scale-95 cursor-pointer">
-                          CONTACT
-                        </div>
-                      </div>
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-
-          <div
-            className="sm:hidden block bg-gray fixed top-0 right-0 w-14 h-14 cursor-pointer z-[9999] text-center
-              rounded-bl-[25px]"
-            onClick={handleClick}
-          >
-            <span
-              className={cn("relative bg-black w-7 h-[2px] inline-block mt-[24px] transition-all duration-150",
-                "before:absolute before:-top-2 before:left-0 before:transition-all before:inline-block before:w-7 before:h-[2px] before:bg-black",
-                "after:absolute after:top-2 after:left-0 after:transition-all after:inline-block after:w-7 after:h-[2px] after:bg-black",
-                isOpen ? "bg-transparent inline-block mt-[30px] transition-all duration-150 before:top-0 before:rotate-[135deg] after:top-0 after:rotate-[-135deg]" : ""
-              )}
-            ></span>
-          </div>
-
-          <div className={cn(
-            "fixed top-0 right-0 rounded-[50%] h-[100px] w-[100px] cursor-pointer z-50 text-center scale-0 bg-gray transition-all duration-1000",
-            isOpen ? "scale-[80]" : "",
-            isClose ? "" : "scalse-[80]"
+        {/* Mobile menu toggle */}
+        <button
+          type="button"
+          aria-label={isOpen ? 'メニューを閉じる' : 'メニューを開く'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setIsOpen((v) => !v)}
+          className="sm:hidden -mr-2 flex h-12 w-12 items-center justify-center rounded-full active:scale-[0.94] transition-transform duration-150 ease-out-strong"
+        >
+          <span
+            aria-hidden="true"
+            className={cn(
+              'relative block h-[2px] w-6 bg-black transition-[background-color] duration-150',
+              'before:absolute before:left-0 before:h-[2px] before:w-6 before:bg-black before:transition-[transform] before:duration-300 before:ease-in-out-strong',
+              'after:absolute after:left-0 after:h-[2px] after:w-6 after:bg-black after:transition-[transform] after:duration-300 after:ease-in-out-strong',
+              isOpen
+                ? 'bg-transparent before:translate-y-0 before:rotate-45 after:translate-y-0 after:-rotate-45'
+                : 'before:-translate-y-2 after:translate-y-2'
             )}
           />
-
-          <nav className={cn(
-            "h-[100svh] sm:h-auto fixed sm:hidden top-0 right-0 w-full transition-all duration-500",
-            isOpen ? "opacity-1 z-[9998]" : "opacity-0 hidden"
-            )}
-          >
-            <ul className={cn(
-                "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full",
-              )}
-            >
-              <li className="text-[30px] no-underline text-black px-4 py-5 transition-all duration-300 cursor-pointer">
-                <Link href="/" onClick={handleCloseClick}>HOME</Link>
-              </li>
-              <li className="text-[30px] no-underline text-black px-4 py-5 transition-all duration-300 cursor-pointer">
-                <Link href="/company" onClick={handleCloseClick}>COMPANY</Link>
-              </li>
-              <li className="text-[30px] no-underline text-black px-4 py-5 transition-all duration-300 cursor-pointer">
-                <Link href="/news" onClick={handleCloseClick}>NEWS</Link>
-              </li>
-              <li className="text-[30px] no-underline text-black px-4 py-5 transition-all duration-300 cursor-pointer">
-                <Link href="/product" onClick={handleCloseClick}>PRODUCT</Link>
-              </li>
-              <li className="text-[30px] no-underline text-black px-4 py-5 transition-all duration-300 cursor-pointer">
-                <Link href="/contact" onClick={handleCloseClick}>CONTACT</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        </button>
       </div>
-    </div>
+
+      {/* Mobile nav: a circle that grows from the toggle button */}
+      <nav
+        id="mobile-nav"
+        aria-label="メインナビゲーション"
+        aria-hidden={!isOpen}
+        className={cn(
+          'sm:hidden fixed inset-0 z-0 bg-gray flex items-center justify-center',
+          'transition-[clip-path] duration-500 ease-in-out-strong motion-reduce:transition-opacity motion-reduce:duration-200',
+          isOpen
+            ? '[clip-path:circle(150%_at_calc(100%_-_40px)_40px)] motion-reduce:opacity-100'
+            : '[clip-path:circle(0px_at_calc(100%_-_40px)_40px)] pointer-events-none motion-reduce:opacity-0'
+        )}
+      >
+        <ul className="text-center">
+          {[...NAV_ITEMS, { label: 'CONTACT', href: '/contact' }].map((item, i) => {
+            const active = isActive(pathname, item.href)
+            return (
+              <li
+                key={item.href}
+                style={{ transitionDelay: isOpen ? `${120 + i * 40}ms` : '0ms' }}
+                className={cn(
+                  'transition-[opacity,transform] duration-300 ease-out-strong',
+                  isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
+                )}
+              >
+                <Link
+                  href={item.href}
+                  tabIndex={isOpen ? 0 : -1}
+                  aria-current={active ? 'page' : undefined}
+                  className={cn(
+                    'block px-6 py-4 text-[28px] font-bold tracking-wider text-black',
+                    'active:scale-[0.97] transition-transform duration-150 ease-out-strong',
+                    active && 'text-kouka'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+    </header>
   )
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  )
-})
-ListItem.displayName = "ListItem"
