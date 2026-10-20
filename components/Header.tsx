@@ -50,7 +50,7 @@ export function Header() {
       <div
         className={cn(
           'relative z-10 flex items-center justify-between h-[72px] sm:h-[88px] px-4 sm:px-6 pt-[env(safe-area-inset-top)]',
-          'transition-[background-color] duration-300',
+          'transition-[background-color] duration-200',
           isOpen ? 'bg-transparent' : 'bg-white/85 backdrop-blur-md'
         )}
       >
@@ -70,7 +70,7 @@ export function Header() {
                       'group relative inline-flex h-10 items-center px-4 text-[15px] font-bold tracking-wide text-neutral-900',
                       'transition-colors duration-200 hover:text-kouka',
                       'after:absolute after:left-4 after:right-4 after:bottom-0 after:h-[2px] after:rounded-full after:bg-kouka',
-                      'after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out-strong',
+                      'after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-out-strong',
                       'hover:after:scale-x-100',
                       active && 'text-kouka after:scale-x-100'
                     )}
@@ -108,8 +108,8 @@ export function Header() {
             aria-hidden="true"
             className={cn(
               'relative block h-[2px] w-6 bg-black transition-[background-color] duration-150',
-              'before:absolute before:left-0 before:h-[2px] before:w-6 before:bg-black before:transition-[transform] before:duration-300 before:ease-in-out-strong',
-              'after:absolute after:left-0 after:h-[2px] after:w-6 after:bg-black after:transition-[transform] after:duration-300 after:ease-in-out-strong',
+              'before:absolute before:left-0 before:h-[2px] before:w-6 before:bg-black before:transition-[transform] before:duration-250 before:ease-in-out-strong',
+              'after:absolute after:left-0 after:h-[2px] after:w-6 after:bg-black after:transition-[transform] after:duration-250 after:ease-in-out-strong',
               isOpen
                 ? 'bg-transparent before:translate-y-0 before:rotate-45 after:translate-y-0 after:-rotate-45'
                 : 'before:-translate-y-2 after:translate-y-2'
@@ -125,10 +125,11 @@ export function Header() {
         aria-hidden={!isOpen}
         className={cn(
           'sm:hidden fixed inset-0 z-0 bg-gray flex items-center justify-center',
-          'transition-[clip-path] duration-500 ease-in-out-strong motion-reduce:transition-opacity motion-reduce:duration-200',
+          // Enter slower than exit: the reveal is the deliberate moment, the dismissal is a system response
+          'transition-[clip-path] ease-out-strong motion-reduce:transition-opacity motion-reduce:duration-200',
           isOpen
-            ? '[clip-path:circle(150%_at_calc(100%_-_40px)_40px)] motion-reduce:opacity-100'
-            : '[clip-path:circle(0px_at_calc(100%_-_40px)_40px)] pointer-events-none motion-reduce:opacity-0'
+            ? 'duration-[400ms] [clip-path:circle(150%_at_calc(100%_-_40px)_40px)] motion-reduce:opacity-100'
+            : 'duration-250 [clip-path:circle(0px_at_calc(100%_-_40px)_40px)] pointer-events-none motion-reduce:opacity-0'
         )}
       >
         <ul className="text-center">
@@ -137,9 +138,10 @@ export function Header() {
             return (
               <li
                 key={item.href}
-                style={{ transitionDelay: isOpen ? `${120 + i * 40}ms` : '0ms' }}
+                style={{ transitionDelay: isOpen ? `${100 + i * 40}ms` : '0ms' }}
                 className={cn(
-                  'transition-[opacity,transform] duration-300 ease-out-strong',
+                  'transition-[opacity,transform] ease-out-strong',
+                  isOpen ? 'duration-300' : 'duration-150',
                   isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
                 )}
               >

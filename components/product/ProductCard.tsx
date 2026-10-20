@@ -16,7 +16,7 @@ export function ProductCard({ product, sizes }: { product: Product; sizes: strin
           alt=""
           fill
           sizes={sizes}
-          className="object-cover transition-transform duration-500 ease-out-strong group-hover:scale-[1.04]"
+          className="object-cover transition-transform duration-[400ms] ease-out-strong group-hover:scale-[1.04]"
         />
       </div>
       <div className="px-2 pt-4">

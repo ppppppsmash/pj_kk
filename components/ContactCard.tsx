@@ -14,7 +14,7 @@ export function ContactCard() {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]"
+          className="object-cover transition-transform duration-[400ms] ease-out-strong group-hover:scale-[1.04]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 to-white/10" />
 

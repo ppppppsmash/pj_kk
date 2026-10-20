@@ -72,7 +72,7 @@ export const HomeSection = () => {
                   alt=""
                   fill
                   sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover opacity-80 transition-transform duration-700 ease-out-strong group-hover:scale-[1.04]"
+                  className="object-cover opacity-80 transition-transform duration-[400ms] ease-out-strong group-hover:scale-[1.04]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
 

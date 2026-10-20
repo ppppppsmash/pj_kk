@@ -10,7 +10,7 @@ export default function Page({ params } : { params: { slug: string }}) {
       <section className="pt-[50px] sm:pt-[100px] bg-gray w-full overflow-hidden pb-10">
         <div className="pt-[60px] px-[10%] max-w-[1600px] mx-auto">
           <h1
-            className="font-bold text-[30px] sm:text-[50px] leading-[50px] sm:leading-[120px] tracking-[.01em] duration-100 delay-100"
+            className="font-bold text-[30px] sm:text-[50px] leading-[50px] sm:leading-[120px] tracking-[.01em]"
           >
             文章标题文章标题文章标题文章标题
           </h1>

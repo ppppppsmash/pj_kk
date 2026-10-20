@@ -151,6 +151,11 @@
 .hero-in .hero-in-item:nth-child(3) { animation-delay: 120ms; }
 .hero-in .hero-in-item:nth-child(4) { animation-delay: 180ms; }
 
+/* Swiper reads its curve from this variable; slide movement is on-screen motion -> strong in-out */
+.swiper {
+  --swiper-wrapper-transition-timing-function: var(--ease-in-out);
+}
+
 /* Small content swap (gallery caption etc.) */
 .fade-up-in {
   animation: hero-fade-up 250ms var(--ease-out) both;
