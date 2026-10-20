@@ -9,9 +9,10 @@ import { Logo } from './Logo'
 
 const NAV_ITEMS = [
   { label: 'HOME', href: '/' },
+  { label: 'ABOUT', href: '/about' },
   { label: 'COMPANY', href: '/company' },
-  { label: 'NEWS', href: '/news' },
   { label: 'PRODUCT', href: '/product' },
+  { label: 'NEWS', href: '/news' },
 ] as const
 
 function isActive(pathname: string, href: string) {
@@ -147,7 +148,7 @@ export function Header() {
                   tabIndex={isOpen ? 0 : -1}
                   aria-current={active ? 'page' : undefined}
                   className={cn(
-                    'block px-6 py-4 text-[28px] font-bold tracking-wider text-black',
+                    'block px-6 py-3 text-[26px] font-bold tracking-wider text-black',
                     'active:scale-[0.97] transition-transform duration-150 ease-out-strong',
                     active && 'text-kouka'
                   )}
