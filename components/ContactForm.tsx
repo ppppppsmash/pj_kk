@@ -1,208 +1,215 @@
 'use client'
 
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { ArrowRight, Check, Loader2 } from 'lucide-react'
 
-import { Textarea } from "@/components/ui/textarea"
-
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
+import { cn } from '@/lib/utils'
+import { contactSchema, type ContactInput } from '@/lib/contact-schema'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { PillLink } from '@/components/ui/pill-link'
 
-import useSubmitContactForm from '@/hooks/use-submit-contact-form'
+type Status = 'idle' | 'submitting' | 'success' | 'error'
 
-const formSchema = z.object({
-  familyname: z.string().min(2, {
-    message: '必須項目です.',
-  }),
-  lastname: z.string().min(2, {
-    message: '必須項目です.',
-  }),
-  email: z.string().min(2, {
-    message: '必須項目です.',
-  }),
-  tel: z.string().min(2, {
-    message: '必須項目です.',
-  }),
-  companyname: z.string().min(2, {
-    message: '必須項目です.',
-  }),
-  mainmessage: z.string().min(2, {
-    message: '請填寫您想詢問的內容.',
-  }),
-})
+function Required({ optional }: { optional?: boolean }) {
+  return (
+    <span
+      className={cn(
+        'ml-2 rounded-full px-2 py-0.5 text-[11px] font-medium tracking-wider',
+        optional ? 'bg-neutral-100 text-neutral-500' : 'bg-kouka/10 text-kouka'
+      )}
+    >
+      {optional ? '任意' : '必須'}
+    </span>
+  )
+}
 
 export function ContactForm() {
-  const { isLoading, submitForm } = useSubmitContactForm()
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [status, setStatus] = useState<Status>('idle')
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ContactInput>({
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       familyname: '',
       lastname: '',
       email: '',
       tel: '',
       companyname: '',
-      mainmessage: ''
+      mainmessage: '',
+      website: '',
     },
   })
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    setIsSubmitted(true)
-
-    const result = await submitForm(values)
-    if (result) {
+  const onSubmit = async (values: ContactInput) => {
+    setStatus('submitting')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok || !data.success) throw new Error(data.reason ?? `HTTP ${res.status}`)
+      setStatus('success')
       form.reset()
-    } else {
-      // エラー時の処理（必要に応じて実装）
-      console.error('送信に失敗しました')
+    } catch (error) {
+      console.error('[contact] submit failed', error)
+      setStatus('error')
     }
   }
 
-  if (isSubmitted) {
+  if (status === 'success') {
     return (
-      <div className="text-center py-8">
-        <h2 className="text-2xl font-bold mb-4">送信完了</h2>
-        <p className="mb-6">お問い合わせありがとうございます。<br />内容を確認次第、担当者よりご連絡させていただきます。</p>
+      <div className="fade-up-in mx-auto max-w-[36em] py-10 text-center" role="status" aria-live="polite">
+        <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-kouka text-white">
+          <Check className="h-8 w-8" aria-hidden="true" />
+        </span>
+        <h2 className="mt-6 text-2xl font-bold text-neutral-900">送信が完了しました</h2>
+        <p className="mt-4 leading-[1.9] text-neutral-600">
+          お問い合わせありがとうございます。確認メールをお送りしましたので、ご確認ください。
+          <br />
+          内容を確認のうえ、担当者よりご連絡いたします。
+        </p>
+        <div className="mt-10">
+          <PillLink href="/" variant="dark">ホームへ戻る</PillLink>
+        </div>
       </div>
     )
   }
 
+  const submitting = status === 'submitting'
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-        <FormField
-          control={form.control}
-          name="familyname"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-[18px]"><strong>姓</strong></FormLabel>
-              <FormControl>
-                <Input
-                  className="rounded-sm"
-                  placeholder="姓を入力してください."
-                  {...field}
-                />
-              </FormControl>
-              {/* <FormDescription>
-                This is your public display name.
-              </FormDescription> */}
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="lastname"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-[18px]"><strong>名</strong></FormLabel>
-              <FormControl>
-                <Input
-                  className="rounded-sm"
-                  placeholder="名を入力してください."
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <form onSubmit={form.handleSubmit(onSubmit)} noValidate className="space-y-7">
+        <div className="grid gap-7 sm:grid-cols-2">
+          <FormField
+            control={form.control}
+            name="familyname"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-base font-bold">姓<Required /></FormLabel>
+                <FormControl>
+                  <Input placeholder="山田" autoComplete="family-name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="lastname"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-base font-bold">名<Required /></FormLabel>
+                <FormControl>
+                  <Input placeholder="太郎" autoComplete="given-name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[18px]"><strong>E-mail</strong></FormLabel>
+              <FormLabel className="text-base font-bold">メールアドレス<Required /></FormLabel>
               <FormControl>
-                <Input
-                  className="rounded-sm"
-                  placeholder="メールアドレスを入力してください."
-                  {...field}
-                />
+                <Input type="email" inputMode="email" autoComplete="email" placeholder="example@kouka.co.jp" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <FormField
-          control={form.control}
-          name="tel"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-[18px]"><strong>電話番号</strong></FormLabel>
-              <FormControl>
-                <Input
-                  className="rounded-sm"
-                  placeholder="電話番号を入力してください."
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="companyname"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-[18px]"><strong>会社名</strong></FormLabel>
-              <FormControl>
-                <Input
-                  className="rounded-sm"
-                  placeholder="会社名を入力してください."
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="grid gap-7 sm:grid-cols-2">
+          <FormField
+            control={form.control}
+            name="tel"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-base font-bold">電話番号<Required optional /></FormLabel>
+                <FormControl>
+                  <Input type="tel" inputMode="tel" autoComplete="tel" placeholder="03-1234-5678" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="companyname"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-base font-bold">会社名<Required optional /></FormLabel>
+                <FormControl>
+                  <Input autoComplete="organization" placeholder="株式会社〇〇" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
           name="mainmessage"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[18px]"><strong>お問い合わせ内容</strong></FormLabel>
+              <FormLabel className="text-base font-bold">お問い合わせ内容<Required /></FormLabel>
               <FormControl>
-                <Textarea
-                  className="resize-none rounded-sm"
-                  rows={10}
-                  placeholder="お問い合わせ内容を入力してください."
-                  {...field}
-                />
+                <Textarea rows={8} placeholder="商品について、健康相談、ビジネスパートナーのご希望など、ご自由にお書きください。" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <div className="w-[220px] mx-auto mt-6">
-          <span className="mx-auto">
-            <button
-              className="h-[55px] w-[220px] rounded-[40px] sm:rounded-[50px] bg-black text-white relative
-                flex flex-wrap items-center justify-center tracking-[.5em] text-sm pl-[10px] hover:bg-kouka duration-500 delay-100"
-              type="submit"
-            >
-              送信
-            </button>
-          </span>
+        {/* Honeypot: hidden from people, visible to bots */}
+        <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+          <label>
+            Website
+            <input type="text" tabIndex={-1} autoComplete="off" {...form.register('website')} />
+          </label>
+        </div>
+
+        {status === 'error' && (
+          <p role="alert" className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-relaxed text-red-700">
+            送信に失敗しました。時間をおいて再度お試しいただくか、お電話（0493-27-5122）でお問い合わせください。
+          </p>
+        )}
+
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={submitting}
+            className={cn(
+              'group inline-flex h-14 min-w-[220px] items-center justify-center gap-2 rounded-full bg-kouka px-8 text-sm font-bold tracking-[.2em] text-white',
+              'transition-[transform,background-color,opacity] duration-200 ease-out-strong hover:bg-[#7a2a7e] active:scale-[0.97]',
+              'disabled:pointer-events-none disabled:opacity-70'
+            )}
+          >
+            {submitting ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+                送信中
+              </>
+            ) : (
+              <>
+                送信する
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-out-strong group-hover:translate-x-0.5" aria-hidden="true" />
+              </>
+            )}
+          </button>
+          <p className="mt-4 text-xs leading-relaxed text-neutral-500">
+            ご入力いただいた内容は、お問い合わせへの回答のみに使用します。
+          </p>
         </div>
       </form>
     </Form>

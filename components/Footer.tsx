@@ -1,34 +1,73 @@
-import { IconShoppingBag } from '@tabler/icons-react';
+import Link from 'next/link'
+import { ExternalLink } from 'lucide-react'
+
 import { Logo } from './Logo'
+
+const siteLinks = [
+  { label: 'HOME', href: '/' },
+  { label: 'ABOUT', href: '/about' },
+  { label: 'COMPANY', href: '/company' },
+  { label: 'PRODUCT', href: '/product' },
+  { label: 'NEWS', href: '/news' },
+  { label: 'CONTACT', href: '/contact' },
+]
+
+const AMAZON_STORE = 'https://www.amazon.co.jp/s?me=AJZHQW1IE0MDG&marketplaceID=A1VC38T7YXB528'
 
 export function Footer() {
   return (
-    <div className="flex justify-between flex-wrap ml-5 items-center">
-      {/* ↓ w-[calc(100%_-_80px)] */}
-      <div
-        className="w-full flex sm:flex-wrap justify-between items-center sm:px-7 h-[150px] overflow-hidden
-          rounded-tl-[30px] bg-gray"
-      >
-          <div className="flex items-center gap-x-4 ml-4">
+    <footer className="mt-20 rounded-t-[36px] bg-gray sm:mt-28 sm:rounded-t-[50px]">
+      <div className="mx-auto max-w-[1400px] px-6 pb-10 pt-14 sm:px-8 sm:pt-20">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
+            <Logo style="w-[120px] sm:w-[140px]" />
+            <p className="mt-6 max-w-[24em] text-sm leading-[1.9] text-neutral-600">
+              さらに甦る美と健康。日本の健康食品、漢方薬、化粧品を、国内外のお客様へお届けします。
+            </p>
             <a
-              className="flex gap-x-2 hover:scale-95 transition-all hover:text-kouka"
-              href="https://www.amazon.co.jp/s?me=AJZHQW1IE0MDG&marketplaceID=A1VC38T7YXB528"
+              href={AMAZON_STORE}
               target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex h-11 items-center gap-2 rounded-full border border-neutral-900 px-5 text-sm font-bold tracking-wider text-neutral-900 transition-[transform,background-color,color] duration-200 ease-out-strong hover:bg-neutral-900 hover:text-white active:scale-[0.97]"
             >
-              <IconShoppingBag className="w-6 h-6" stroke={2} />
-              <span>amazonショップへ</span>
+              Amazon ストア
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
 
-          <div className="mr-5">
-            <Logo style={"w-[80px] pt-3 mb-2"} />
+          <nav aria-label="フッターナビゲーション">
+            <h2 className="font-normsEn text-sm tracking-[.2em] text-neutral-500">SITE MAP</h2>
+            <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3 md:grid-cols-1">
+              {siteLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="inline-block text-sm font-bold tracking-wider text-neutral-900 transition-colors duration-200 hover:text-kouka"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div>
+            <h2 className="font-normsEn text-sm tracking-[.2em] text-neutral-500">COMPANY</h2>
+            <address className="mt-5 space-y-3 text-sm not-italic leading-[1.8] text-neutral-700">
+              <p className="font-bold text-neutral-900">恒佳株式会社</p>
+              <p>〒103-0004<br />東京都中央区東日本橋1-1-9-2F<br />備広東日本橋ビルIII</p>
+              <p>
+                TEL <a className="hover:text-kouka" href="tel:0343333211">03-4333-3211</a>
+              </p>
+            </address>
           </div>
         </div>
 
-
-        <div className="w-full text-center bg-gray">
+        <div className="mt-14 flex flex-col gap-3 border-t border-neutral-300/70 pt-6 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
           <small className="text-xs">© Kouka Co., Ltd. All Rights Reserved.</small>
+          <span className="font-normsEn tracking-[.2em]">KOUKA CO., LTD. ■</span>
         </div>
-    </div>
+      </div>
+    </footer>
   )
 }

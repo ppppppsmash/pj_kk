@@ -1,19 +1,14 @@
-//import { contactFormSchema } from '@/data/schemas/contact-form-schema'
-import nodemailer, { SendMailOptions } from 'nodemailer'
+import nodemailer from 'nodemailer'
 
-const keyTransform: { [key: string]: string} = {
-  familyname: '姓',
-  lastname: '名',
-  email: 'メール',
-  tel: '電話番号',
-  companyname: '会社名',
-  mainmessage: 'お問い合わせ内容',
-}
+import { contactLabels, contactSchema } from '@/lib/contact-schema'
+
+export const runtime = 'nodejs'
+export const maxDuration = 20
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
-  port: 465,
   host: 'smtp.gmail.com',
+  port: 465,
   secure: true,
   auth: {
     user: process.env.EMAIL_USERNAME,
@@ -21,48 +16,65 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-const sendMail = (mailOptions: SendMailOptions) =>
-  new Promise((resolve, reject) => {
-    transporter.sendMail(mailOptions)
-  })
-
 export async function POST(request: Request) {
-  const formData = await request.json()
-
-  const formattedTextForContact = Object.entries(formData)
-    .map(([key, value]) => `${keyTransform[key] || key}: ${value}`)
-    .join('\n');
-
-  const formattedTextForUser = 'お問い合わせありがとうございます。以下の内容で受け付けました。\n' + formattedTextForContact + '\n\n恒佳よりご連絡させていただきますので、しばらくお待ち下さい。\nよろしくお願いいたします。';
-
-  const mailOptions = {
-    from: process.env.EMAIL_SENDER,
-    to: process.env.EMAIL_DESTINATION,
-    subject: 'お問い合わせの件',
-    text: formattedTextForContact,
+  let json: unknown
+  try {
+    json = await request.json()
+  } catch {
+    return Response.json({ success: false, reason: 'Invalid JSON' }, { status: 400 })
   }
 
-  const mailOptionsForUser = {
-    from: process.env.EMAIL_SENDER,
-    to: formData.email, // ユーザーのメールアドレス
-    subject: 'お問い合わせありがとうございます',
-    text: formattedTextForUser,
+  const parsed = contactSchema.safeParse(json)
+  if (!parsed.success) {
+    return Response.json(
+      { success: false, reason: 'Validation failed', issues: parsed.error.flatten().fieldErrors },
+      { status: 400 }
+    )
+  }
+
+  const { website, ...data } = parsed.data
+
+  // Bots fill the hidden field; pretend it worked and send nothing.
+  if (website) {
+    return Response.json({ success: true })
+  }
+
+  const summary = (Object.keys(contactLabels) as (keyof typeof contactLabels)[])
+    .map((key) => `${contactLabels[key]}: ${data[key] || '-'}`)
+    .join('\n')
+
+  const sender = process.env.EMAIL_SENDER
+  const destination = process.env.EMAIL_DESTINATION
+
+  if (!sender || !destination) {
+    console.error('[contact] EMAIL_SENDER / EMAIL_DESTINATION are not configured')
+    return Response.json({ success: false, reason: 'Server Error' }, { status: 500 })
   }
 
   try {
-    await sendMail(mailOptions);
-    await sendMail(mailOptionsForUser);
+    await transporter.sendMail({
+      from: sender,
+      to: destination,
+      replyTo: data.email,
+      subject: `【お問い合わせ】${data.familyname} ${data.lastname} 様`,
+      text: summary,
+    })
+
+    await transporter.sendMail({
+      from: sender,
+      to: data.email,
+      subject: 'お問い合わせありがとうございます｜恒佳株式会社',
+      text:
+        `${data.familyname} ${data.lastname} 様\n\n` +
+        'お問い合わせありがとうございます。以下の内容で受け付けました。\n\n' +
+        `${summary}\n\n` +
+        '内容を確認のうえ、担当者よりご連絡いたしますので、しばらくお待ちください。\n' +
+        '恒佳株式会社',
+    })
 
     return Response.json({ success: true })
   } catch (error) {
-    return Response.json(
-      {
-        success: false,
-        reason: 'Server Error!',
-      },
-      {
-        status: 500,
-      },
-    )
+    console.error('[contact] sendMail failed', error)
+    return Response.json({ success: false, reason: 'Server Error' }, { status: 500 })
   }
 }
