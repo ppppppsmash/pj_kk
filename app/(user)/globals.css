@@ -160,6 +160,37 @@
   --swiper-wrapper-transition-timing-function: var(--ease-in-out);
 }
 
+/* Spotlight glow (ContactCard). Tracks the pointer on hover devices, drifts on touch, static under reduced motion. */
+.spotlight {
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(217, 166, 220, 0.45), rgba(144, 52, 148, 0.18) 45%, transparent 70%);
+  opacity: 0;
+  transform: translate3d(0, 0, 0) translate(-50%, -50%);
+  transition: opacity 400ms var(--ease-out);
+}
+
+.spotlight[data-visible="true"] {
+  opacity: 1;
+}
+
+@keyframes spotlight-drift {
+  0%   { transform: translate3d(20%, 30%, 0) translate(-50%, -50%); }
+  50%  { transform: translate3d(80%, 70%, 0) translate(-50%, -50%); }
+  100% { transform: translate3d(20%, 30%, 0) translate(-50%, -50%); }
+}
+
+.spotlight[data-mode="drift"] {
+  opacity: 1;
+  animation: spotlight-drift 14s ease-in-out infinite;
+}
+
+.spotlight[data-mode="static"] {
+  opacity: 1;
+  transform: translate3d(70%, 40%, 0) translate(-50%, -50%);
+}
+
 /* Small content swap (gallery caption etc.) */
 .fade-up-in {
   animation: hero-fade-up 250ms var(--ease-out) both;
