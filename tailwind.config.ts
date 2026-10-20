@@ -37,6 +37,7 @@ const config = {
       },
       colors: {
         kouka: "#903494",
+        "kouka-light": "#d9a6dc",
         gray: "#F2F2F2",
         scroll: "#333333",
         border: "hsl(var(--border))",

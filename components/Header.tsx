@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+import { Mail } from 'lucide-react'
+
 import { cn } from '@/lib/utils'
 import { Logo } from './Logo'
 
@@ -84,11 +86,12 @@ export function Header() {
               <Link
                 href="/contact"
                 className={cn(
-                  'inline-flex h-11 items-center rounded-full bg-kouka px-7 text-[15px] font-bold text-white',
+                  'inline-flex h-11 items-center gap-2 rounded-full bg-kouka pl-5 pr-6 text-[15px] font-bold text-white',
                   'transition-[transform,background-color] duration-200 ease-out-strong',
                   'hover:bg-[#7a2a7e] active:scale-[0.97]'
                 )}
               >
+                <Mail className="h-4 w-4" aria-hidden="true" />
                 CONTACT
               </Link>
             </li>

@@ -96,6 +96,7 @@ export const Hero = () => {
           >
             <span className="relative block aspect-square">
               <Image src={secondImage} alt="" fill sizes="220px" className="object-cover" />
+              <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-white via-white/90 to-transparent" />
             </span>
           </Link>
         </div>
