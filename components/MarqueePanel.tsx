@@ -1,59 +1,27 @@
-import Image from 'next/image';
-import { cn } from '@/lib/utils';
-import { Marquee } from '@/components/ui/marquee';
+import Image from 'next/image'
 
-const reviews = [
-  {
-    img: "/images/marquee/marquee-1.jpg",
-  },
-  {
-    img: "/images/marquee/marquee-2.jpg",
-  },
-  {
-    img: "/images/marquee/marquee-3.jpg",
-  },
-  {
-    img: "/images/marquee/marquee-4.jpg",
-  },
-  {
-    img: "/images/marquee/marquee-5.jpg",
-  },
-  {
-    img: "/images/marquee/marquee-6.jpg",
-  },
-  {
-    img: "/images/marquee/marquee-7.jpg",
-  },
-];
+import { Marquee } from '@/components/ui/marquee'
+import productList from '@/app/(user)/product/product.json'
 
-const ReviewCard = ({
-  img
-}: {
-  img: string;
-}) => {
-  return (
-    <figure
-      className={cn(
-        "relative w-[160px] sm:w-[260px] cursor-pointer overflow-hidden rounded-xl sm:rounded-3xl bg-transparent",
-      )}
-    >
-      <div className="relative w-full h-[120px] sm:h-[160px] bg-transparent">
-        <Image className="object-cover" fill sizes="260px" alt="" src={img} />
-      </div>
-    </figure>
-  );
-};
-
+/** Decorative strip of product imagery under the hero. Purely visual, hidden from AT. */
 export function MarqueePanel() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent my-4 sm:my-20">
-      <Marquee pauseOnHover className="[--duration:20s] bg-transparent">
-        {reviews.map((review) => (
-          <ReviewCard key={review.img} {...review} />
+    <div
+      aria-hidden="true"
+      className="relative w-full overflow-hidden py-4 [touch-action:pan-y] sm:py-10"
+    >
+      <Marquee pauseOnHover className="[--duration:40s] [--gap:1rem] p-0 sm:[--gap:1.5rem]">
+        {productList.map((product) => (
+          <figure
+            key={product.id}
+            className="relative aspect-[16/10] w-[200px] overflow-hidden rounded-2xl bg-gray sm:w-[280px] sm:rounded-3xl"
+          >
+            <Image src={product.imgThumb} alt="" fill sizes="280px" className="object-cover" />
+          </figure>
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-white" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-white" />
     </div>
-  );
+  )
 }
