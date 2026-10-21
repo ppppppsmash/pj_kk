@@ -17,7 +17,7 @@ const facts = [
   { Icon: Award, value: '3年連続', label: '国際モンドセレクション受賞' },
   { Icon: ShieldCheck, value: 'GMP・ISO22000', label: '認証を取得した工場で製造' },
   { Icon: Globe2, value: '中国・香港・米国', label: '日本の品質を海外へ' },
-  { Icon: Building2, value: '2012年', label: '東京・日本橋にて設立' },
+  { Icon: Building2, value: '2012年', label: '東京にて設立' },
 ]
 
 export const Hero = () => {
