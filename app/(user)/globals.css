@@ -174,6 +174,45 @@
   transform: translate3d(70%, 40%, 0) translate(-50%, -50%);
 }
 
+/* Parallax (marketing images only). Scroll-driven CSS animations run on the compositor; browsers
+   without animation-timeline, and users with reduced motion, simply get a static image. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* an image inside an overflow-hidden frame drifts slower than the page */
+    .px-img {
+      animation: px-img linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+    @keyframes px-img {
+      from { transform: translateY(-6%) scale(1.14); }
+      to   { transform: translateY(6%) scale(1.14); }
+    }
+
+    /* whole blocks that drift against each other */
+    .px-up,
+    .px-down {
+      animation: px-up linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+    .px-down { animation-name: px-down; }
+    @keyframes px-up   { from { transform: translateY(28px); }  to { transform: translateY(-28px); } }
+    @keyframes px-down { from { transform: translateY(-28px); } to { transform: translateY(28px); } }
+
+    /* hero visual lags behind as the hero scrolls away */
+    .px-exit {
+      animation: px-exit linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes px-exit {
+      from { transform: translateY(0); }
+      to   { transform: translateY(72px); }
+    }
+  }
+}
+
 /* Small content swap (gallery caption etc.) */
 .fade-up-in {
   animation: hero-fade-up 250ms var(--ease-out) both;

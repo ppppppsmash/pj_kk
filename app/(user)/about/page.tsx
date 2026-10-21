@@ -44,8 +44,10 @@ export default function AboutPage() {
               <Reveal>
                 <SectionHeading en="MESSAGE" ja="代表メッセージ" />
               </Reveal>
-              <Reveal delay={60} className="relative mt-10 aspect-[4/5] max-w-[320px] overflow-hidden rounded-[28px] bg-gray">
-                <Image src="/images/about/ceo.jpg" alt="代表取締役 梅原 美鳳" fill sizes="320px" className="object-cover" />
+              <Reveal delay={60} className="relative mt-10 aspect-[4/5] max-w-[320px] overflow-clip rounded-[28px] bg-gray">
+                <div className="px-img absolute inset-0">
+                  <Image src="/images/about/ceo.jpg" alt="代表取締役 梅原 美鳳" fill sizes="320px" className="object-cover" />
+                </div>
               </Reveal>
             </div>
           </div>

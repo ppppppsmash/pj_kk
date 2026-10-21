@@ -27,7 +27,7 @@ export const Hero = () => {
   const secondImage = second.product_detail?.[0]?.product_detail_img ?? second.imgThumb
 
   return (
-    <section className="relative overflow-hidden pt-[72px] sm:pt-[88px]">
+    <section className="relative overflow-clip pt-[72px] sm:pt-[88px]">
       {/* Backdrop: a brand-purple glow top-right and a warm glow bottom-left, so the white page gets some depth */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(55%_60%_at_88%_12%,rgba(144,52,148,0.16),transparent_70%)]" />
@@ -63,6 +63,7 @@ export const Hero = () => {
 
         {/* Visual: featured product with a second one tucked behind */}
         <div className="hero-visual relative mx-auto w-full max-w-[520px] pb-10 pl-6 sm:pb-12 sm:pl-10 lg:max-w-none">
+          <div className="px-exit relative">
           <Link
             href={featured.link}
             className="group relative block aspect-square overflow-hidden rounded-[32px] bg-white shadow-[0_40px_90px_-30px_rgba(144,52,148,0.45)] ring-1 ring-line transition-transform duration-200 ease-out-strong active:scale-[0.99] sm:rounded-[40px]"
@@ -99,6 +100,7 @@ export const Hero = () => {
               <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-white via-white/90 to-transparent" />
             </span>
           </Link>
+          </div>
         </div>
       </div>
 

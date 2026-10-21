@@ -82,15 +82,17 @@ export const HomeSection = () => {
             <Reveal key={card.href} delay={i * 60}>
               <Link
                 href={card.href}
-                className="group relative block aspect-[4/3] overflow-hidden rounded-[28px] bg-neutral-900 transition-transform duration-200 ease-out-strong active:scale-[0.99] sm:aspect-[16/10] sm:rounded-[36px]"
+                className="group relative block aspect-[4/3] overflow-clip rounded-[28px] bg-neutral-900 transition-transform duration-200 ease-out-strong active:scale-[0.99] sm:aspect-[16/10] sm:rounded-[36px]"
               >
-                <Image
-                  src={card.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover opacity-80 transition-transform duration-[400ms] ease-out-strong group-hover:scale-[1.04]"
-                />
+                <div className="px-img absolute inset-0">
+                  <Image
+                    src={card.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover opacity-80 transition-transform duration-[400ms] ease-out-strong group-hover:scale-[1.04]"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
 
                 <div className="relative flex h-full flex-col justify-between p-6 sm:p-10">
@@ -116,11 +118,11 @@ export const HomeSection = () => {
         <div className="mx-auto grid max-w-[1400px] items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal className="grid grid-cols-2 gap-3 sm:gap-4">
             {collage.map((item, i) => (
+              <div key={item.href} className={i % 2 === 1 ? 'px-down mt-8 sm:mt-12' : 'px-up'}>
               <Link
-                key={item.href}
                 href={item.href}
                 aria-label={item.title}
-                className={`group relative block overflow-hidden rounded-[24px] bg-gray ring-1 ring-line transition-transform duration-200 ease-out-strong active:scale-[0.98] sm:rounded-[28px] ${i % 2 === 1 ? 'mt-8 sm:mt-12' : ''}`}
+                className="group relative block overflow-hidden rounded-[24px] bg-gray ring-1 ring-line transition-transform duration-200 ease-out-strong active:scale-[0.98] sm:rounded-[28px]"
               >
                 <span className="relative block aspect-square">
                   <Image
@@ -133,6 +135,7 @@ export const HomeSection = () => {
                   <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-white via-white/90 to-transparent" />
                 </span>
               </Link>
+              </div>
             ))}
           </Reveal>
 
@@ -188,17 +191,19 @@ export const HomeSection = () => {
 
       {/* PICK UP */}
       <section className="mt-24 px-4 sm:mt-36 sm:px-6">
-        <Reveal className="mx-auto max-w-[1400px] overflow-hidden rounded-[32px] bg-gray sm:rounded-[44px]">
+        <Reveal className="mx-auto max-w-[1400px] overflow-clip rounded-[32px] bg-gray sm:rounded-[44px]">
           <div className="grid items-center lg:grid-cols-[1fr_1.1fr]">
             <div className="p-4 pb-0 sm:p-6 sm:pb-0 lg:p-10 lg:pr-0">
-              <Link href={pickup.link} className="group relative block aspect-[4/3] overflow-hidden rounded-[24px] bg-white ring-1 ring-line sm:rounded-[32px]">
-                <Image
-                  src={pickup.imgThumb}
-                  alt={pickup.title}
-                  fill
-                  sizes="(min-width: 1024px) 45vw, 100vw"
-                  className="object-cover transition-transform duration-[400ms] ease-out-strong group-hover:scale-[1.03]"
-                />
+              <Link href={pickup.link} className="group relative block aspect-[4/3] overflow-clip rounded-[24px] bg-white ring-1 ring-line sm:rounded-[32px]">
+                <div className="px-img absolute inset-0">
+                  <Image
+                    src={pickup.imgThumb}
+                    alt={pickup.title}
+                    fill
+                    sizes="(min-width: 1024px) 45vw, 100vw"
+                    className="object-cover transition-transform duration-[400ms] ease-out-strong group-hover:scale-[1.03]"
+                  />
+                </div>
               </Link>
             </div>
             <div className="p-7 sm:p-12 lg:p-16">
